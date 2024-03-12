@@ -1,0 +1,213 @@
+/* Variables de couleur pour le mode clair */
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+}
+
+/* Variables de couleur pour le mode sombre */
+[data-theme="dark"] {
+    --background-color: #02030ae5;
+    --text-color: #000000;
+}
+
+/* Réinitialisation des marges et paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Cette propriété assure que padding et border sont inclus dans la largeur/hauteur totale des éléments */
+}
+
+body,
+html {
+    overflow-x: hidden;
+    /* Empêche le défilement horizontal */
+
+    background-color: var(--background-color);
+    color: var(--text-color);
+
+    font-family: "Tinos", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.card {
+    background-color: rgba(237, 235, 232, 0.4);
+}
+
+
+
+.card-header {
+    background-color: rgba(237, 235, 232, 0.6);
+}
+
+.btn-custom {
+    background-color: white;
+    /* Couleur de fond */
+    color: white;
+    /* Couleur du texte */
+    border-radius: 25px;
+    /* Coins arrondis */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* Ombre */
+    border-color: #313228;
+    color: #313228;
+}
+
+.btn-custom-cancel {
+    background-color: white;
+    /* Couleur de fond */
+    color: white;
+    /* Couleur du texte */
+    border-radius: 25px;
+    /* Coins arrondis */
+    border-color: #B53300;
+    color: #B53300;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* Ombre */
+}
+
+
+
+.col-date {
+    width: 10%;
+}
+
+.col-participant {
+    width: 5%;
+}
+
+.col-nom {
+    width: 10%;
+}
+
+.col-description {
+    width: 20%;
+}
+
+.col-action {
+    width: 20%;
+}
+
+
+/* diagramme */
+#chartContainer {
+    background-color: #E4D0D0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    margin: auto;
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 60px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+}
+
+#myDoughnutChart {
+    width: 80% !important;
+    height: 80% !important;
+}
+
+#noteContainer {
+    background-color: rgba(237, 235, 232, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center;
+    padding: 1rem;
+    margin: 0;
+    /* Ajustement pour s'assurer qu'il n'y a pas de marge empêchant de coller à gauche */
+    /* Ajustements pour la responsivité */
+    max-width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 50px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+    background-color: #AFC8AD;
+}
+
+@media (min-width: 901px) {
+    .container {
+        width: 100%;
+        max-width: none;
+        /* Pour s'assurer que le conteneur prend toute la largeur */
+        padding-left: 0;
+        /* Élimine le padding à gauche */
+        padding-right: 0;
+        /* Élimine le padding à droite */
+    }
+
+    #noteContainer {
+        width: 28.5rem;
+        /* Ou toute autre largeur fixe selon votre design */
+        margin-left: 0;
+        /* Pour coller le bloc note à gauche */
+        margin-right: auto;
+        /* Pour garder le reste de la marge à droite */
+        display: flex;
+
+        height: 100%;
+
+    }
+}
+
+
+
+/* Media query pour les écrans de moins de 768px (tablette) */
+@media (max-width: 769px) {
+    #chartContainer {
+        max-width: 100%;
+        /* Permet à la div de prendre toute la largeur disponible */
+        padding: 0 15px;
+        /* Ajoute un peu de padding pour ne pas toucher les bords */
+    }
+
+    #noteContainer {
+        width: 100%;
+        height: auto;
+        /* Ajuster la hauteur pour les écrans plus petits */
+        display: block;
+    }
+}
+
+/* Media query pour les très petits écrans (mobile) */
+@media (max-width: 575.98px) {
+    #chartContainer {
+        padding: 0 10px;
+        /* Réduit le padding sur les très petits écrans */
+    }
+}
+
+.bgTitle {
+    background-color: rgba(237, 235, 232, 0.6);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.custom-height {
+    height: 100px;
+
+}
+
+/* table*/
+
+.cardTable {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.Card-one {
+    background-color: #B0A8B9;
+}
+
+.Card-two {
+    background-color: #B0A8B9;
+}
+
+.Card-three {
+    background-color: #B0A8B9;
+}
+
+.table-one {
+    background-color: #AFC8AD;
+}

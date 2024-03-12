@@ -1,0 +1,84 @@
+/* Réinitialisation des marges et paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+
+    font-family: "Tinos", serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+/* Variables de couleur pour le mode clair */
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+}
+
+/* Variables de couleur pour le mode sombre */
+[data-theme="dark"] {
+    --background-color: #02030ae5;
+    --text-color: #000000;
+}
+
+/* Style des boutons */
+.btn-custom {
+    background-color: white;
+    /* Couleur de fond */
+    color: white;
+    /* Couleur du texte */
+    border-radius: 25px;
+    /* Coins arrondis */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* Ombre */
+    border-color: #313228;
+    color: #313228;
+}
+
+.btn-custom-cancel {
+    background-color: white;
+    /* Couleur de fond */
+    color: white;
+    /* Couleur du texte */
+    border-radius: 25px;
+    /* Coins arrondis */
+    border-color: #B53300;
+    color: #B53300;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* Ombre */
+}
+
+.bgTitle {
+    background-color: rgba(237, 235, 232, 0.6);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
+}
+
+.colorValidate {
+    background-color: #D2DAFF;
+}
+
+.colorReserved {
+
+    background-color: #F7DED0;
+}
+
+.colorTrain {
+    background-color: #FFE3E1;
+}
+
+.card-header {
+    background-color: #CCD3CA;
+}
+
+.bloc {
+    background-color: #FFF7D4;
+}

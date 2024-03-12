@@ -1,0 +1,123 @@
+html,
+body {
+
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* Empêche le défilement */
+
+    /* S'assure que le corps prend toute la hauteur */
+}
+
+
+
+.card {
+    /* background-color: rgba(183, 185, 189, 0.5); */
+    background-color: rgba(0, 0, 0, 0.13);
+
+}
+
+.card-transparent {
+    opacity: 0.8;
+    /* Ajustez cette valeur entre 0 (complètement transparent) et 1 (opaque) */
+
+}
+
+
+
+.video-background {
+    position: fixed;
+    /* Ou 'absolute', selon le besoin */
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    /* Assure que la vidéo reste en arrière-plan */
+    background-size: cover;
+    /* Couvre l'espace disponible */
+    overflow: hidden;
+}
+
+video {
+    /* Pour s'assurer que la vidéo couvre l'espace disponible */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.error {
+    color: red;
+}
+
+.captcha {
+    margin: 0 auto;
+    width: max-content;
+}
+
+.footerPage {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.contain {
+    background-image: url('images/bureauClair.jpg');
+    /* Remplacez par le chemin de votre image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* Centrer l'image de fond */
+    height: 100vh;
+    /* Assurez-vous que l'élément a une hauteur pour voir l'image de fond */
+    width: 100%;
+    /* Optionnel: selon la mise en page souhaitée */
+
+}
+
+.fond {
+    background-image: url('images/rever.jpg');
+    /* Remplacez par le chemin de votre image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* Centrer l'image de fond */
+    height: 100vh;
+    /* Assurez-vous que l'élément a une hauteur pour voir l'image de fond */
+    width: 100%;
+    /* Optionnel: selon la mise en page souhaitée */
+
+}
+
+.back {
+    background-image: url('images/rever.jpg');
+    /* Remplacez par le chemin de votre image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Centrer l'image de fond */
+    height: 100vh;
+    /* Assurez-vous que l'élément a une hauteur pour voir l'image de fond */
+    width: 100%;
+    /* Optionnel: selon la mise en page souhaitée */
+
+
+}
+
+/* page home-admin */
+
+.card-home-ad {
+    background-color: rgba(237, 235, 232, 0.6);
+}
+
+.card-header-home-ad {
+    background-color: rgba(237, 235, 232, 0.6);
+}

@@ -1,0 +1,88 @@
+body {
+    /* Chemin vers votre image */
+    background-image: url('../assets/images/mur.jpg');
+
+    /* Centrer l'image dans la page */
+    background-position: center;
+
+    /* Empêcher l'image de se répéter */
+    background-repeat: no-repeat;
+
+    /* Redimensionner l'image pour qu'elle couvre entièrement le fond, vous pouvez aussi utiliser 'contain' si vous ne voulez pas qu'elle soit coupée */
+    background-size: cover;
+
+    /* Fixer l'image en arrière-plan lors du défilement de la page */
+    background-attachment: fixed;
+    font-family: "Tinos", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+input.transparent-input {
+    background: rgba(237, 235, 232, 0.6);
+    border: none;
+    border-bottom: 1px solid #000;
+    /* Ajoute une bordure en bas pour indiquer visuellement l'input */
+    color: #000;
+    /* Couleur du texte */
+    padding: 5px;
+    /* Espacement interne */
+}
+
+
+
+.transparent-input:focus {
+    outline: none;
+    /* Supprime le contour par défaut lors de la sélection de l'élément */
+}
+
+textarea.transparent-input {
+
+    background: rgba(237, 235, 232, 0.6);
+    border: none;
+    border-bottom: 1px solid #000;
+    /* Ajoute une bordure en bas pour indiquer visuellement l'input */
+    color: #000;
+    /* Couleur du texte */
+    padding: 5px;
+    /* Espacement interne */
+}
+
+
+select.transparent-input {
+
+    background: rgba(237, 235, 232, 0.6);
+    border: none;
+    border-bottom: 1px solid #000;
+    /* Ajoute une bordure en bas pour indiquer visuellement l'input */
+    color: #000;
+    /* Couleur du texte */
+    padding: 5px;
+    /* Espacement interne */
+}
+
+.btn-custom {
+    background-color: white;
+    /* Couleur de fond */
+    color: white;
+    /* Couleur du texte */
+    border-radius: 25px;
+    /* Coins arrondis */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* Ombre */
+    border-color: #313228;
+    color: #313228;
+}
+
+.btn-custom-cancel {
+    background-color: white;
+    /* Couleur de fond */
+    color: white;
+    /* Couleur du texte */
+    border-radius: 25px;
+    /* Coins arrondis */
+    border-color: #B53300;
+    color: #B53300;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* Ombre */
+}
