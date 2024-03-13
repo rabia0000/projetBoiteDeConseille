@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : dim. 25 fév. 2024 à 19:49
+-- Généré le : mer. 13 mars 2024 à 08:34
 -- Version du serveur : 8.0.30
 -- Version de PHP : 8.1.10
 
@@ -73,22 +73,13 @@ CREATE TABLE `to_register` (
 --
 
 INSERT INTO `to_register` (`training_id`, `user_id`, `authorized_training`, `completed_training`) VALUES
-(60, 4, 0, 0),
-(60, 26, 0, 0),
-(62, 1, 0, 0),
-(62, 4, 0, 0),
-(62, 10, 0, 0),
-(63, 10, 0, 0),
-(64, 10, 0, 0),
-(65, 1, 0, 0),
-(65, 3, 0, 0),
-(65, 10, 0, 0),
-(66, 2, 0, 0),
-(66, 4, 0, 0),
-(66, 10, 0, 0),
-(67, 1, 0, 0),
-(67, 3, 0, 0),
-(67, 10, 0, 0);
+(83, 25, 1, 0),
+(83, 26, 1, 1),
+(84, 1, 0, 0),
+(85, 1, 0, 0),
+(85, 26, 0, 1),
+(86, 1, 1, 1),
+(86, 26, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -112,13 +103,10 @@ CREATE TABLE `training` (
 --
 
 INSERT INTO `training` (`training_id`, `training_name`, `training_url`, `training_description`, `training_date`, `training_max`, `training_archived`, `type_id`) VALUES
-(60, 'cours de python', 'py.com', 'cours', '2024-02-11', 19, 0, 5),
-(62, 'Javascript ', 'js.com', 'cours de javascript ', '2024-02-26', 10, 0, 5),
-(63, 'C', 'c.fr', 'apprendre le C ', '2024-02-28', 5, 0, 5),
-(64, 'PHP', 'php.com', 'cours de php', '2024-02-29', 20, 0, 5),
-(65, 'HTML', 'html.fr', 'cours HTML ', '2024-02-28', 10, 0, 5),
-(66, 'tout sur l\'ia', 'tout sur l\'ia', 'cours d\'IA', '2024-02-27', 5, 0, 2),
-(67, 'css', 'css.fr', 'cours de css', '2024-03-19', 8, 0, 5);
+(83, 'javascript', 'javascript', 'cours de javascript du 04/12 au 07/12/2023', '2023-12-04', 4, 1, 5),
+(84, 'python', 'python', 'cours de python du 15/01 au 18/01/2024', '2024-01-15', 5, 1, 5),
+(85, 'HTML', 'HTML.com', 'Formation HTML du 04/09 au 15/09/2023', '2023-09-04', 5, 0, 5),
+(86, 'PHP', 'php.com', 'Formation PHP du 18/12 au 15/01/2024', '2023-12-18', 5, 0, 5);
 
 -- --------------------------------------------------------
 
@@ -246,7 +234,7 @@ ALTER TABLE `articles`
 -- AUTO_INCREMENT pour la table `training`
 --
 ALTER TABLE `training`
-  MODIFY `training_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `training_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT pour la table `type_training`
