@@ -19,6 +19,47 @@
             backdrop-filter: blur(30px);
             /* Effet de flou optionnel */
         }
+
+        .nav-btns-container {
+            position: fixed;
+            /* Change to fixed */
+            top: 0;
+            /* Align top */
+            left: 0;
+            /* Align left */
+            height: 100%;
+            /* Full height */
+            width: 60px;
+            /* Set a fixed width */
+            background: rgba(255, 255, 255, 0.8);
+            /* Légère transparence */
+            display: flex;
+            flex-direction: column;
+            /* Stack buttons vertically */
+            align-items: center;
+            /* Center buttons horizontally */
+            gap: 0.5rem;
+            /* Adjust gap between buttons */
+            padding-top: 4rem;
+            /* Add some padding on the top */
+        }
+
+        .nav-btn .bi {
+            margin: 0;
+            font-size: 1.5rem;
+            /* Adjust icon size */
+        }
+
+        /* Hide button text */
+        .nav-btn span {
+            display: none;
+        }
+
+        /* Adjust content margin to not overlap with nav buttons */
+        .container-fluid {
+            padding-left: 80px;
+            /* Adjust based on the width of your nav-btns-container */
+        }
     </style>
 </head>
 
@@ -36,18 +77,7 @@
             <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link text-light fs-6" aria-current="page" href="../controllers-admin/controller-display-modify-training.php">Afficher/modifier une formation</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light fs-6" aria-current="page" href="../controllers-admin/controller-create-training.php">Créer une formation</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light fs-6" href="../controllers-admin/controller-gestion-admin.php">Gérer les réservations</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light fs-6" href="../controllers-admin/controller-completed-training.php">Gérer les validations de formation</a>
-                    </li>
+
                     <li class="nav-item ">
                         <a class="nav-link text-danger fs-6" href="../controllers/controller-deconnexion.php">Déconnexion</a>
                     </li>
@@ -59,6 +89,32 @@
             </div>
         </div>
     </nav>
+    <div class="nav-btns-container">
+        <a href="../controllers-admin/controller-home-admin.php" class="btn btn-outline-info nav-btn">
+            <i class="bi bi-arrow-left"></i>
+            <span>Retour au tableau de bord</span>
+        </a>
+        <a href="../controllers-admin/controller-display-modify-training.php" class="btn btn-outline-primary nav-btn">
+            <i class="bi bi-card-list"></i>
+            <span>Afficher/Modifier</span>
+        </a>
+        <a href="../controllers-admin/controller-create-training.php" class="btn btn-outline-secondary nav-btn">
+            <i class="bi bi-plus-lg"></i>
+            <span>Créer Formation</span>
+        </a>
+        <a href="../controllers-admin/controller-gestion-admin.php" class="btn btn-outline-success nav-btn">
+            <i class="bi bi-calendar-check"></i>
+            <span>Gérer Réservations</span>
+        </a>
+        <a href="../controllers-admin/controller-completed-training.php" class="btn btn-outline-danger nav-btn">
+            <i class="bi bi-check-circle"></i>
+            <span>Gérer Validations</span>
+        </a>
+    </div>
+
+
+
+
 
     <!-- Nouvelle colonne pour le nombre de demandes de formation -->
     <div class="container-fluid">
@@ -132,7 +188,7 @@
     </div>
 
     <!-- TABLEAU DES COURS DISPONIBLE -->
-    <div class="container-fluid mb-3">
+    <!-- <div class="container-fluid mb-3">
         <div class="bgTitle text-dark rounded border border-secondary p-1">
             <div class="card-header d-flex justify-content-between align-items-center">
                 <h2 class="bgTitle text-left mx-2 my-2 p-1 fs-4 rounded"><i class="bi bi-person-lines-fill fs-2 mx-3"></i> Liste des employés</h2>
@@ -166,7 +222,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Modal de Confirmation -->
     <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
@@ -189,7 +245,6 @@
             </div>
         </div>
     </div>
-
 
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.1/main.min.js'></script>
