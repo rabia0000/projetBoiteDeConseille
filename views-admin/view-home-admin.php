@@ -58,11 +58,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <!-- Brand -->
-            <a href="../controllers-admin/controller-home-admin.php" class="btn btn-outline-success nav-btn mx-2 ">
-                <i class="bi bi-arrow-left fs-5"></i>
 
-            </a>
-            <a class="navbar-brand fs-6 " href="../controllers-admin/controller-home-admin.php">Dashboard Administrateur de <?= $_SESSION['admin']['admin_name'] ?></a>
+            <a class="navbar-brand fs-6 ms-2" href="../controllers-admin/controller-home-admin.php">Dashboard Administrateur de <?= $_SESSION['admin']['admin_name'] ?></a>
             <!-- Toggler/collapsibe Button -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -83,13 +80,13 @@
             <i class="bi bi-card-list fw-bold mx-1"></i>
             <span class="d-none d-md-inline">Vos formations</span>
         </a>
-        <a href="../controllers-admin/controller-create-training.php" class="btn btn-outline-light nav-btn ">
-            <i class="bi bi-plus-lg fw-bold mx-1"></i>
-            <span class="d-none d-md-inline">Créer Formation</span>
-        </a>
         <a href="../controllers-admin/controller-gestion-admin.php" class="btn btn-outline-light nav-btn ">
             <i class="bi bi-calendar-check fw-bold mx-1"></i>
             <span class="d-none d-md-inline">Gérer Réservations</span>
+        </a>
+        <a href="../controllers-admin/controller-create-training.php" class="btn btn-outline-light nav-btn ">
+            <i class="bi bi-plus-lg fw-bold mx-1"></i>
+            <span class="d-none d-md-inline">Ajouter une formation</span>
         </a>
         <a href="../controllers-admin/controller-completed-training.php" class="btn btn-outline-light nav-btn ">
             <i class="bi bi-check-circle fw-bold mx-1" title="Gérer les validations"></i>
