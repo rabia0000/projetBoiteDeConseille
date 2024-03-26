@@ -14,7 +14,7 @@
 
     <style>
         .modal-content {
-            background-color: rgba(255, 255, 255, 0.6);
+            background-color: rgba(128, 128, 128, 0.5);
             /* Transparence du modal */
             backdrop-filter: blur(30px);
             /* Effet de flou optionnel */
@@ -22,43 +22,32 @@
 
         .nav-btns-container {
             position: fixed;
-            /* Change to fixed */
-            top: 0;
-            /* Align top */
+            bottom: 0;
             left: 0;
-            /* Align left */
-            height: 100%;
-            /* Full height */
-            width: 60px;
-            /* Set a fixed width */
-            background: rgba(255, 255, 255, 0.8);
-            /* Légère transparence */
+            right: 0;
+
             display: flex;
-            flex-direction: column;
-            /* Stack buttons vertically */
-            align-items: center;
-            /* Center buttons horizontally */
-            gap: 0.5rem;
-            /* Adjust gap between buttons */
-            padding-top: 4rem;
-            /* Add some padding on the top */
+            justify-content: space-around;
+            gap: 1rem;
+            padding: 0.5rem 0;
         }
 
         .nav-btn .bi {
-            margin: 0;
             font-size: 1.5rem;
-            /* Adjust icon size */
         }
 
-        /* Hide button text */
-        .nav-btn span {
-            display: none;
+        @media (max-width: 768px) {
+            .nav-btn .bi {
+                font-size: 1.2rem;
+            }
+
+            .nav-btn span {
+                display: none;
+            }
         }
 
-        /* Adjust content margin to not overlap with nav buttons */
         .container-fluid {
-            padding-left: 80px;
-            /* Adjust based on the width of your nav-btns-container */
+            padding-top: 4rem;
         }
     </style>
 </head>
@@ -66,10 +55,14 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
             <!-- Brand -->
-            <a class="navbar-brand fs-4" href="../controllers-admin/controller-home-admin.php">Dashboard Administrateur de <?= $_SESSION['admin']['admin_name'] ?></a>
+            <a href="../controllers-admin/controller-home-admin.php" class="btn btn-outline-success nav-btn mx-2 ">
+                <i class="bi bi-arrow-left fs-5"></i>
+
+            </a>
+            <a class="navbar-brand fs-6 " href="../controllers-admin/controller-home-admin.php">Dashboard Administrateur de <?= $_SESSION['admin']['admin_name'] ?></a>
             <!-- Toggler/collapsibe Button -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -77,38 +70,35 @@
             <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
-                    <li class="nav-item ">
-                        <a class="nav-link text-danger fs-6" href="../controllers/controller-deconnexion.php">Déconnexion</a>
-                    </li>
-
-                    <li><button id="theme-toggle" class="btn btn-custom ms-2 my-2">Changer de thème</button><!-- Switch pour changer de thème -->
+                    <li><button id="theme-toggle" class="btn btn-custom">Changer de thème</button><!-- Switch pour changer de thème -->
                     </li>
                     <!-- Ajouter plus de liens ici selon les besoins -->
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="nav-btns-container">
-        <a href="../controllers-admin/controller-home-admin.php" class="btn btn-outline-info nav-btn">
-            <i class="bi bi-arrow-left"></i>
-            <span>Retour au tableau de bord</span>
+    <div class="nav-btns-container bg-dark">
+
+        <a href="../controllers-admin/controller-display-modify-training.php" class="btn btn-outline-light nav-btn ">
+            <i class="bi bi-card-list fw-bold mx-1"></i>
+            <span class="d-none d-md-inline">Vos formations</span>
         </a>
-        <a href="../controllers-admin/controller-display-modify-training.php" class="btn btn-outline-primary nav-btn">
-            <i class="bi bi-card-list"></i>
-            <span>Afficher/Modifier</span>
+        <a href="../controllers-admin/controller-create-training.php" class="btn btn-outline-light nav-btn ">
+            <i class="bi bi-plus-lg fw-bold mx-1"></i>
+            <span class="d-none d-md-inline">Créer Formation</span>
         </a>
-        <a href="../controllers-admin/controller-create-training.php" class="btn btn-outline-secondary nav-btn">
-            <i class="bi bi-plus-lg"></i>
-            <span>Créer Formation</span>
+        <a href="../controllers-admin/controller-gestion-admin.php" class="btn btn-outline-light nav-btn ">
+            <i class="bi bi-calendar-check fw-bold mx-1"></i>
+            <span class="d-none d-md-inline">Gérer Réservations</span>
         </a>
-        <a href="../controllers-admin/controller-gestion-admin.php" class="btn btn-outline-success nav-btn">
-            <i class="bi bi-calendar-check"></i>
-            <span>Gérer Réservations</span>
+        <a href="../controllers-admin/controller-completed-training.php" class="btn btn-outline-light nav-btn ">
+            <i class="bi bi-check-circle fw-bold mx-1" title="Gérer les validations"></i>
+            <span class="d-none d-md-inline">Gérer Validations</span>
         </a>
-        <a href="../controllers-admin/controller-completed-training.php" class="btn btn-outline-danger nav-btn">
-            <i class="bi bi-check-circle"></i>
-            <span>Gérer Validations</span>
+
+        <a href="../controllers/controller-deconnexion.php" class="btn btn-outline-danger nav-btn ">
+            <i class="bi bi-power fw-bold mx-1" title="Se déconnecter"></i>
+            <span class="d-none d-md-inline">Se déconnecter</span>
         </a>
     </div>
 
@@ -149,14 +139,14 @@
                     <?php endif; ?>
                 </div>
             </div>
-            <!-- Ajoutez plus de colonnes ici si nécessaire -->
+
         </div>
     </div>
 
 
-    <div class="container-fluid my-5">
+    <div class="container-fluid pb-3 mb-3">
         <div class="d-flex row justify-content-center">
-            <!-- Colonne adaptative pour le graphique Doughnut -->
+
 
             <div class="col-lg-4 col-md-6 col-12 mb-4 mb-md-0">
                 <div id="chartContainer" class="text-center border border-secondary custom-height justify-content-center mx-auto">

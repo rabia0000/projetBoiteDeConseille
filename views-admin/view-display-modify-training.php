@@ -19,16 +19,46 @@
             backdrop-filter: blur(30px);
             /* Effet de flou optionnel */
         }
+
+        .nav-btns-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(128, 128, 128, 0.5);
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 0.5rem 0;
+        }
+
+        .nav-btn .bi {
+            font-size: 1.5rem;
+        }
+
+        .nav-btn span {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-btn .bi {
+                font-size: 1.2rem;
+            }
+        }
+
+        .container-fluid {
+            padding-top: 4rem;
+        }
     </style>
 </head>
 
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed">
+        <div class="container">
             <!-- Brand -->
-            <a class="navbar-brand fs-4" href="../controllers-admin/controller-home-admin.php">Dashboard Administrateur de <?= $_SESSION['admin']['admin_name'] ?></a>
+            <a class="navbar-brand fs-4 " href="../controllers-admin/controller-home-admin.php">Dashboard Administrateur de <?= $_SESSION['admin']['admin_name'] ?></a>
             <!-- Toggler/collapsibe Button -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -36,21 +66,8 @@
             <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link text-light fs-6" aria-current="page" href="../controllers-admin/controller-display-modify-training.php">Afficher/modifier une formation</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light fs-6" aria-current="page" href="../controllers-admin/controller-create-training.php">Créer une formation</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light fs-6" href="../controllers-admin/controller-gestion-admin.php">Gérer les réservations</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light fs-6" href="../controllers-admin/controller-completed-training.php">Gérer les validations de formation</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link text-danger fs-6" href="../controllers/controller-deconnexion.php">Déconnexion</a>
-                    </li>
+
+
 
                     <li><button id="theme-toggle" class="btn btn-custom ms-2 my-2">Changer de thème</button><!-- Switch pour changer de thème -->
                     </li>
@@ -59,10 +76,39 @@
             </div>
         </div>
     </nav>
+    <div class="nav-btns-container">
+        <a href="../controllers-admin/controller-home-admin.php" class="btn btn-outline-danger nav-btn">
+            <i class="bi bi-arrow-left"></i>
+            <span>Retour au tableau de bord</span>
+        </a>
+        <a href="../controllers-admin/controller-display-modify-training.php" class="btn btn-outline-primary nav-btn">
+            <i class="bi bi-card-list"></i>
+            <span>Afficher/Modifier</span>
+        </a>
+        <a href="../controllers-admin/controller-create-training.php" class="btn btn-outline-secondary nav-btn">
+            <i class="bi bi-plus-lg"></i>
+            <span>Créer Formation</span>
+        </a>
+        <a href="../controllers-admin/controller-gestion-admin.php" class="btn btn-outline-success nav-btn">
+            <i class="bi bi-calendar-check"></i>
+            <span>Gérer Réservations</span>
+        </a>
+        <a href="../controllers-admin/controller-completed-training.php" class="btn btn-outline-info nav-btn">
+            <i class="bi bi-check-circle" title="Gérer les validations"></i>
+            <span>Gérer Validations</span>
+        </a>
+
+        <a href="../controllers/controller-deconnexion.php" class="btn btn-outline-danger nav-btn">
+            <i class="bi bi-power" title="Se déconnecter"></i>
+            <span>"bi bi-door-open"</span>
+        </a>
+    </div>
+
+
 
     <!-- TABLEAU DES COURS DISPONIBLE -->
-    <div class="container-fluid my-3">
-        <div class="table-one bgTitle text-dark rounded border border-secondary p-1">
+    <div class="container-fluid mt-5 pt-1">
+        <div class="table-one bgTitle text-dark rounded border border-secondary p-1 border border-dark">
             <h2 class="text-left ms-2 my-2 bgTitle p-1 rounded fs-4"><i class="bi bi-person-workspace fs-4 mx-2"></i>Vos Cours Disponibles</h2>
             <div class="card-header d-flex justify-content-between align-items-center">
                 <div class="card-body">
