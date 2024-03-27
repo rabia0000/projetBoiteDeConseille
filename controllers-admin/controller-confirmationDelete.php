@@ -9,7 +9,7 @@ if (isset($_POST['delete'])) {
     Admin::deleteTraining($_POST['trainingId']);
 
 
-    header('Location: controller-home-admin.php ');
+    header('Location: controller-display-modify-training.php ');
 
     exit;
 } else if (!isset($_POST['training_id'])) {

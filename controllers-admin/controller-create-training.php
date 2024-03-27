@@ -37,7 +37,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Si des données obligatoires sont manquantes ou invalides
         echo "Veuillez remplir correctement tous les champs du formulaire.";
     }
+
+    // Après que le cours a été ajouté avec succès
+    $_SESSION['ajoutReussi'] = true;
 }
+
 
 // Inclure la vue pour la création de formation
 include_once('../views-admin/view-create-training.php');

@@ -74,19 +74,19 @@
 
         <a href="../controllers-admin/controller-display-modify-training.php" class="btn btn-outline-light nav-btn ">
             <i class="bi bi-card-list fw-bold mx-1"></i>
-            <span class="d-none d-md-inline">Vos formations</span>
-        </a>
-        <a href="../controllers-admin/controller-create-training.php" class="btn btn-outline-light nav-btn ">
-            <i class="bi bi-plus-lg fw-bold mx-1"></i>
-            <span class="d-none d-md-inline">Créer Formation</span>
+            <span class="d-none d-md-inline">Gérer vos formations</span>
         </a>
         <a href="../controllers-admin/controller-gestion-admin.php" class="btn btn-outline-light nav-btn ">
             <i class="bi bi-calendar-check fw-bold mx-1"></i>
-            <span class="d-none d-md-inline">Gérer Réservations</span>
+            <span class="d-none d-md-inline">Gérer vos réservations</span>
+        </a>
+        <a href="../controllers-admin/controller-create-training.php" class="btn btn-outline-light nav-btn ">
+            <i class="bi bi-plus-lg fw-bold mx-1"></i>
+            <span class="d-none d-md-inline">Ajouter une formation</span>
         </a>
         <a href="../controllers-admin/controller-completed-training.php" class="btn btn-outline-light nav-btn ">
             <i class="bi bi-check-circle fw-bold mx-1" title="Gérer les validations"></i>
-            <span class="d-none d-md-inline">Gérer Validations</span>
+            <span class="d-none d-md-inline">Gérer les validations de formation</span>
         </a>
 
         <a href="../controllers/controller-deconnexion.php" class="btn btn-outline-danger nav-btn ">
@@ -94,6 +94,7 @@
             <span class="d-none d-md-inline">Se déconnecter</span>
         </a>
     </div>
+
 
 
     <div class="container text-center text-light">
@@ -186,13 +187,46 @@
     <?php endif; ?>
 
     </div>
+
     <div class="text-center mb-5">
         <button type="submit" class="btn btn-custom fw-semibold my-5 btn-lg">Ajouter le cours</button>
 
     </div>
+
     </form>
     </div>
+    <?php if (isset($_SESSION['ajoutReussi']) && $_SESSION['ajoutReussi']) : ?>
+        <script>
+            document.addEventListener('DOMContentLoaded', (event) => {
+                var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+                confirmationModal.show();
+            });
+        </script>
+        <?php
+        // N'oubliez pas de réinitialiser ou supprimer la variable de session pour éviter que le modal s'affiche de nouveau après un rafraîchissement de la page.
+        unset($_SESSION['ajoutReussi']);
+        ?>
+    <?php endif; ?>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Modal de Confirmation -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmationModalLabel">Cours ajouté</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Votre cours a bien été ajouté.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

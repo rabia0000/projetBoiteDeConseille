@@ -31,13 +31,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             try {
                 echo "ok";
                 Admin::updateTraining($trainingId, $trainingName, $trainingUrl, $trainingDescription, $trainingDate, $trainingMax, $trainingArchived, $trainingType);
-
-                header('location: controller-home-admin.php');
+                $_SESSION['ajoutReussi'] = true;
+                header('location: controller-update-training.php');
+                exit;
             } catch (Exception $e) {
                 $errorMessage = "Erreur lors de la mise à jour de la formation : " . $e->getMessage();
             }
-        } else {
-            $errorMessage = "L'ID de formation est invalide.";
         }
     }
 }

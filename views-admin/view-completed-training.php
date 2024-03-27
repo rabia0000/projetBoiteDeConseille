@@ -74,11 +74,11 @@
 
         <a href="../controllers-admin/controller-display-modify-training.php" class="btn btn-outline-light nav-btn ">
             <i class="bi bi-card-list fw-bold mx-1"></i>
-            <span class="d-none d-md-inline">Vos formations</span>
+            <span class="d-none d-md-inline">Gérer vos formations</span>
         </a>
         <a href="../controllers-admin/controller-gestion-admin.php" class="btn btn-outline-light nav-btn ">
             <i class="bi bi-calendar-check fw-bold mx-1"></i>
-            <span class="d-none d-md-inline">Gérer Réservations</span>
+            <span class="d-none d-md-inline">Gérer vos réservations</span>
         </a>
         <a href="../controllers-admin/controller-create-training.php" class="btn btn-outline-light nav-btn ">
             <i class="bi bi-plus-lg fw-bold mx-1"></i>
@@ -86,7 +86,7 @@
         </a>
         <a href="../controllers-admin/controller-completed-training.php" class="btn btn-outline-light nav-btn ">
             <i class="bi bi-check-circle fw-bold mx-1" title="Gérer les validations"></i>
-            <span class="d-none d-md-inline">Gérer Validations</span>
+            <span class="d-none d-md-inline">Gérer la validations de formation</span>
         </a>
 
         <a href="../controllers/controller-deconnexion.php" class="btn btn-outline-danger nav-btn ">

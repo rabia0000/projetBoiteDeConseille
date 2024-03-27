@@ -81,19 +81,19 @@
 
         <a href="../controllers-admin/controller-display-modify-training.php" class="btn btn-outline-light nav-btn ">
             <i class="bi bi-card-list fw-bold mx-1"></i>
-            <span class="d-none d-md-inline">Vos formations</span>
+            <span class="d-none d-md-inline">Gérer vos formations</span>
         </a>
         <a href="../controllers-admin/controller-gestion-admin.php" class="btn btn-outline-light nav-btn ">
             <i class="bi bi-calendar-check fw-bold mx-1"></i>
-            <span class="d-none d-md-inline">Gérer Réservations</span>
+            <span class="d-none d-md-inline">Gérer vos réservations</span>
         </a>
         <a href="../controllers-admin/controller-create-training.php" class="btn btn-outline-light nav-btn ">
             <i class="bi bi-plus-lg fw-bold mx-1"></i>
-            <span class="d-none d-md-inline">Créer Formation</span>
+            <span class="d-none d-md-inline">Ajouter une formation</span>
         </a>
         <a href="../controllers-admin/controller-completed-training.php" class="btn btn-outline-light nav-btn ">
             <i class="bi bi-check-circle fw-bold mx-1" title="Gérer les validations"></i>
-            <span class="d-none d-md-inline">Gérer Validations</span>
+            <span class="d-none d-md-inline">Gérer les validations de formation</span>
         </a>
 
         <a href="../controllers/controller-deconnexion.php" class="btn btn-outline-danger nav-btn ">
@@ -104,11 +104,10 @@
 
 
 
-
     <!-- TABLEAU DES COURS DISPONIBLE -->
-    <div class="container-fluid mt-5 pt-1 border border-danger">
-        <div class="table-one bgTitle text-dark rounded border border-secondary p-1 border border-dark">
-            <h2 class="text-left ms-2 my-2 bgTitle p-1 rounded fs-4"><i class="bi bi-person-workspace fs-4 mx-2"></i>Vos Cours Disponibles</h2>
+    <div class="container-fluid my-5 pt-1">
+        <div class="table-one bgTitle text-dark rounded border border-secondary p-1 border border-dark mt-5">
+            <h2 class="text-left ms-2 my-2 bgTitle p-1 rounded fs-4"><i class="bi bi-card-list fw-bold  fs-4 mx-2"></i>Vos Formations</h2>
             <div class="card-header d-flex justify-content-between align-items-center">
                 <div class="card-body">
                     <div class="table-responsive-lg">
@@ -188,7 +187,7 @@
             });
         });
     </script>
-
+    <script src="../script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

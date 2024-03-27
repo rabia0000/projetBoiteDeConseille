@@ -22,28 +22,28 @@ body {
 }
 
 
-.title {
+/* .title {
     background: rgba(255, 255, 255, 0.5);
-}
+} */
 
 
 
-.card {
+/* .card {
     background-color: rgba(237, 235, 232, 0.6);
-}
+} */
 
 .btn-custom {
-    background-color: rgb(255, 255, 255);
-    ;
+    /* background-color: rgb(255, 255, 255);
+    ; */
     /* Couleur de fond */
-    color: white;
+    /* color: white; */
     /* Couleur du texte */
     border-radius: 25px;
     /* Coins arrondis */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     /* Ombre */
     border-color: #313228;
-    color: #313228;
+    /* color: #313228; */
 }
 
 .fake-disabled {
