@@ -67,6 +67,14 @@
             <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="../controllers/controller-booking.php" class="nav-link text-light fs-6">Réserver un cours en présentiel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link text-light fs-6">Accèder au cours en ligne</a>
+                    </li>
+
+
                     <li><button id="theme-toggle" class="btn btn-custom ms-2 my-2">Changer de thème</button><!-- Switch pour changer de thème -->
                     </li>
                     <!-- Ajouter plus de liens ici selon les besoins -->
@@ -77,23 +85,18 @@
 
 
 
-
+            <a href="../controllers/controller-booking.php" class="btn btn-outline-light nav-btn ">
+                <i class="bi bi-card-list fw-bold mx-1"></i>
+                <span class="d-none d-md-inline">Réserver une formation en présentiel</span>
+            </a>
 
             <a href="../controllers/controller-modify.php" class="btn btn-outline-light nav-btn ">
                 <i class="bi bi-pencil-square fw-bold mx-1" title="Gérer les validations"></i>
                 <span class="d-none d-md-inline">Modifier vos réservations</span>
             </a>
-            <a href="../controllers/controller-booking.php" class="btn btn-outline-light nav-btn ">
-                <i class="bi bi-plus-lg fw-bold mx-1"></i>
-                <span class="d-none d-md-inline">Réserver une formation en présentiel</span>
-            </a>
             <a href="../controllers/controller-completed-training.php" class="btn btn-outline-light nav-btn ">
                 <i class="bi bi-calendar-check fw-bold mx-1"></i>
                 <span class="d-none d-md-inline">Vos formations Validées</span>
-            </a>
-            <a href="" class="btn btn-outline-light nav-btn ">
-                <i class="bi bi-mortarboard fw-bold mx-1"></i>
-                <span class="d-none d-md-inline">Accéder au cours en ligne</span>
             </a>
             <a href="../controllers/controller-deconnexion.php" class="btn btn-outline-danger nav-btn ">
                 <i class="bi bi-power fw-bold mx-1" title="Se déconnecter"></i>
@@ -101,66 +104,50 @@
             </a>
         </div>
     </nav>
-
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="nbFormation col-lg-4 col-md-6 col-12 mt-3 p-2">
-                <div class="bgTitle colorReserved text-center fw-bold mx-4 border border-secondary rounded">
-                    <h5 class="">
-                        <i class="bi bi-easel fs-1 mx-3"></i>Nombre de formation réservées :
-                    </h5>
-
-                    <?php if (!empty($displayReservedTraining)) : ?>
-                        <span class="fs-2 text-success my-3"><?= $displayReservedTraining['nombre_de_reservation']; ?></span>
-                    <?php else : ?>
-                        <p>Aucune demande de formation enregistrée.</p>
-                    <?php endif; ?>
-                </div>
+    <div class="container-fluid my-3">
+        <div class="card bgTitle text-dark rounded border border-secondary p-1">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h2 class="card-title text-center ms-1 my-2 fs-4">Suivie et annulation de vos demandes de formation</h2>
             </div>
-
-            <div class="nbFormation col-lg-4 col-md-6 col-12 mt-3 p-2">
-                <div class="bgTitle colorValidate text-center fw-bold mx-4 border border-secondary rounded">
-                    <h5 class=""><i class="bi bi-mortarboard fs-1 mx-3"></i> Nombre de formation validée : </h5>
-                    <?php if (!empty($countCompletedTraining)) : ?>
-                        <span class="fs-2 text-primary my-3"><?= $countCompletedTraining[0]['nombre_de_formation_validé']; ?></span>
-                    <?php else : ?>
-                        <p>Aucune demande de formation enregistrée.</p>
-                    <?php endif; ?>
-                </div>
-            </div>
-            <div class="nbFormation col-lg-4 col-md-6 col-12 mt-3 p-2">
-                <div class="bgTitle colorTrain text-center fw-bold mx-4 border border-secondary rounded pb-3">
-                    <h5 class=""><i class="bi bi-person-workspace fs-1 mx-3"></i>Prochaine formation à venir : </h5>
-                    <?php if (!empty($displayUpCommingTraining)) : ?>
-                        <span class="fs-4 my-3 p-2 text-warning-emphasis"><?= date('d-m-Y', strtotime($displayUpCommingTraining[0]['training_date'])) . '    ' . $displayUpCommingTraining[0]['training_name']; ?></span>
-                    <?php else : ?>
-                        <p>Aucune demande de formation enregistrée.</p>
-                    <?php endif; ?>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-
-    <!-- Bloc Note -->
-    <div class="container-fluid mb-2 ">
-        <div class="d-flex row justify-content-left">
-            <div class="col-lg-4 col-md-6 col-12 mb-4 mb-md-0">
-                <div id="noteContainer" class="bloc bgTitle text-center border border-secondary rounded justify-content-center mx-auto">
-                    <h3 class="bgTitle fs-4 text-center mx-4 p-2 my-2">Mes notes</h3>
-                    <textarea id="mesNotes" class="form-control my-3" rows="10">Contenu de votre bloc note...</textarea>
-                    <button onclick="sauvegarderNote()" class="btn btn-custom my-3 align-self-center ">Sauvegarder la note</button>
+            <!-- Suppression de la partie collapse pour rendre le tableau toujours visible -->
+            <div class="card-body">
+                <div class="table-responsive-lg">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="text-center">
+                                <th scope="col">Nom du cours</th>
+                                <th scope="col" class="d-none d-md-table-cell">Description du cours</th>
+                                <th scope="col">date du cours</th>
+                                <th scope="col">Validation de l'inscription</th>
+                                <th scope="col">Annuler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($afficherCours as $cour) : ?>
+                                <tr class="text-center">
+                                    <td><?= htmlspecialchars($cour['training_name']) ?></td>
+                                    <td class="d-none d-md-table-cell"><?= htmlspecialchars($cour['training_description']) ?></td>
+                                    <td><?= date('d-m-Y', strtotime($cour['training_date'])) ?></td>
+                                    <td><?= $cour['authorized_training'] ?  '<span class="text-success fw-bold fs-5"> Validée </span>'  : '<span class="text-danger fw-bold fs-5">En cours</span>' ?></td>
+                                    <td>
+                                        <?php if (!$cour['authorized_training'] && isset($cour['training_id'])) : ?>
+                                            <form action="" method="post">
+                                                <input type="hidden" name="user_id" value="<?= htmlspecialchars($userId); ?>">
+                                                <input type="hidden" name="training_id" value="<?= htmlspecialchars($cour['training_id']); ?>">
+                                                <button class="btn btn-custom-cancel" type="submit" name="cancel">Annuler la pré-réservation</button>
+                                            </form>
+                                        <?php endif; ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Tableaux -->
+
 
 
     <script src="../scriptUser.js"></script>
