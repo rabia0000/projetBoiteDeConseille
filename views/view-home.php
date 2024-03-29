@@ -74,11 +74,6 @@
             </div>
         </div>
         <div class="nav-btns-container bg-dark">
-
-
-
-
-
             <a href="../controllers/controller-modify.php" class="btn btn-outline-light nav-btn ">
                 <i class="bi bi-pencil-square fw-bold mx-1" title="Gérer les validations"></i>
                 <span class="d-none d-md-inline">Modifier vos réservations</span>

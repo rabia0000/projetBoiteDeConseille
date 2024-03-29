@@ -42,8 +42,8 @@ class Training
     }
 
     /**
-     * Methode permettant d'afficher tout les cours 
-     *@return void
+     * Methode permettant d'afficher tout les cours et le nom du type de cours 
+     *@return Array
      */
 
     public static function getAlltraining(): array
@@ -53,7 +53,10 @@ class Training
             // Création d'un objet $db selon la classe PDO
             $bdd = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
             // stockage de ma requete dans une variable
-            $sql = "SELECT `training_id`, `training_name`, `training_description`, `training_date`, `training_max`, `training_archived`, `type_id` FROM `training`";
+            $sql = "SELECT training.training_id, training.training_name, training.training_description, training.training_date, training.training_max, training.training_archived, 
+            type_training.type_name AS type_de_cours 
+            FROM training
+            INNER JOIN type_training ON training.type_id = type_training.type_id;";
 
             $query = $bdd->prepare($sql);
 

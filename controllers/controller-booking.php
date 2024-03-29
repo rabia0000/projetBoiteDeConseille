@@ -17,7 +17,7 @@ $cours = Training::getAlltraining();
 $confirmationMessage = '';
 
 
-// Votre logique existante pour le traitement de la pré-réservation
+//  traitement de la pré-réservation
 if (isset($_POST['training_id'])) {
     $trainingId = $_POST['training_id'];
     $success = Training::submitPreReservation($userId, $trainingId);
@@ -29,7 +29,4 @@ if (isset($_POST['training_id'])) {
 }
 
 
-// La suite de votre logique et l'inclusion de la vue
-
-// Inclusion de la vue de booking
 require_once '../views/view-booking.php';
