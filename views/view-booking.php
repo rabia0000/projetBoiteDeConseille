@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pre-réservation de cours</title>
+    <title>demande de réservation de cours</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
@@ -43,6 +43,13 @@
 
         .container-fluid {
             padding-top: 4rem;
+        }
+
+        .table-responsive-lg .table thead th {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1;
         }
     </style>
 </head>
@@ -92,9 +99,9 @@
     </div>
 
     <div class="container-fluid">
-        <div class="card-header text-dark text-center fs-1 ">Cours en présentiel :</div>
+        <div class="card-header text-dark text-center fs-1 mb-2 ">Cours en présentiel :</div>
         <div class="card-body">
-            <h3 class='text-center text-dark'>Liste des cours</h3>
+
             <div class="card-transparent">
                 <div class="table-responsive-lg" style="max-height: 400px; overflow-y: auto;">
                     <table class="table">
@@ -111,7 +118,8 @@
                         </thead>
                         <tbody>
                             <?php foreach ($cours as $cour) : ?>
-                                <tr class="text-center">
+                                <!-- Applique la classe archived conditionnellement -->
+                                <tr class="text-center <?= $cour['training_archived'] ? 'archived' : '' ?>">
                                     <td><?= htmlspecialchars($cour['training_name']) ?></td>
                                     <td class="d-none d-md-table-cell"><?= htmlspecialchars($cour['training_description']) ?></td>
                                     <td><?= date('d-m-Y', strtotime($cour['training_date'])) ?></td>
@@ -119,31 +127,33 @@
                                     <td class="d-none d-md-table-cell"><?= htmlspecialchars($cour['type_de_cours']) ?></td>
                                     <td><?= $cour['training_archived'] ? 'Oui' : 'Non' ?></td>
                                     <td>
-                                        <form action="" method="post">
-                                            <input type="hidden" name="user_id" value="<?= htmlspecialchars($userId); ?>">
-                                            <input type="hidden" name="training_id" value="<?= htmlspecialchars($cour['training_id']); ?>">
-                                            <button class="btn btn-outline-success ms-2 btn-sm" type="submit">Pré-réserver ce cours</button>
-                                        </form>
+                                        <?php if (!$cour['training_archived']) : ?>
+                                            <form action="" method="post">
+                                                <input type="hidden" name="user_id" value="<?= htmlspecialchars($userId); ?>">
+                                                <input type="hidden" name="training_id" value="<?= htmlspecialchars($cour['training_id']); ?>">
+                                                <button class="btn btn-outline-success ms-2 btn-sm" type="submit">Pré-réserver ce cours</button>
+                                            </form>
+                                        <?php endif; ?>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
+
                     </table>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class=" align-items-center justify-content-center">
-        <?php if (!empty($confirmationMessage)) : ?>
-            <p class='text-center text-danger fw-bolder fs-4'><?= $confirmationMessage; ?></p>
-        <?php endif; ?>
-    </div>
-
+        <div class=" align-items-center justify-content-center">
+            <?php if (!empty($confirmationMessage)) : ?>
+                <p class='text-center text-danger fw-bolder fs-4'><?= $confirmationMessage; ?></p>
+            <?php endif; ?>
+        </div>
 
 
-    <!-- Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
