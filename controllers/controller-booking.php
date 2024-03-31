@@ -23,9 +23,7 @@ if (isset($_POST['training_id'])) {
     $success = Training::submitPreReservation($userId, $trainingId);
 
 
-    $confirmationMessage = "Votre demande de pré-réservation a été soumise avec succès.";
-} elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $confirmationMessage = "Informations manquantes pour soumettre la demande de pré-réservation.";
+    $confirmationMessage = "Votre demande de pré-réservation a été pris en compte.";
 }
 
 

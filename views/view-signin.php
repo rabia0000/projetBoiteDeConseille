@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tinos&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/style.css">
+    <script src="https://kit.fontawesome.com/6c654ba7b1.js" crossorigin="anonymous"></script>
     <title>Sign in</title>
-
 
 
 </head>
@@ -22,70 +23,134 @@
 
     <div class="video-background">
         <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-            <source src="../assets/video/IA.mp4" type="video/mp4">
+            <source src="../assets/video/art1.mp4" type="video/mp4">
         </video>
     </div>
 
 
-
-    <!-- header -->
-    <header class=" mb-5">
-
-        <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong" aria-label="Thirteenth navbar example">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
-                    <a class="navbar-brand col-lg-3 me-0 text-primary" href="#">LOGO</a>
-                    <ul class="navbar-nav col-lg-6 justify-content-lg-center">
-                        <li class="nav-item">
-                            <a class="nav-link active text-dark fs-4 me-1 fw-semibold" aria-current="page" href="#">Page d'Accueil</a>
-                        </li>
-                        <!-- <li class="nav-item">
-                                    <a class="nav-link text-dark fs-3 me-1" href="#">Link</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link disabled text-dark fs-3 me-1" aria-disabled="true">Disabled</a>
-                                </li> -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-dark fs-4 me-1 fw-semibold" href="#" data-bs-toggle="dropdown" aria-expanded="false">Expertises</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-dark fs-4 me-1 fw-semibold" href="#" data-bs-toggle="dropdown" aria-expanded="false">Découvrir l'entreprise</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
+    <nav>
+        <div class="wrapper">
+            <div class="logo"><a href="#">Innovéo Conseil</a></div>
+            <input type="radio" name="slider" id="menu-btn">
+            <input type="radio" name="slider" id="close-btn">
+            <ul class="nav-links">
+                <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li>
+                    <a href="#" class="desktop-item">Dropdown Menu</a>
+                    <input type="checkbox" id="showDrop">
+                    <label for="showDrop" class="mobile-item">Dropdown Menu</label>
+                    <ul class="drop-menu">
+                        <li><a href="#">Drop menu 1</a></li>
+                        <li><a href="#">Drop menu 2</a></li>
+                        <li><a href="#">Drop menu 3</a></li>
+                        <li><a href="#">Drop menu 4</a></li>
                     </ul>
-                    <<div class="d-lg-flex col-lg-3 justify-content-lg-end">
-                        <a href="../controllers-admin/controller-signin-admin.php">
-                            <button type="button" class="btn btn-outline-danger">Admin</button>
+                </li>
+                <li>
+                    <a href="#" class="desktop-item">Mega Menu</a>
+                    <input type="checkbox" id="showMega">
+                    <label for="showMega" class="mobile-item">Mega Menu</label>
+                    <div class="mega-box">
+                        <div class="content">
+                            <div class="row">
+                                <img src="../assets/images/img2.jpg" alt="">
+                            </div>
+                            <div class="row">
+                                <header>Design Services</header>
+                                <ul class="mega-links">
+                                    <li><a href="#">Graphics</a></li>
+                                    <li><a href="#">Vectors</a></li>
+                                    <li><a href="#">Business cards</a></li>
+                                    <li><a href="#">Custom logo</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>Email Services</header>
+                                <ul class="mega-links">
+                                    <li><a href="#">Personal Email</a></li>
+                                    <li><a href="#">Business Email</a></li>
+                                    <li><a href="#">Mobile Email</a></li>
+                                    <li><a href="#">Web Marketing</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>Security services</header>
+                                <ul class="mega-links">
+                                    <li><a href="#">Site Seal</a></li>
+                                    <li><a href="#">VPS Hosting</a></li>
+                                    <li><a href="#">Privacy Seal</a></li>
+                                    <li><a href="#">Website design</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">Feedback</a></li>
+            </ul>
+            <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+        </div>
+    </nav>
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" href="#">FBIA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNavDropdown">
+                <ul class="navbar-nav mx-auto gap-3 fs-6">
+                    <li class="nav-item ">
+                        <a class="nav-link text-light" aria-current="page" href="#">Accueil</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light dropdown-toggle-custom" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Expertises
                         </a>
-                </div>
+                        <ul class="dropdown-menu dropdown-menu-expand " aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item text-light" href="#">Développement d'applications</a></li>
+                            <li><a class="dropdown-item text-light" href="#">Gestion de bases de données</a></li>
+                            <li><a class="dropdown-item text-light" href="#">Sécurité informatique</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light dropdown-toggle-custom" href="#" id="navbarDropdownMenuLink2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Découvrez FBIA
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-expand " aria-labelledby="navbarDropdownMenuLink2">
+                            <li><a class="dropdown-item text-light" href="#">Développement d'applications</a></li>
+                            <li><a class="dropdown-item text-light" href="#">Gestion de bases de données</a></li>
+                            <li><a class="dropdown-item text-light" href="#">Sécurité informatique</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#">Blog</a>
+                    </li>
+                </ul>
             </div>
+            <div class="ms-auto">
+                <button type="button" class="btn btn-outline-danger btn-sm">Connexion Admin</button>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav> -->
+
+
+
 
     <div class="container mt-5">
         <div class="d-flex justify-content-center align-items-center mt-5">
             <div class="col-lg-6 ">
                 <div class="card shadow-lg border-light p-3 border border-dark mt-5">
                     <div class="card-body p-4">
-                        <h2 class="card-title text-center text-dark fs-3">Page de connexion</h2>
+                        <h2 class="card-title text-center text-light fs-3">Page de connexion</h2>
                         <form class="row" method="POST" action="../controllers/controller-signin.php" novalidate>
                             <!-- email  -->
 
-                            <div class="text-center fs-5 text-dark">
+                            <div class="text-center fs-5 text-light">
                                 <label for="email">Login :</label><br>
 
                                 <input class="col-12" type="email" id="email" name="email" value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>" required>
@@ -97,7 +162,7 @@
                             </span>
 
 
-                            <div class="text-center fs-5 text-dark">
+                            <div class="text-center fs-5 text-light">
                                 <label for="password">Mot de passe :</label><br>
                                 <input class="col-12" type="password" id="password" name="password">
                                 <span class="error text-danger">
@@ -110,12 +175,12 @@
 
 
                             <div class=" text-center mt-1">
-                                <input type="submit" value="Me connecter" class="btn btn-outline-dark  ">
+                                <input type="submit" value="Me connecter" class="btn btn-outline-light  ">
                             </div>
 
                             <div class='text-center mt-2'>
                                 <a href="../controllers/controller-signup.php">
-                                    <button type="button" class="btn btn-outline-dark">Pas encore inscrit ?</button>
+                                    <button type="button" class="btn btn-outline-light">Pas encore inscrit ?</button>
                                 </a>
 
                             </div>
@@ -129,18 +194,22 @@
 
 
 
-    <footer class="footerPage bg-dark pb-3 mt-5">
+
+    <footer class="footerPage pb-3 mt-5">
         <ul class=" nav justify-content-center border-bottom">
             <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Conditions d'utilisation</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Contact</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Carrières</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Qui nous sommes ? </a></li>
+
         </ul>
         <p class="text-center text-light  mb-2 pt-1">© 2024 Tout droit réservés.</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

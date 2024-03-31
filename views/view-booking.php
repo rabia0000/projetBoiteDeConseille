@@ -131,7 +131,7 @@
                                             <form action="" method="post">
                                                 <input type="hidden" name="user_id" value="<?= htmlspecialchars($userId); ?>">
                                                 <input type="hidden" name="training_id" value="<?= htmlspecialchars($cour['training_id']); ?>">
-                                                <button class="btn btn-outline-success ms-2 btn-sm" type="submit">Pré-réserver ce cours</button>
+                                                <button class="preReservationButton btn btn-outline-success ms-2 btn-sm" type="submit">Pré-réserver ce cours</button>
                                             </form>
                                         <?php endif; ?>
                                     </td>
@@ -144,16 +144,40 @@
             </div>
         </div>
 
-        <div class=" align-items-center justify-content-center">
-            <?php if (!empty($confirmationMessage)) : ?>
-                <p class='text-center text-danger fw-bolder fs-4'><?= $confirmationMessage; ?></p>
-            <?php endif; ?>
+
+        <!-- Modal de Confirmation -->
+        <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirmationModalLabel">Confirmation de la Demande</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <?= $confirmationMessage; ?>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
 
         <!-- Bootstrap Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+        <?php if (!empty($confirmationMessage)) : ?>
+            <script>
+                document.addEventListener('DOMContentLoaded', (event) => {
+                    var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+                    confirmationModal.show();
+                });
+            </script>
+        <?php endif; ?>
+
 </body>
 
 </html>
