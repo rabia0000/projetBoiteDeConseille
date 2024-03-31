@@ -192,21 +192,21 @@
                 <h2>LOGIN</h2>
                 <form method="POST" action="../controllers/controller-signin.php" novalidate>
                     <div class="input-field">
-                        <input type="email" id="email" name="email" value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>" required>
-                        <span class="error">
+                        <input type="email" id="email" name="email" placeholder="Email" value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>" required>
+                        <span class="error text-danger">
                             <?php if (isset($errors['email'])) {
                                 echo $errors['email'];
                             } ?>
-                            <label>Email</label>
+
                     </div>
                     <div class="input-field">
-                        <input type="password" id="password" name="password">
+                        <input type="password" id="password" name="password" placeholder="Password" required>
                         <span class="error text-danger">
                             <?php if (isset($errors['password'])) {
                                 echo $errors['password'];
                             } ?>
                         </span>
-                        <label>Password</label>
+
                     </div>
                     <a href="#" class="forgot-pass-link"></a>
                     <button type="submit">Log In</button>

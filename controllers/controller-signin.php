@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 header('Location: controller-home.php');
             } else {
-                $errors['connexion'] = 'Mauvais mots de passe';
+                $errors['password'] = 'Mauvais mots de passe';
             }
         }
     }
