@@ -46,7 +46,7 @@
                     <div class="mega-box">
                         <div class="content">
                             <div class="row">
-                                <img src="img.jpg" alt="">
+                                <img src="../assets/images/employer1.jpg" alt="">
                             </div>
                             <div class="row">
                                 <header>Rejoignez nous</header>
@@ -91,12 +91,12 @@
                 </li> -->
                 <li>
                     <a href="#" class="desktop-item">Services</a>
-                    <input type="checkbox" id="showMega">
-                    <label for="showMega" class="mobile-item">Services</label>
+                    <input type="checkbox" id="showMega2">
+                    <label for="showMega2" class="mobile-item">Services</label>
                     <div class="mega-box">
                         <div class="content">
                             <div class="row">
-                                <img src="img.jpg" alt="">
+                                <img src="../assets/images/accueil.jpg" alt="">
                             </div>
                             <div class="row">
                                 <header>Cloud</header>
@@ -181,16 +181,84 @@
     </nav> -->
 
 
+    <div class="form-popup">
+
+        <div class="form-box login">
+            <div class="form-details">
+                <h2>Bienvenue</h2>
+                <p>Veuillez vous connecter en utilisant vos informations personnelles.</p>
+            </div>
+            <div class="form-content">
+                <h2>LOGIN</h2>
+                <form method="POST" action="../controllers/controller-signin.php" novalidate>
+                    <div class="input-field">
+                        <input type="email" id="email" name="email" value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>" required>
+                        <span class="error">
+                            <?php if (isset($errors['email'])) {
+                                echo $errors['email'];
+                            } ?>
+                            <label>Email</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="password" name="password">
+                        <span class="error text-danger">
+                            <?php if (isset($errors['password'])) {
+                                echo $errors['password'];
+                            } ?>
+                        </span>
+                        <label>Password</label>
+                    </div>
+                    <a href="#" class="forgot-pass-link"></a>
+                    <button type="submit">Log In</button>
+                </form>
+                <div class="bottom-link">
+                    Pas de compte ?
+                    <a href="#" id="signup-link">Signup</a>
+                </div>
+            </div>
+        </div>
+        <div class="form-box signup">
+            <div class="form-details">
+                <h2>Create Account</h2>
+                <p>To become a part of our community, please sign up using your personal information.</p>
+            </div>
+            <div class="form-content">
+                <h2>SIGNUP</h2>
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" required>
+                        <label>Enter your email</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" required>
+                        <label>Create password</label>
+                    </div>
+                    <div class="policy-text">
+                        <input type="checkbox" id="policy">
+                        <label for="policy">
+                            I agree the
+                            <a href="#" class="option">Terms & Conditions</a>
+                        </label>
+                    </div>
+                    <button type="submit">Sign Up</button>
+                </form>
+                <div class="bottom-link">
+                    Already have an account?
+                    <a href="#" id="login-link">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-    <div class="container mt-5">
+    <!-- <div class="container mt-5">
         <div class="d-flex justify-content-center align-items-center mt-5">
             <div class="col-lg-6 ">
                 <div class="card shadow-lg border-light p-3 border border-dark mt-5">
                     <div class="card-body p-4">
                         <h2 class="card-title text-center text-light fs-3">Page de connexion</h2>
                         <form class="row" method="POST" action="../controllers/controller-signin.php" novalidate>
-                            <!-- email  -->
+
 
                             <div class="text-center fs-5 text-light">
                                 <label for="email">Login :</label><br>
@@ -231,7 +299,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
 
