@@ -24,7 +24,7 @@
 
     <div class="video-background">
         <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-            <source src="../assets/video/art1.mp4" type="video/mp4">
+            <source src="../assets/video/montain.mp4" type="video/mp4">
         </video>
     </div>
 
