@@ -13,18 +13,13 @@ body {
 
 }
 
+
+/* barre de navigation */
 nav {
-
-
     position: fixed;
-    z-index: 99;
+    z-index: 10;
     width: 100%;
     border-bottom: 0.5px solid #fff;
-
-
-
-
-
 }
 
 nav .wrapper {
@@ -420,13 +415,14 @@ nav input {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    z-index: 10;
     height: 100%;
+    width: 100%;
     opacity: 0;
     pointer-events: none;
-    backdrop-filter: blur(15px);
-    transition: 0.1 ease;
-
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: 0.1s ease;
 }
 
 /* fera apparaitre le pop up formulaire grace a JS dans le body */
@@ -438,16 +434,16 @@ nav input {
 
 .form-popup {
     position: fixed;
-    background: #ffffff;
-    max-width: 720px;
-    opacity: 0;
-    pointer-events: none;
     top: 50%;
     left: 50%;
+    z-index: 10;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    max-width: 720px;
+    background: #fff;
     border: 2px solid #fff;
-    transform: translate(-50%, -100%);
-    transition: 0.1s ease;
-
+    transform: translate(-50%, -70%);
 }
 
 .show-popup .form-popup {
