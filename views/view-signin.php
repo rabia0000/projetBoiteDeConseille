@@ -128,11 +128,13 @@
                         </div>
                     </div>
                 </li>
-                <li><a href="../controllers/controller-signin.php">Login</a></li>
-                <li><a href="#">Login admin</a></li>
+                <!-- <li><a href="../controllers/controller-signin.php">Login</a></li>
+                <li><a href="../controllers-admin/controller-signin-admin.php">Login admin</a></li> -->
             </ul>
+            <button class="login-btn">LOG IN</button>
             <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
         </div>
+
     </nav>
 
     <!-- <nav class="navbar navbar-expand-lg navbar-light bg-dark">
@@ -181,7 +183,7 @@
     </nav> -->
 
 
-    <div class="form-popup">
+    <!-- <div class="form-popup">
 
         <div class="form-box login">
             <div class="form-details">
@@ -248,7 +250,81 @@
                 </div>
             </div>
         </div>
+    </div> -->
+
+    <!-- Pop up de LOGIN -->
+    <div class="blur-bg-overlay"></div>
+    <div class="form-popup">
+        <span class="close-btn material-symbols-rounded">close</span>
+        <div class="form-box login">
+            <div class="form-details">
+                <h2>Bienvenue</h2>
+                <p>Entrer vos information personnelles pour vous connecter</p>
+            </div>
+            <div class="form-content">
+                <h2>LOGIN</h2>
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" required>
+                        <label>Email</label>
+                    </div>
+
+                    <div class="input-field">
+                        <input type="password" required>
+                        <label>Password</label>
+                    </div>
+                    <a href="#" class="forgot-pass">Mots de passe oublié? </a>
+                    <button type="submit">Log In</button>
+                </form>
+                <div class="buttom-link">
+                    Vous n'avez pas de compte?
+                    <a href="#">Signup</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-box signup">
+            <div class="form-details">
+                <h2>Crée un compte</h2>
+                <p>Entrer vos information personnelles pour crée un compte</p>
+            </div>
+            <div class="form-content">
+                <h2>SIGNUP</h2>
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" required>
+                        <label>Entrer votre email</label>
+                    </div>
+
+                    <div class="input-field">
+                        <input type="password" required>
+                        <label>Crée un mot de passe</label>
+                    </div>
+                    <div class="policy-text">
+                        <input type="checkbox" id="policy">
+                        <label for="policy"></label>
+                        J'accepte les
+                        <a href="#">cgu</a>
+                    </div>
+                    <button type="submit">Sign Up</button>
+                </form>
+                <div class="buttom-link">
+                    Vous avez un compte?
+                    <a href="#">Login</a>
+                </div>
+
+            </div>
+        </div>
     </div>
+
+
+
+
+
+
+
+
+
 
 
     <!-- <div class="container mt-5">
@@ -320,6 +396,15 @@
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer>
+        const showPopupBtn = document.querySelector(".login-btn");
+        // Show login popup
+
+        //ajoute la classe show-popup a body
+        showPopupBtn.addEventListener("click", () => {
+            document.body.classList.toggle("show-popup");
+        });
+    </script>
 
 </body>
 

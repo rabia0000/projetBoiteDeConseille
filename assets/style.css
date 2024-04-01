@@ -13,10 +13,13 @@ body {
 }
 
 nav {
+
+
     position: fixed;
     z-index: 99;
     width: 100%;
     border-bottom: 0.5px solid #fff;
+
 
 
 
@@ -27,24 +30,50 @@ nav .wrapper {
     position: relative;
     max-width: 1300px;
     padding: 0px 30px;
-    height: 70px;
+    height: 90px;
     line-height: 70px;
-    margin: auto;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
+
+
 /* logo */
+.wrapper .logo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+}
+
 .wrapper .logo a {
     color: #000;
     font-size: 30px;
     font-weight: 600;
     text-decoration: none;
+    margin-left: auto;
 }
 
 .wrapper .nav-links {
-    display: inline-flex;
+    display: flex;
+    gap: 35px;
+
+}
+
+/* button login */
+.wrapper .login-btn {
+    border: none;
+    outline: none;
+    color: #000;
+    font-size: 0.8rem;
+    /* Réduite de 1rem à 0.8rem */
+    font-weight: 600;
+    padding: 0px 16px;
+    border-radius: 3px;
+    cursor: pointer;
+    background: #fff;
 }
 
 .nav-links li {
@@ -63,8 +92,12 @@ nav .wrapper {
 }
 
 .nav-links li a:hover {
-    background: #3A3B3C;
+    color: #fff;
+    text-decoration-line: underline;
 }
+
+
+
 
 .nav-links .mobile-item {
     display: none;
@@ -337,7 +370,7 @@ nav input {
 
 /* formulaire de connexion */
 
-.form-popup {
+/* .form-popup {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -470,9 +503,227 @@ form :where(.forgot-pass-link, .policy-text) {
     display: inline-flex;
     margin-top: 13px;
     font-size: 0.95rem;
+} */
+
+/* POPUP */
+
+
+/* effet flouter */
+.blur-bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(5px);
+    transition: 0.1 ease;
+
+}
+
+/* fera apparaitre le pop up formulaire grace a JS dans le body */
+.show-popup .blur-bg-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.form-popup {
+    position: fixed;
+    background: #ffffff;
+    max-width: 720px;
+    opacity: 0;
+    pointer-events: none;
+    top: 50%;
+    left: 50%;
+    border: 2px solid #fff;
+    transform: translate(-50%, -100%);
+
+}
+
+.show-popup .form-popup {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease, opacity 0.1s;
+}
+
+.form-popup .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: #878484;
+    cursor: pointer;
+
+}
+
+.form-popup .form-box {
+    display: flex;
+}
+
+
+/* ecriture a gauche du formulaire */
+.form-box .form-details {
+    max-width: 320px;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    padding: 0 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+/* formulaire login */
+.login .form-details {
+    background-image: url("images/login-img.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* formulaire signup */
+.signup .form-details {
+    background-image: url("images/signup-img.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+
+.form-box h2 {
+    text-align: center;
+    margin-bottom: 30;
+}
+
+.form-box .form-content {
+    width: 100%;
+    padding: 35px;
+}
+
+
+form .input-field {
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+}
+
+form .input-field input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    padding: 0 15px;
+    font-size: 0.95rem;
+    border-radius: 3px;
+    border: 1px solid #000
+}
+
+.input-field input:focus {
+    border: 1px solid #00bcd4;
+}
+
+.input-field input:is(:focus, :valid) {
+    padding: 1-px 15px 0;
+}
+
+form .input-field label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #4a4646;
+    pointer-events: none;
+    transition: 0.2s ease;
+
+}
+
+.input-field input:is(:focus, :valid)~label {
+    color: #00bcd4;
+    font-size: 0.75rem;
+    transform: translateY(-120%);
+}
+
+.form-box a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+.form-box a:hover {
+    color: #00bcd4;
+    text-decoration: underline;
+}
+
+/* mots de passe oublie */
+.form-box :where(.forgot-pass, .policy-text) {
+    display: inline-block;
+    margin-top: 19px;
+    font-size: 0.95rem;
+
 }
 
 form button {
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 14px 0;
+    border-radius: 3px;
+    margin: 25px 0;
+    color: #fff;
+    cursor: pointer;
+    background: #00bcd4;
+    transition: 0.2s ease;
+}
+
+form button:hover {
+    background: #0097a7;
+}
+
+.form-box .bottom-link {
+    text-align: center;
+}
+
+/* ne pas afficher le signup */
+
+.form-popup .signup {
+    display: none;
+}
+
+.signup .policy-text {
+    display: flex;
+    align-items: center;
+}
+
+.signup .policy-text input {
+    width: 14px;
+    height: 14px;
+    margin-right: 7px;
+}
+
+/* formulaire format mobile */
+
+@media (max-width: 760px) {
+    .form-popup {
+        width: 95%;
+    }
+
+    .form-box .form-details {
+        display: none;
+    }
+
+    .form-box .form-content {
+        padding: 30px 20px;
+    }
+
+}
+
+
+/* form button {
     width: 100%;
     color: #fff;
     border: none;
@@ -584,7 +835,7 @@ form button:hover {
     .form-box .form-content {
         padding: 30px 20px;
     }
-}
+} */
 
 
 /*  */
