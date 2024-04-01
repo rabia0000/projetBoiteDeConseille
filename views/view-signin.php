@@ -399,6 +399,7 @@
     <script defer>
         const showPopupBtn = document.querySelector(".login-btn");
         const hidePopupBtn = document.querySelector(".form-popup .close-btn");
+        const formPopup = document.querySelector(".form-popup");
         const signupLoginLink = document.querySelectorAll(".form-content a");
         // body > div.form-popup > div.form-box.login > div.form-content > div > a
 
@@ -413,7 +414,10 @@
         signupLoginLink.forEach(link => {
             link.addEventListener("click", (e) => {
                 e.preventDefault(); // Empêche le comportement par défaut du lien
-                console.log(link.id);
+                // console.log(link.id);
+
+                //si le click est sur signup alors on ajoute la classe "show-signup" dans le formulaire popup (form popup)sinon on le retire
+                formPopup.classList[link.id === "signup-link" ? 'add' : 'remove']('show-signup');
             });
         });
     </script>

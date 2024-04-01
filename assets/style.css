@@ -694,10 +694,16 @@ form button:hover {
     text-align: center;
 }
 
-/* ne pas afficher le signup */
+/* ne pas afficher le signup important a comprendre ici login et signup */
 
-.form-popup .signup {
+.form-popup .signup,
+.form-popup.show-signup .login {
     display: none;
+}
+
+/* ajout de la classe show-signup du script js  */
+.form-popup.show-signup .signup {
+    display: flex;
 }
 
 .signup .policy-text {
