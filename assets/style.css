@@ -539,6 +539,7 @@ form :where(.forgot-pass-link, .policy-text) {
     left: 50%;
     border: 2px solid #fff;
     transform: translate(-50%, -100%);
+    transition: 0.1s ease;
 
 }
 
@@ -547,6 +548,11 @@ form :where(.forgot-pass-link, .policy-text) {
     pointer-events: auto;
     transform: translate(-50%, -50%);
     transition: transform 0.3s ease, opacity 0.1s;
+}
+
+.show-popup .blur-bg-overlay {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .form-popup .close-btn {

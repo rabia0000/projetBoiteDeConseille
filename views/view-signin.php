@@ -255,7 +255,7 @@
     <!-- Pop up de LOGIN -->
     <div class="blur-bg-overlay"></div>
     <div class="form-popup">
-        <span class="close-btn material-symbols-rounded">close</span>
+        <span class="close-btn material-symbols-rounded">X</span>
         <div class="form-box login">
             <div class="form-details">
                 <h2>Bienvenue</h2>
@@ -278,7 +278,7 @@
                 </form>
                 <div class="buttom-link">
                     Vous n'avez pas de compte?
-                    <a href="#">Signup</a>
+                    <a href="#" id="signup-link">Signup</a>
                 </div>
 
             </div>
@@ -310,7 +310,7 @@
                 </form>
                 <div class="buttom-link">
                     Vous avez un compte?
-                    <a href="#">Login</a>
+                    <a href="#" id="login-link">Login</a>
                 </div>
 
             </div>
@@ -395,16 +395,29 @@
 
 
     <!-- Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <script defer>
         const showPopupBtn = document.querySelector(".login-btn");
-        // Show login popup
+        const hidePopupBtn = document.querySelector(".form-popup .close-btn");
+        const signupLoginLink = document.querySelectorAll(".form-content a");
+        // body > div.form-popup > div.form-box.login > div.form-content > div > a
 
-        //ajoute la classe show-popup a body
+        // voir login popup
         showPopupBtn.addEventListener("click", () => {
             document.body.classList.toggle("show-popup");
         });
+        //fermer la popup
+        hidePopupBtn.addEventListener("click", () => showPopupBtn.click());
+
+
+        signupLoginLink.forEach(link => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault(); // Empêche le comportement par défaut du lien
+                console.log(link.id);
+            });
+        });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
