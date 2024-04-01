@@ -16,7 +16,7 @@
 <body class="">
     <div class="video-background">
         <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-            <source src="../assets/video/IA.mp4" type="video/mp4">
+            <source src="../assets/video/montain.mp4" type="video/mp4">
         </video>
     </div>
 
@@ -28,53 +28,115 @@
         <form class="row" method="POST" action="../controllers/controller-signup.php" novalidate>
             <!-- header -->
             <header>
-                <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong" aria-label="Thirteenth navbar example">
-                    <div class="container-fluid">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+                <nav>
+                    <div class="wrapper">
+                        <div class="logo"><a href="#">Innovéo Conseil</a></div>
+                        <input type="radio" name="slider" id="menu-btn">
+                        <input type="radio" name="slider" id="close-btn">
+                        <ul class="nav-links">
+                            <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+                            <li><a href="#">Accueil</a></li>
+                            <li><a href="#">About</a></li>
 
-                        <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
-                            <a class="navbar-brand col-lg-3 me-0 text-primary" href="#">LOGO</a>
-                            <ul class="navbar-nav col-lg-6 justify-content-lg-center">
-                                <li class="nav-item">
-                                    <a class="nav-link active text-dark fs-4 me-1 fw-semibold" aria-current="page" href="#">Page d'Accueil</a>
-                                </li>
-                                <!-- <li class="nav-item">
-                                    <a class="nav-link text-dark fs-3 me-1" href="#">Link</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link disabled text-dark fs-3 me-1" aria-disabled="true">Disabled</a>
-                                </li> -->
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle text-dark fs-4 me-1 fw-semibold" href="#" data-bs-toggle="dropdown" aria-expanded="false">Expertises</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle text-dark fs-4 me-1 fw-semibold" href="#" data-bs-toggle="dropdown" aria-expanded="false">Découvrir l'entreprise</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <div class="d-lg-flex col-lg-3 justify-content-lg-end">
-                                <a href="../controllers-admin/controller-signin-admin.php">
-                                    <button type="button" class="btn btn-outline-danger">Admin</button>
-                                </a>
-                            </div>
-                        </div>
+                            <li>
+                                <a href="#" class="desktop-item">Carrières</a>
+                                <input type="checkbox" id="showMega">
+                                <label for="showMega" class="mobile-item">Carrières</label>
+                                <div class="mega-box">
+                                    <div class="content">
+                                        <div class="row">
+                                            <img src="../assets/images/employer1.jpg" alt="">
+                                        </div>
+                                        <div class="row">
+                                            <header>Rejoignez nous</header>
+                                            <ul class="mega-links">
+                                                <li><a href="#"></a></li>
+                                                <li><a href="#">Pourquoi rejoindre Innovéo</a></li>
+                                                <li><a href="#">Business cards</a></li>
+                                                <li><a href="#">Custom logo</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="row">
+                                            <header>Cyber Sécurité</header>
+                                            <ul class="mega-links">
+                                                <li><a href="#">Personal Email</a></li>
+                                                <li><a href="#">Business Email</a></li>
+                                                <li><a href="#">Mobile Email</a></li>
+                                                <li><a href="#">Web Marketing</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="row">
+                                            <header>Intelligence Artificielle</header>
+                                            <ul class="mega-links">
+                                                <li><a href="#">Site Seal</a></li>
+                                                <li><a href="#">VPS Hosting</a></li>
+                                                <li><a href="#">Privacy Seal</a></li>
+                                                <li><a href="#">Website design</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- <li>
+                    <a href="#" class="desktop-item">Dropdown Menu</a>
+                    <input type="checkbox" id="showDrop">
+                    <label for="showDrop" class="mobile-item">Dropdown Menu</label>
+                    <ul class="drop-menu">
+                        <li><a href="#">Drop menu 1</a></li>
+                        <li><a href="#">Drop menu 2</a></li>
+                        <li><a href="#">Drop menu 3</a></li>
+                        <li><a href="#">Drop menu 4</a></li>
+                    </ul>
+                </li> -->
+                            <li>
+                                <a href="#" class="desktop-item">Services</a>
+                                <input type="checkbox" id="showMega2">
+                                <label for="showMega2" class="mobile-item">Services</label>
+                                <div class="mega-box">
+                                    <div class="content">
+                                        <div class="row">
+                                            <img src="../assets/images/accueil.jpg" alt="">
+                                        </div>
+                                        <div class="row">
+                                            <header>Cloud</header>
+                                            <ul class="mega-links">
+                                                <li><a href="#">Graphics</a></li>
+                                                <li><a href="#">Vectors</a></li>
+                                                <li><a href="#">Business cards</a></li>
+                                                <li><a href="#">Custom logo</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="row">
+                                            <header>Cyber Sécurité</header>
+                                            <ul class="mega-links">
+                                                <li><a href="#">Personal Email</a></li>
+                                                <li><a href="#">Business Email</a></li>
+                                                <li><a href="#">Mobile Email</a></li>
+                                                <li><a href="#">Web Marketing</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="row">
+                                            <header>Intelligence Artificielle</header>
+                                            <ul class="mega-links">
+                                                <li><a href="#">Site Seal</a></li>
+                                                <li><a href="#">VPS Hosting</a></li>
+                                                <li><a href="#">Privacy Seal</a></li>
+                                                <li><a href="#">Website design</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a href="../controllers/controller-signin.php">Login</a></li>
+                            <li><a href="#">Login admin</a></li>
+                        </ul>
+                        <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
                     </div>
                 </nav>
 
             </header>
             <!-- header -->
-            <div class="container">
+            <!-- <div class="container">
                 <div class="d-flex justify-content-center align-items-center ">
                     <div class="col-lg-4 ">
                         <div class="card shadow-lg p-3 mb-5 border-light mt-5">
@@ -160,24 +222,71 @@
                     </div>
                 </div>
             </div>
-        <?php } ?>
+        <?php } ?> -->
 
-        <footer class="footerPage bg-dark pb-3 mt-5">
-            <ul class=" nav justify-content-center border-bottom">
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Conditions d'utilisation</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Contact</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Carrières</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Qui nous sommes ? </a></li>
-            </ul>
-            <p class="text-center text-light  mb-2 pt-1">© 2024 Tout droit réservés.</p>
-        </footer>
+            <div class="sign-up form-popup">
+                <div class="form-box login">
+                    <div class="form-details">
+                        <h2>Creation de compte</h2>
+                        <p>Inscrivez vous pour accéder à votre espace</p>
+                    </div>
+                    <div class="form-content">
+                        <h2>LOGIN</h2>
+                        <form action="controller-signup.php" method="POST" novalidate>
+                            <div class="input-field">
+                                <input type="text" required>
+                                <label>Enter your email</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" required>
+                                <label>Create password</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" required>
+                                <label>Confirm password</label>
+                            </div>
+
+                            <div class="policy-text">
+                                <input type="checkbox" id="policy">
+                                <label for="policy">
+                                    I agree the
+                                    <a href="#" class="option">Terms & Conditions</a>
+                                </label>
+                            </div>
+                            <button type="submit">Sign Up</button>
+                        </form>
+                        <div class="bottom-link">
+                            Vous avez deja un compte ?
+                            <a href="../controllers/controller-signin.php" id="signup-link">Sign In</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
 
 
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+
+
+
+
+
+            <footer class="footerPage  pb-3 mt-5">
+                <ul class=" nav justify-content-center border-bottom">
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-dark">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-dark">Conditions d'utilisation</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-dark">Contact</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-dark">Carrières</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-dark">Qui nous sommes ? </a></li>
+                </ul>
+                <p class="text-center text-dark  mb-2 pt-1">© 2024 Tout droit réservés.</p>
+            </footer>
+
+
+
+
+            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 
 </body>
 

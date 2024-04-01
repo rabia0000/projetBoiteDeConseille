@@ -516,6 +516,10 @@ form button:hover {
     margin-right: 7px;
 }
 
+.sign-up {
+    margin-top: 80px;
+}
+
 @media (max-width: 950px) {
     .navbar :is(.hamburger-btn, .close-btn) {
         display: block;

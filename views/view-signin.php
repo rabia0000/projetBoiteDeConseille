@@ -213,7 +213,7 @@
                 </form>
                 <div class="bottom-link">
                     Pas de compte ?
-                    <a href="#" id="signup-link">Signup</a>
+                    <a href="../controllers/controller-signup.php" id="signup-link">Signup</a>
                 </div>
             </div>
         </div>
