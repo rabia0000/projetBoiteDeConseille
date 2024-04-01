@@ -137,50 +137,6 @@
 
     </nav>
 
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand text-light" href="#">FBIA</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarNavDropdown">
-                <ul class="navbar-nav mx-auto gap-3 fs-6">
-                    <li class="nav-item ">
-                        <a class="nav-link text-light" aria-current="page" href="#">Accueil</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-light dropdown-toggle-custom" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Expertises
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-expand " aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item text-light" href="#">Développement d'applications</a></li>
-                            <li><a class="dropdown-item text-light" href="#">Gestion de bases de données</a></li>
-                            <li><a class="dropdown-item text-light" href="#">Sécurité informatique</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-light dropdown-toggle-custom" href="#" id="navbarDropdownMenuLink2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Découvrez FBIA
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-expand " aria-labelledby="navbarDropdownMenuLink2">
-                            <li><a class="dropdown-item text-light" href="#">Développement d'applications</a></li>
-                            <li><a class="dropdown-item text-light" href="#">Gestion de bases de données</a></li>
-                            <li><a class="dropdown-item text-light" href="#">Sécurité informatique</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Blog</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="ms-auto">
-                <button type="button" class="btn btn-outline-danger btn-sm">Connexion Admin</button>
-            </div>
-        </div>
-    </nav> -->
 
 
     <!-- <div class="form-popup">

@@ -9,6 +9,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    box-sizing: border-box;
 
 }
 
@@ -29,7 +30,7 @@ nav {
 nav .wrapper {
     position: relative;
     max-width: 1300px;
-    padding: 0px 30px;
+    padding: 0px 10px;
     height: 90px;
     line-height: 70px;
     margin: 0 auto;
@@ -44,16 +45,16 @@ nav .wrapper {
 .wrapper .logo {
     display: flex;
     gap: 10px;
-    align-items: center;
+    align-items: left;
 
 }
 
 .wrapper .logo a {
     color: #000;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 600;
     text-decoration: none;
-    margin-left: auto;
+
 }
 
 .wrapper .nav-links {
@@ -67,14 +68,33 @@ nav .wrapper {
     border: none;
     outline: none;
     color: #000;
-    font-size: 0.8rem;
-    /* Réduite de 1rem à 0.8rem */
+    /* Couleur du texte */
+    font-size: 0.9rem;
+    /* Taille de police */
     font-weight: 600;
-    padding: 0px 16px;
-    border-radius: 3px;
+    /* Poids du texte */
+    padding: 0 25px;
+    /* Ajustement du padding horizontal pour contrôler la largeur */
+    border-radius: 10px;
+    /* Bords arrondis */
     cursor: pointer;
-    background: #fff;
+    /* Indication de l'interactivité */
+    /* background: #007bff; */
+    /* Couleur de fond */
+    width: auto;
+    /* Largeur basée sur le contenu */
+    min-width: 120px;
+    /* Largeur minimale pour assurer la longueur */
+    height: 40px;
+    /* Hauteur fixe pour contrôler la taille */
+    display: inline-block;
+    /* Permet le respect des dimensions spécifiées */
+    text-align: center;
+    /* Centrage du texte */
+    line-height: 40px;
+    /* Hauteur de ligne correspondant à la hauteur du bouton pour centrer le texte verticalement */
 }
+
 
 .nav-links li {
     list-style: none;
@@ -82,7 +102,7 @@ nav .wrapper {
 
 /* text nav */
 .nav-links li a {
-    color: #000;
+    color: #fff;
     text-decoration: none;
     font-size: 17px;
     font-weight: 700;
@@ -204,6 +224,29 @@ nav .wrapper {
     .wrapper .btn {
         display: block;
     }
+
+
+    /* button login */
+    .wrapper .login-btn {
+        font-size: 0.6rem;
+        /* Réduction de la taille de la police pour économiser de l'espace */
+        padding: 0 20px;
+        /* Ajustement du padding horizontal pour s'adapter à des écrans plus petits */
+        min-width: 100px;
+        /* Réduction de la largeur minimale pour mieux s'adapter aux écrans plus petits */
+        height: 35px;
+        /* Réduction de la hauteur pour un aspect plus proportionné sur mobile */
+        line-height: 35px;
+    }
+
+    .wrapper .logo a {
+        color: #000;
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+
+    }
+
 
     .wrapper .nav-links {
         position: fixed;
@@ -369,142 +412,6 @@ nav input {
 }
 
 /* formulaire de connexion */
-
-/* .form-popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    z-index: 10;
-    width: 100%;
-    opacity: 1;
-    pointer-events: auto;
-    max-width: 720px;
-    background: #fff;
-    border: 2px solid #fff;
-    transform: translate(-50%, -70%);
-    margin-top: 30px;
-}
-
-.show-popup .form-popup {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translate(-50%, -50%);
-    transition: transform 0.3s ease, opacity 0.1s;
-}
-
-.form-popup .close-btn {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    color: #878484;
-    cursor: pointer;
-}
-
-.forgot-pass-link {
-    margin-top: 40px;
-}
-
-.show-popup .blur-bg-overlay {
-
-    pointer-events: auto;
-}
-
-.form-popup .form-box {
-    display: flex;
-}
-
-.form-box .form-details {
-    width: 100%;
-    color: #fff;
-    max-width: 330px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.login .form-details {
-    padding: 0 40px;
-    background: url("images/login-img.jpg");
-    background-position: center;
-    background-size: cover;
-}
-
-.signup .form-details {
-    padding: 0 20px;
-    background: url("images/signup-img.jpg");
-    background-position: center;
-    background-size: cover;
-}
-
-.form-box .form-content {
-    width: 100%;
-    padding: 35px;
-}
-
-.form-box h2 {
-    text-align: center;
-    margin-bottom: 29px;
-}
-
-form .input-field {
-    position: relative;
-    height: 50px;
-    width: 100%;
-    margin-top: 20px;
-}
-
-.input-field input {
-    height: 100%;
-    width: 100%;
-    background: none;
-    outline: none;
-    font-size: 0.95rem;
-    padding: 0 15px;
-    border: 1px solid #717171;
-    border-radius: 3px;
-}
-
-.input-field input:focus {
-    border: 1px solid #00bcd4;
-}
-
-.input-field label {
-    position: absolute;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%);
-    color: #4a4646;
-    pointer-events: none;
-    transition: 0.2s ease;
-}
-
-.input-field input:is(:focus, :valid) {
-    padding: 16px 15px 0;
-}
-
-.input-field input:is(:focus, :valid)~label {
-    transform: translateY(-120%);
-    color: #00bcd4;
-    font-size: 0.75rem;
-}
-
-.form-box a {
-    color: #00bcd4;
-    text-decoration: none;
-}
-
-.form-box a:hover {
-    text-decoration: underline;
-}
-
-form :where(.forgot-pass-link, .policy-text) {
-    display: inline-flex;
-    margin-top: 13px;
-    font-size: 0.95rem;
-} */
-
 /* POPUP */
 
 
@@ -517,7 +424,7 @@ form :where(.forgot-pass-link, .policy-text) {
     height: 100%;
     opacity: 0;
     pointer-events: none;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(15px);
     transition: 0.1 ease;
 
 }
@@ -735,122 +642,7 @@ form button:hover {
 }
 
 
-/* form button {
-    width: 100%;
-    color: #fff;
-    border: none;
-    outline: none;
-    padding: 14px 0;
-    font-size: 1rem;
-    font-weight: 500;
-    border-radius: 3px;
-    cursor: pointer;
-    margin: 25px 0;
-    background: #00bcd4;
-    transition: 0.2s ease;
-}
 
-form button:hover {
-    background: #0097a7;
-}
-
-.form-content .bottom-link {
-    text-align: center;
-}
-
-.form-popup .signup,
-.form-popup.show-signup .login {
-    display: none;
-}
-
-.form-popup.show-signup .signup {
-    display: flex;
-}
-
-.signup .policy-text {
-    display: flex;
-    margin-top: 14px;
-    align-items: center;
-}
-
-.signup .policy-text input {
-    width: 14px;
-    height: 14px;
-    margin-right: 7px;
-}
-
-.sign-up {
-    margin-top: 80px;
-}
-
-@media (max-width: 950px) {
-    .navbar :is(.hamburger-btn, .close-btn) {
-        display: block;
-    }
-
-    .navbar {
-        padding: 15px 0;
-    }
-
-    .navbar .logo img {
-        display: none;
-    }
-
-    .navbar .logo h2 {
-        font-size: 1.4rem;
-    }
-
-    .navbar .links {
-        position: fixed;
-        top: 0;
-        z-index: 10;
-        left: -100%;
-        display: block;
-        height: 100vh;
-        width: 100%;
-        padding-top: 60px;
-        text-align: center;
-        background: #fff;
-        transition: 0.2s ease;
-    }
-
-    .navbar .links.show-menu {
-        left: 0;
-    }
-
-    .navbar .links a {
-        display: inline-flex;
-        margin: 20px 0;
-        font-size: 1.2rem;
-        color: #000;
-    }
-
-    .navbar .links a:hover {
-        color: #00BCD4;
-    }
-
-    .navbar .login-btn {
-        font-size: 0.9rem;
-        padding: 7px 10px;
-    }
-}
-
-@media (max-width: 760px) {
-    .form-popup {
-        width: 95%;
-    }
-
-    .form-box .form-details {
-        display: none;
-    }
-
-    .form-box .form-content {
-        padding: 30px 20px;
-    }
-} */
-
-
-/*  */
 .card {
     /* background-color: rgba(183, 185, 189, 0.5); */
     background-color: rgba(0, 0, 0, 0.13);
