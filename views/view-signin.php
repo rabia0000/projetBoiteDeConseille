@@ -137,79 +137,8 @@
 
     </nav>
 
-
-
-    <!-- <div class="form-popup">
-
-        <div class="form-box login">
-            <div class="form-details">
-                <h2>Bienvenue</h2>
-                <p>Veuillez vous connecter en utilisant vos informations personnelles.</p>
-            </div>
-            <div class="form-content">
-                <h2>LOGIN</h2>
-                <form method="POST" action="../controllers/controller-signin.php" novalidate>
-                    <div class="input-field">
-                        <input type="email" id="email" name="email" placeholder="Email" value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>" required>
-                        <span class="error text-danger">
-                            <?php if (isset($errors['email'])) {
-                                echo $errors['email'];
-                            } ?>
-
-                    </div>
-                    <div class="input-field">
-                        <input type="password" id="password" name="password" placeholder="Password" required>
-                        <span class="error text-danger">
-                            <?php if (isset($errors['password'])) {
-                                echo $errors['password'];
-                            } ?>
-                        </span>
-
-                    </div>
-                    <a href="#" class="forgot-pass-link"></a>
-                    <button type="submit">Log In</button>
-                </form>
-                <div class="bottom-link">
-                    Pas de compte ?
-                    <a href="../controllers/controller-signup.php" id="signup-link">Signup</a>
-                </div>
-            </div>
-        </div>
-        <div class="form-box signup">
-            <div class="form-details">
-                <h2>Create Account</h2>
-                <p>To become a part of our community, please sign up using your personal information.</p>
-            </div>
-            <div class="form-content">
-                <h2>SIGNUP</h2>
-                <form action="#">
-                    <div class="input-field">
-                        <input type="text" required>
-                        <label>Enter your email</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" required>
-                        <label>Create password</label>
-                    </div>
-                    <div class="policy-text">
-                        <input type="checkbox" id="policy">
-                        <label for="policy">
-                            I agree the
-                            <a href="#" class="option">Terms & Conditions</a>
-                        </label>
-                    </div>
-                    <button type="submit">Sign Up</button>
-                </form>
-                <div class="bottom-link">
-                    Already have an account?
-                    <a href="#" id="login-link">Login</a>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
     <!-- Pop up de LOGIN -->
-    <div class="blur-bg-overlay"></div>
+    <!-- <div class="blur-bg-overlay"></div> -->
     <div class="form-popup">
         <span class="close-btn material-symbols-rounded">X</span>
         <div class="form-box login">
@@ -219,15 +148,26 @@
             </div>
             <div class="form-content">
                 <h2>LOGIN</h2>
-                <form action="#">
+                <form class="row" method="POST" action="../controllers/controller-signin.php" novalidate>
                     <div class="input-field">
-                        <input type="text" required>
+                        <input type="email" id="email" name="email" value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>" required>
                         <label>Email</label>
+                        <span class="error">
+                            <?php if (isset($errors['email'])) {
+                                echo $errors['email'];
+                            } ?>
+                        </span>
                     </div>
 
                     <div class="input-field">
-                        <input type="password" required>
+                        <input type="password" id="password" name="password" required>
                         <label>Password</label>
+                        <span class="error text-danger">
+                            <?php if (isset($errors['password'])) {
+                                echo $errors['password'];
+                            } ?>
+                        </span>
+
                     </div>
                     <a href="#" class="forgot-pass">Mots de passe oublié? </a>
                     <button type="submit">Log In</button>
@@ -239,6 +179,8 @@
 
             </div>
         </div>
+
+        <!-- Formulaire signup -->
         <div class="form-box signup">
             <div class="form-details">
                 <h2>Crée un compte</h2>
@@ -246,21 +188,47 @@
             </div>
             <div class="form-content">
                 <h2>SIGNUP</h2>
-                <form action="#">
+                <form method="POST" action="../controllers/controller-signup.php" novalidate>
                     <div class="input-field">
-                        <input type="text" required>
+                        <input type="text" id="name" name="name" value="<?= isset($_POST['name']) ? htmlspecialchars($_POST['name']) : '' ?>" required>
+                        <label>Nom</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="prenom" name="prenom" value="<?= isset($_POST['prenom']) ? htmlspecialchars($_POST['prenom']) : '' ?>" required>
+                        <label>Prénom</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="email" id="email" name="email" value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>" required>
+                        <?php if (isset($errors['email'])) {
+                            echo $errors['email'];
+                        } ?>
+                        </span>
                         <label>Entrer votre email</label>
                     </div>
 
                     <div class="input-field">
-                        <input type="password" required>
-                        <label>Crée un mot de passe</label>
+                        <input type="password" id="password" name="password" required>
+                        <label>Password</label>
+                        <span class="error text-danger">
+                            <?php if (isset($errors['password'])) {
+                                echo $errors['password'];
+                            } ?>
+                        </span>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="confirm_password" name="confirm_password" required>
+                        <label>Password</label>
+                        <span class="error text-danger">
+                            <?php if (isset($errors['password'])) {
+                                echo $errors['password'];
+                            } ?>
+                        </span>
                     </div>
                     <div class="policy-text">
                         <input type="checkbox" id="policy">
                         <label for="policy"></label>
                         J'accepte les
-                        <a href="#">cgu</a>
+                        <a href="#"> cgu</a>
                     </div>
                     <button type="submit">Sign Up</button>
                 </form>
@@ -272,68 +240,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-    <!-- <div class="container mt-5">
-        <div class="d-flex justify-content-center align-items-center mt-5">
-            <div class="col-lg-6 ">
-                <div class="card shadow-lg border-light p-3 border border-dark mt-5">
-                    <div class="card-body p-4">
-                        <h2 class="card-title text-center text-light fs-3">Page de connexion</h2>
-                        <form class="row" method="POST" action="../controllers/controller-signin.php" novalidate>
-
-
-                            <div class="text-center fs-5 text-light">
-                                <label for="email">Login :</label><br>
-
-                                <input class="col-12" type="email" id="email" name="email" value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>" required>
-                                <span class="error">
-                                    <?php if (isset($errors['email'])) {
-                                        echo $errors['email'];
-                                    } ?>
-                            </div>
-                            </span>
-
-
-                            <div class="text-center fs-5 text-light">
-                                <label for="password">Mot de passe :</label><br>
-                                <input class="col-12" type="password" id="password" name="password">
-                                <span class="error text-danger">
-                                    <?php if (isset($errors['password'])) {
-                                        echo $errors['password'];
-                                    } ?>
-                                </span><br>
-                                <br>
-                            </div>
-
-
-                            <div class=" text-center mt-1">
-                                <input type="submit" value="Me connecter" class="btn btn-outline-light  ">
-                            </div>
-
-                            <div class='text-center mt-2'>
-                                <a href="../controllers/controller-signup.php">
-                                    <button type="button" class="btn btn-outline-light">Pas encore inscrit ?</button>
-                                </a>
-
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-
 
 
 
@@ -352,33 +258,101 @@
 
     <!-- Bootstrap Bundle with Popper -->
 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script defer>
-        const showPopupBtn = document.querySelector(".login-btn");
-        const hidePopupBtn = document.querySelector(".form-popup .close-btn");
-        const formPopup = document.querySelector(".form-popup");
-        const signupLoginLink = document.querySelectorAll(".form-content a");
-        // body > div.form-popup > div.form-box.login > div.form-content > div > a
+        document.addEventListener("DOMContentLoaded", function() {
+            //pop up de connection 
 
-        // voir login popup
-        showPopupBtn.addEventListener("click", () => {
-            document.body.classList.toggle("show-popup");
-        });
-        //fermer la popup
-        hidePopupBtn.addEventListener("click", () => showPopupBtn.click());
+            const showPopupBtn = document.querySelector(".login-btn");
+            const hidePopupBtn = document.querySelector(".form-popup .close-btn");
+            const formPopup = document.querySelector(".form-popup");
+            const signupLoginLink = document.querySelectorAll(".form-content a");
 
 
-        signupLoginLink.forEach(link => {
-            link.addEventListener("click", (e) => {
-                e.preventDefault(); // Empêche le comportement par défaut du lien
-                // console.log(link.id);
-
-                //si le click est sur signup alors on ajoute la classe "show-signup" dans le formulaire popup (form popup)sinon on le retire
-                formPopup.classList[link.id === "signup-link" ? 'add' : 'remove']('show-signup');
+            // voir login popup
+            showPopupBtn.addEventListener("click", () => {
+                document.body.classList.toggle("show-popup");
             });
+            //fermer la popup
+            hidePopupBtn.addEventListener("click", () => showPopupBtn.click());
+
+
+            signupLoginLink.forEach(link => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault(); // Empêche le comportement par défaut du lien
+                    // console.log(link.id);
+
+                    //si le click est sur signup alors on ajoute la classe "show-signup" dans le formulaire popup (form popup)sinon on le retire
+                    formPopup.classList[link.id === "signup-link" ? 'add' : 'remove']('show-signup');
+                });
+            });
+
+
+
+
+            // Création d'une variable JavaScript basée sur la présence d'erreurs
+            var showLoginForm = <?php echo !empty($errors) ? 'true' : 'false'; ?>;
+
+
+            if (showLoginForm) {
+                // Ouvrir le formulaire de connexion si des erreurs sont présentes
+                document.body.classList.add("show-popup");
+            }
+
+
+            const inputs = formPopup.querySelectorAll("input");
+            const errorMessages = formPopup.querySelectorAll(".error");
+
+            // Fermer la popup et vider les inputs
+            hidePopupBtn.addEventListener("click", () => {
+                document.body.classList.remove("show-popup");
+                // Boucle sur tous les champs d'input pour les vider
+                inputs.forEach(input => {
+                    // Ne réinitialisez pas les champs de type 'checkbox' ou 'radio'
+                    if (input.type !== "checkbox" && input.type !== "radio") {
+                        input.value = "";
+                    }
+                });
+
+                // Boucle sur tous les éléments d'erreur pour effacer les messages
+                errorMessages.forEach(errorElement => {
+                    errorElement.textContent = ""; // Efface le texte de l'élément d'erreur
+                });
+
+
+            });
+
+            // Création d'une variable JavaScript basée sur la présence d'erreurs dans le formulaire d'inscription
+            var showSignupForm = <?php echo !empty($errors) ? 'true' : 'false'; ?>;
+
+
+            // Afficher la popup d'inscription si des erreurs sont présentes
+            if (showSignupForm) {
+                document.body.classList.add("show-popup");
+                formPopup.classList.add('show-signup'); // S'assurer que le formulaire d'inscription est visible
+            }
+
+            // Fermer la popup et réinitialiser les champs d'input ainsi que les messages d'erreur
+            hidePopupBtn.addEventListener("click", () => {
+                document.body.classList.remove("show-popup");
+                formPopup.classList.remove('show-signup'); // S'assurer que le formulaire d'inscription est masqué
+
+                // Réinitialiser les champs d'input
+                inputs.forEach(input => {
+                    if (input.type !== "checkbox" && input.type !== "radio") {
+                        input.value = "";
+                    }
+                });
+
+                // Effacer les messages d'erreur
+                errorMessages.forEach(errorElement => {
+                    errorElement.textContent = "";
+                });
+            });
+
         });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 
 </html>

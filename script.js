@@ -69,3 +69,5 @@ themeToggle.addEventListener('click', function () {
         themeToggle.textContent = "Passer au mode clair";
     }
 });
+
+

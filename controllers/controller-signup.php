@@ -1,12 +1,12 @@
 <?php
 //models 
-// var_dump($_POST);
+var_dump($_POST);
 require_once '../config.php';
 require_once '../models/userprofil.php';
 // require_once '../models/enterprise.php';
 
 
-$showform = true;
+// $showform = true;
 // $enterprises = Enterprise::getAllEnterprise();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors['prenom'] = "Le prénom est obligatoire.";
         //si ça ne match pas !preg_match alors tableau d'erreur
     } else if (!preg_match("/^[a-zA-ZÀ-ÿ\-]+$/", $_POST["prenom"])) {
-        $errors['prenom'] = "Le nom est invalide.";
+        $errors['prenom'] = "Le prénom est invalide.";
     }
 
 
@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
         Userprofil::create($lastname, $firstname, $mail, $password);
-        $showform = false;
+        // $showform = false;
     }
 }
 
@@ -91,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // Inclusion de la vue
 
-include_once('../views/view-signup.php');
+include_once('../views/view-signin.php');
 
 
 ?>

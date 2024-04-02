@@ -10,7 +10,7 @@ require_once '../models/userprofil.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = [];
 
-    // Vérification du mot de passe
+    // Vérification du mot de passe de la page login
 
 
     if (empty($_POST["password"]) || strlen($_POST["password"]) < 8) {
