@@ -1,13 +1,9 @@
 <?php
 //models 
-var_dump($_POST);
+// var_dump($_POST);
 require_once '../config.php';
-require_once '../models/userprofil.php';
-// require_once '../models/enterprise.php';
+require_once '../models/Userprofil.php';
 
-
-// $showform = true;
-// $enterprises = Enterprise::getAllEnterprise();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // je créer un tableau d'erreur vide 
