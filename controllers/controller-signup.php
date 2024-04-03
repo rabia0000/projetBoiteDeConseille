@@ -1,6 +1,8 @@
 <?php
+
+
 //models 
-// var_dump($_POST);
+
 require_once '../config.php';
 require_once '../models/Userprofil.php';
 
@@ -49,21 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors['cgu'] = "Veuillez accepter les CGU pour continuer.";
     }
 
-
-
-    // // La réponse du CAPTCHA
-    // $captcha_response = $_POST['g-recaptcha-response'];
-
-    // // Vérifiez la réponse du CAPTCHA en utilisant l'API de Google
-    // $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=votre_clé_secrète&response=" . $captcha_response);
-    // $response_keys = json_decode($response, true);
-    // if (empty($_POST['g-recaptcha-response'])) {
-    //     $errors['g-recaptcha-response'] = "Cochez je ne suis pas un robot";
-    // } else if ($response_keys["success"]) {
-    //     // Le CAPTCHA est valide. Traitez le formulaire.
-    // }
-    // verification s'il n'y pas d'erreur, nous allons inscrire l'utilisateur
-    // var_dump($errors);
+    var_dump($errors);
 
     if (empty($errors)) {
 
@@ -74,9 +62,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
         Userprofil::create($lastname, $firstname, $mail, $password);
-        // $showform = false;
     }
 }
+
+
+// // La réponse du CAPTCHA
+// $captcha_response = $_POST['g-recaptcha-response'];
+
+// // Vérifiez la réponse du CAPTCHA en utilisant l'API de Google
+// $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=votre_clé_secrète&response=" . $captcha_response);
+// $response_keys = json_decode($response, true);
+// if (empty($_POST['g-recaptcha-response'])) {
+//     $errors['g-recaptcha-response'] = "Cochez je ne suis pas un robot";
+// } else if ($response_keys["success"]) {
+//     // Le CAPTCHA est valide. Traitez le formulaire.
+// }
+// verification s'il n'y pas d'erreur, nous allons inscrire l'utilisateur
+// var_dump($errors);
+
+
 
 ?>
 

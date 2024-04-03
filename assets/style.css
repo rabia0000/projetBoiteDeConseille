@@ -488,7 +488,7 @@ nav input {
 
 /* formulaire login */
 .login .form-details {
-    background-image: url("images/login-img.jpg");
+    background-image: url("images/login.jpg");
     background-size: cover;
     background-position: center;
 }

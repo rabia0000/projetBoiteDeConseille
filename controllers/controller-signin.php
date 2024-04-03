@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($errors)) {
 
         if (!Userprofil::checkMailExists($_POST['email'])) {
-            $errors['email'] = "utilisateur inconnu";
+            $errors['email'] = "Utilisateur inconnu";
         } else {
             //je recupère toutes les infos via la méthode getInfos()
             $utilisateurInfos = Userprofil::getInfos($_POST['email']);

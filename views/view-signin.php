@@ -174,13 +174,11 @@
                 </form>
                 <div class="buttom-link">
                     Vous n'avez pas de compte?
-                    <a href="#" id="signup-link">Signup</a>
+                    <a href="../controllers/controller-signup.php" id="signup-link">Signup</a>
                 </div>
 
             </div>
         </div>
-
-        <!-- Formulaire signup -->
         <div class="form-box signup">
             <div class="form-details">
                 <h2>Crée un compte</h2>
@@ -188,7 +186,7 @@
             </div>
             <div class="form-content">
                 <h2>SIGNUP</h2>
-                <form method="POST" action="../controllers/controller-signup.php" novalidate>
+                <form method="POST" action="controller-signup.php" novalidate>
                     <div class="input-field">
                         <input type="text" id="name" name="name" value="<?= isset($_POST['name']) ? htmlspecialchars($_POST['name']) : '' ?>" required>
                         <label>Nom</label>
@@ -217,15 +215,15 @@
                     </div>
                     <div class="input-field">
                         <input type="password" id="confirm_password" name="confirm_password" required>
-                        <label>Password</label>
-                        <span class="error text-danger">
-                            <?php if (isset($errors['password'])) {
-                                echo $errors['password'];
+                        <label>Confirm Password</label>
+                        <span class="error ">
+                            <?php if (isset($errors['confirm_password'])) {
+                                echo $errors['confirm_password'];
                             } ?>
-                        </span>
+                        </span><br><br>
                     </div>
                     <div class="policy-text">
-                        <input type="checkbox" id="policy">
+                        <input type="checkbox" name="cgu" id="policy" required></label>
                         <label for="policy"></label>
                         J'accepte les
                         <a href="#"> cgu</a>
@@ -239,6 +237,7 @@
 
             </div>
         </div>
+        </form>
     </div>
 
 
