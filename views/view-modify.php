@@ -127,7 +127,7 @@
                                             <form action="" method="post">
                                                 <input type="hidden" name="user_id" value="<?= htmlspecialchars($userId); ?>">
                                                 <input type="hidden" name="training_id" value="<?= htmlspecialchars($cour['training_id']); ?>">
-                                                <button class="btn btn-custom-cancel btn-sm" type="submit" name="cancel">Annuler la demande</button>
+                                                <!-- <button class="btn btn-custom-cancel btn-sm" type="submit" name="cancel">Annuler la demande</button> -->
                                             </form>
                                         <?php endif; ?>
                                     </td>

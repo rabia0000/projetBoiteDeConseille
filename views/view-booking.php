@@ -131,7 +131,8 @@
                                             <form action="" method="post">
                                                 <input type="hidden" name="user_id" value="<?= htmlspecialchars($userId); ?>">
                                                 <input type="hidden" name="training_id" value="<?= htmlspecialchars($cour['training_id']); ?>">
-                                                <button class="preReservationButton btn btn-outline-success ms-2 btn-sm" type="submit">Pré-réserver ce cours</button>
+                                                <button class="preReservationButton btn btn-outline-success ms-2 btn-sm" type="submit" data-training-id="<?= htmlspecialchars($cour['training_id']); ?>">Pré-réserver ce cours</button>
+
                                             </form>
                                         <?php endif; ?>
                                     </td>
@@ -171,12 +172,61 @@
 
         <?php if (!empty($confirmationMessage)) : ?>
             <script>
-                document.addEventListener('DOMContentLoaded', (event) => {
+                document.addEventListener('DOMContentLoaded', function() {
                     var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
                     confirmationModal.show();
                 });
             </script>
         <?php endif; ?>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Réactiver les boutons désactivés basés sur le stockage local
+                if (localStorage.getItem('reservedCourses')) {
+                    const reservedCourses = JSON.parse(localStorage.getItem('reservedCourses'));
+                    reservedCourses.forEach(function(trainingId) {
+                        const button = document.querySelector(`button[data-training-id="${trainingId}"]`);
+                        if (button) {
+                            button.disabled = true;
+                            button.textContent = 'Déjà réservé';
+                        }
+                    });
+                }
+
+                document.querySelectorAll('.preReservationButton').forEach(function(button) {
+                    button.addEventListener('click', function(event) {
+                        event.preventDefault(); // Empêcher la soumission standard du formulaire
+                        const form = button.closest('form'); // Trouver le formulaire le plus proche du bouton
+                        const trainingId = form.querySelector('input[name="training_id"]').value;
+                        const formData = new FormData(form);
+
+                        // Envoyer les données du formulaire via AJAX
+                        fetch(form.action, {
+                                method: 'POST',
+                                body: formData
+                            })
+                            .then(response => response.text())
+                            .then(data => {
+                                alert('Pré-réservation réussie !');
+                                button.disabled = true;
+                                button.textContent = 'Déjà réservé';
+
+                                // Enregistrer l'état dans le stockage local
+                                let reservedCourses = localStorage.getItem('reservedCourses') ? JSON.parse(localStorage.getItem('reservedCourses')) : [];
+                                reservedCourses.push(trainingId);
+                                localStorage.setItem('reservedCourses', JSON.stringify(reservedCourses));
+                            })
+                            .catch(error => {
+                                console.error('Erreur lors de la soumission :', error);
+                            });
+                    });
+                });
+            });
+        </script>
+
+
+
+
 
 </body>
 
