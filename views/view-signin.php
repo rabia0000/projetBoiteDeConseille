@@ -138,7 +138,7 @@
     </nav>
 
     <!-- Pop up de LOGIN -->
-    <!-- <div class="blur-bg-overlay"></div> -->
+    <div class="blur-bg-overlay"></div>
     <div class="form-popup">
         <span class="close-btn material-symbols-rounded">X</span>
         <div class="form-box login">
@@ -179,6 +179,7 @@
 
             </div>
         </div>
+
         <div class="form-box signup">
             <div class="form-details">
                 <h2>Crée un compte</h2>
@@ -244,21 +245,39 @@
 
     <footer class="footerPage pb-3 mt-5">
         <ul class=" nav justify-content-center border-bottom">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Conditions d'utilisation</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Contact</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Carrières</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-dark">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-dark">Conditions d'utilisation</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-dark">Contact</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-dark">Carrières</a></li>
 
         </ul>
-        <p class="text-center text-light  mb-2 pt-1">© 2024 Tout droit réservés.</p>
+        <p class="text-center text-dark  mb-2 pt-1">© 2024 Tout droit réservés.</p>
     </footer>
 
 
 
-    <!-- Bootstrap Bundle with Popper -->
+    <!-- Modal -->
+    <div class="modal" tabindex="-1" id="signupSuccessModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Votre inscription à bien été pris en compte, vous pouvez maintenant vous connectez.</p>
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                    <button type="button" class="btn btn-primary">Se connecter</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script defer>
         document.addEventListener("DOMContentLoaded", function() {
             //pop up de connection 

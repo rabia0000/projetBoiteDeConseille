@@ -1,8 +1,4 @@
 <?php
-
-
-//models 
-
 require_once '../config.php';
 require_once '../models/Userprofil.php';
 
@@ -51,45 +47,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors['cgu'] = "Veuillez accepter les CGU pour continuer.";
     }
 
-    var_dump($errors);
 
+
+    // Si aucune erreur, procéder à l'inscription
     if (empty($errors)) {
-
         $lastname = $_POST['name'];
         $firstname = $_POST['prenom'];
         $mail = $_POST['email'];
         $password = $_POST['password'];
 
-
+        // Création de l'utilisateur
         Userprofil::create($lastname, $firstname, $mail, $password);
+
+        // Script pour afficher le modal directement
+        echo "<script type='text/javascript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    var myModal = new bootstrap.Modal(document.getElementById('signupSuccessModal'), {});
+                    myModal.show();
+                });
+              </script>";
     }
 }
-
-
-// // La réponse du CAPTCHA
-// $captcha_response = $_POST['g-recaptcha-response'];
-
-// // Vérifiez la réponse du CAPTCHA en utilisant l'API de Google
-// $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=votre_clé_secrète&response=" . $captcha_response);
-// $response_keys = json_decode($response, true);
-// if (empty($_POST['g-recaptcha-response'])) {
-//     $errors['g-recaptcha-response'] = "Cochez je ne suis pas un robot";
-// } else if ($response_keys["success"]) {
-//     // Le CAPTCHA est valide. Traitez le formulaire.
-// }
-// verification s'il n'y pas d'erreur, nous allons inscrire l'utilisateur
-// var_dump($errors);
-
-
-
 ?>
 
+
+
 <?php
-// Contrôleur - Gestion de la logique métier
-
-// Vérifications et traitements du formulaire ici
-
-// Inclusion de la vue
 
 include_once('../views/view-signin.php');
 

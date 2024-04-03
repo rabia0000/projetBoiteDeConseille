@@ -35,7 +35,6 @@ class Userprofil
 
         try {
             $query->execute();
-            echo 'Utilisateur ajouté avec succès !';
         } catch (PDOException $e) {
             echo 'Erreur : ' . $e->getMessage();
         }
