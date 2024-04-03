@@ -52,43 +52,30 @@
                                 <header>Rejoignez nous</header>
                                 <ul class="mega-links">
                                     <li><a href="#"></a></li>
+                                    <li><a href="#">Qui sommes nous ?</a></li>
                                     <li><a href="#">Pourquoi rejoindre Innovéo</a></li>
-                                    <li><a href="#">Business cards</a></li>
-                                    <li><a href="#">Custom logo</a></li>
+                                    <li><a href="#">Contact</a></li>
                                 </ul>
                             </div>
                             <div class="row">
-                                <header>Cyber Sécurité</header>
+                                <header>Recrutement</header>
                                 <ul class="mega-links">
-                                    <li><a href="#">Personal Email</a></li>
-                                    <li><a href="#">Business Email</a></li>
-                                    <li><a href="#">Mobile Email</a></li>
-                                    <li><a href="#">Web Marketing</a></li>
+                                    <li><a href="#">Nos offres d'emploi</a></li>
+
                                 </ul>
                             </div>
                             <div class="row">
-                                <header>Intelligence Artificielle</header>
+                                <header>Autre titre</header>
                                 <ul class="mega-links">
-                                    <li><a href="#">Site Seal</a></li>
-                                    <li><a href="#">VPS Hosting</a></li>
-                                    <li><a href="#">Privacy Seal</a></li>
-                                    <li><a href="#">Website design</a></li>
+                                    <li><a href="#">titre</a></li>
+                                    <li><a href="#">titre</a></li>
+                                    <li><a href="#">titre</a></li>
+                                    <li><a href="#">titre</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </li>
-                <!-- <li>
-                    <a href="#" class="desktop-item">Dropdown Menu</a>
-                    <input type="checkbox" id="showDrop">
-                    <label for="showDrop" class="mobile-item">Dropdown Menu</label>
-                    <ul class="drop-menu">
-                        <li><a href="#">Drop menu 1</a></li>
-                        <li><a href="#">Drop menu 2</a></li>
-                        <li><a href="#">Drop menu 3</a></li>
-                        <li><a href="#">Drop menu 4</a></li>
-                    </ul>
-                </li> -->
                 <li>
                     <a href="#" class="desktop-item">Services</a>
                     <input type="checkbox" id="showMega2">
@@ -101,28 +88,28 @@
                             <div class="row">
                                 <header>Cloud</header>
                                 <ul class="mega-links">
-                                    <li><a href="#">Graphics</a></li>
-                                    <li><a href="#">Vectors</a></li>
-                                    <li><a href="#">Business cards</a></li>
-                                    <li><a href="#">Custom logo</a></li>
+                                    <li><a href="#">Qu'est ce que le cloud</a></li>
+                                    <li><a href="#">titre</a></li>
+                                    <li><a href="#">titre</a></li>
+                                    <li><a href="#">titre</a></li>
                                 </ul>
                             </div>
                             <div class="row">
                                 <header>Cyber Sécurité</header>
                                 <ul class="mega-links">
-                                    <li><a href="#">Personal Email</a></li>
-                                    <li><a href="#">Business Email</a></li>
-                                    <li><a href="#">Mobile Email</a></li>
-                                    <li><a href="#">Web Marketing</a></li>
+                                    <li><a href="#">titre</a></li>
+                                    <li><a href="#">titre</a></li>
+                                    <li><a href="#">titre</a></li>
+                                    <li><a href="#">titre</a></li>
                                 </ul>
                             </div>
                             <div class="row">
                                 <header>Intelligence Artificielle</header>
                                 <ul class="mega-links">
-                                    <li><a href="#">Site Seal</a></li>
-                                    <li><a href="#">VPS Hosting</a></li>
-                                    <li><a href="#">Privacy Seal</a></li>
-                                    <li><a href="#">Website design</a></li>
+                                    <li><a href="#">titre</a></li>
+                                    <li><a href="#">titre</a></li>
+                                    <li><a href="#">titre</a></li>
+
                                 </ul>
                             </div>
                         </div>
@@ -132,6 +119,7 @@
                 <li><a href="../controllers-admin/controller-signin-admin.php">Login admin</a></li> -->
             </ul>
             <button class="login-btn">LOG IN</button>
+            <button class="login-btn" onclick="location.href='../controllers-admin/controller-signin-admin.php';">ADMIN</button>
             <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
         </div>
 
@@ -245,13 +233,13 @@
 
     <footer class="footerPage pb-3 mt-5">
         <ul class=" nav justify-content-center border-bottom">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-dark">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-dark">Conditions d'utilisation</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-dark">Contact</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-dark">Carrières</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-dark fw-bold">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-dark fw-bold">Conditions d'utilisation</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-dark fw-bold">Contact</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-dark fw-bold">Carrières</a></li>
 
         </ul>
-        <p class="text-center text-dark  mb-2 pt-1">© 2024 Tout droit réservés.</p>
+        <p class="text-center text-dark fw-bold mb-2 pt-1">© 2024 Tout droit réservés.</p>
     </footer>
 
 

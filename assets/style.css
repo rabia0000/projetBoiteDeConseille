@@ -10,9 +10,7 @@ body {
     padding: 0;
     overflow: hidden;
     box-sizing: border-box;
-
 }
-
 
 /* barre de navigation */
 nav {
@@ -20,6 +18,8 @@ nav {
     z-index: 10;
     width: 100%;
     border-bottom: 0.5px solid #fff;
+    /* background-color: rgba(237, 235, 232, 0.3); */
+    background-color: rgba(237, 235, 232, 0.3);
 }
 
 nav .wrapper {
@@ -46,7 +46,7 @@ nav .wrapper {
 
 .wrapper .logo a {
     color: #000;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
     text-decoration: none;
 
@@ -95,7 +95,7 @@ nav .wrapper {
     list-style: none;
 }
 
-/* text nav */
+/* text lien de la barre nav   */
 .nav-links li a {
     color: #000;
     text-decoration: none;
@@ -104,6 +104,7 @@ nav .wrapper {
     padding: 9px 15px;
     border-radius: 5px;
     transition: all 0.3s ease;
+
 }
 
 .nav-links li a:hover {
@@ -156,7 +157,7 @@ nav .wrapper {
 }
 
 .mega-box .content {
-    background: #242526;
+    background: #343435;
     padding: 25px 20px;
     display: flex;
     width: 100%;
@@ -220,6 +221,17 @@ nav .wrapper {
         display: block;
     }
 
+    /* 
+    .nav-links li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 17px;
+        font-weight: 700;
+        padding: 9px 15px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+
+    } */
 
     /* button login */
     .wrapper .login-btn {
@@ -250,7 +262,7 @@ nav .wrapper {
         max-width: 350px;
         top: 0;
         left: -100%;
-        background: #242526;
+        background: #343435;
         display: block;
         padding: 50px 10px;
         line-height: 50px;
@@ -289,9 +301,16 @@ nav .wrapper {
     }
 
     .nav-links li a {
+        color: #fff;
         padding: 0 20px;
         display: block;
         font-size: 19px;
+        font-size: 20px;
+        font-weight: 500;
+        padding-left: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: all 0.3s ease;
     }
 
     .nav-links .drop-menu {
@@ -750,4 +769,10 @@ video {
 
 .card-header-home-ad {
     background-color: rgba(237, 235, 232, 0.6);
+}
+
+/* footer */
+
+.footerPage {
+    background-color: rgba(237, 235, 232, 0.3);
 }
