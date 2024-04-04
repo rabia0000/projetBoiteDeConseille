@@ -65,5 +65,5 @@ $getNumberUserValidate = Admin::countTrainingValidate();
 ?>
 
 <?php
-include_once('../views-admin/view-home-admin.php');
+include_once('../views-admin/view-home-ad.php');
 ?>
