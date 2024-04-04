@@ -219,3 +219,81 @@ html {
     backdrop-filter: blur(30px);
     /* Effet de flou optionnel */
 }
+
+/* page modifier ou supprimer une formation  */
+
+.container {
+    margin: 20px auto;
+    padding-top: 10px;
+    width: 90%;
+}
+
+.title {
+    margin-top: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    text-align: center;
+    border: 1px solid #dee2e6;
+    padding: 8px;
+}
+
+.table thead {
+    background-color: #e9ecef;
+}
+
+.card {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.btn-custom,
+.btn-custom-cancel {
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.btn-custom-cancel {
+    background-color: #dc3545;
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Add more styling as needed */

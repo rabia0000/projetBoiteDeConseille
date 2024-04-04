@@ -30,30 +30,30 @@
 
         <div class="menu-items">
             <ul class="nav-links">
-                <li><a href="#">
+                <li><a href="../controllers-admin/controller-home-admin.php">
                         <i class="uil uil-estate"></i>
                         <span class="link-name">Dahsboard</span>
                     </a></li>
-                <li><a href="#">
+                <li><a href="../controllers-admin/controller-create-training.php">
                         <i class="bi bi-plus-lg"></i>
                         <span class="link-name">Ajouter une formation</span>
                     </a></li>
-                <li><a href="#">
+                <li><a href="../controllers-admin/controller-display-modify-training.php">
                         <i class="bi bi-pencil-square"></i>
                         <span class="link-name">Modifier ou supprimer une formation</span>
                     </a></li>
-                <li><a href="#">
+                <li><a href="../controllers-admin/controller-gestion-admin.php">
                         <i class="bi bi-calendar-check"></i>
                         <span class="link-name">Gérer les demandes de réservations</span>
                     </a></li>
-                <li><a href="#">
+                <li><a href="../controllers-admin/controller-completed-training.php">
                         <i class="bi bi-mortarboard"></i>
                         <span class="link-name">Certifier les formations</span>
                     </a></li>
-                <li><a href="#">
+                <!-- <li><a href="#">
                         <i class="uil uil-share"></i>
                         <span class="link-name">Share</span>
-                    </a></li>
+                    </a></li> -->
             </ul>
             <ul class="logout-mode">
                 <li><a href="#">
@@ -62,7 +62,7 @@
                     </a></li>
 
                 <ul class="logout-mode">
-                    <li><a href="#">
+                    <li><a href="../controllers/controller-deconnexion.php">
                             <i class="uil uil-signout"></i>
                             <span class="link-name">Logout</span>
                         </a></li>
