@@ -11,7 +11,7 @@
 
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="../assets/style-ad.css">
+    <link rel="stylesheet" href="../assets/style-admin-delete.css">
 
 
 </head>
@@ -148,10 +148,10 @@
                             <tbody>
                                 <?php foreach ($afficherCours as $cour) : ?>
                                     <tr>
-                                        <td><?= date('d-m-Y', strtotime($cour['training_date'])) ?></td>
-                                        <td><?= htmlspecialchars($cour['training_name']) ?></td>
-                                        <td class="d-none"><?= htmlspecialchars($cour['training_description']) ?></td>
-                                        <td><?= htmlspecialchars($cour['training_max']) ?></td>
+                                        <td class="link-name"><?= date('d-m-Y', strtotime($cour['training_date'])) ?></td>
+                                        <td class="link-name"><?= htmlspecialchars($cour['training_name']) ?></td>
+                                        <td class="link-name d-none"><?= htmlspecialchars($cour['training_description']) ?></td>
+                                        <td class="link-name"><?= htmlspecialchars($cour['training_max']) ?></td>
                                         <td>
                                             <div>
                                                 <form action="../controllers-admin/controller-update-training.php" method="POST" class="mb-2 mb-md-0 me-md-2">

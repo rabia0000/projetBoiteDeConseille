@@ -565,3 +565,134 @@ nav.close~.dashboard .top {
 
 
 }
+
+/* page de modification ou suppression formation (tableau)*/
+
+.responsive-table {
+    overflow-x: auto;
+    /* Enables horizontal scrolling for small screens */
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    /* Ensures the table takes up the full width of its container */
+    max-width: 100%;
+    /* Prevents the table from extending beyond the screen width */
+}
+
+th,
+td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 600px) {
+
+    th,
+    td {
+        padding: 15px;
+        /* Larger padding for touch screens, adjust as needed */
+    }
+}
+
+.table-container .link-name {
+    color: var(--black-light-color);
+}
+
+/* style du modal de confirmation pour modifier ou supprimer une formation */
+/* TABLEAU MODIFICATION OU ANNULATION FORMATION  */
+
+.table-container {
+    overflow-x: auto;
+    /* Permet le défilement horizontal sur les petits écrans */
+    margin-top: 20px;
+    /* Espace au-dessus du tableau */
+}
+
+table {
+    width: 100%;
+    /* Assure que le tableau prend toute la largeur du conteneur */
+    border-collapse: collapse;
+    /* Supprime l'espace entre les cellules */
+    table-layout: fixed;
+    /* Empêche le tableau de déborder du conteneur */
+}
+
+th,
+td {
+    text-align: left;
+    /* Alignement du texte */
+    padding: 8px;
+    /* Espacement interne dans les cellules */
+    border: 1px solid #ddd;
+    /* Bordure des cellules */
+}
+
+th {
+    background-color: #f8f9fa;
+    /* Couleur de fond pour les en-têtes */
+    color: #333;
+    /* Couleur du texte pour les en-têtes */
+}
+
+@media screen and (max-width: 768px) {
+    .d-none {
+        display: none !important;
+        /* Cache les colonnes non essentielles sur les petits écrans */
+    }
+
+    .d-flex {
+        flex-direction: column;
+        /* Empile les boutons verticalement sur les petits écrans */
+    }
+
+    .mb-2,
+    .me-md-2 {
+        margin-right: 0;
+        /* Supprime la marge à droite sur les petits écrans */
+    }
+}
+
+.btn-custom,
+.btn-custom-cancel {
+    padding: 6px 12px;
+    color: #fff;
+    background-color: #007bff;
+    /* Couleur bleue pour .btn-custom */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-custom-cancel {
+    background-color: #dc3545;
+    /* Couleur rouge pour .btn-custom-cancel */
+}
+
+/* Ajoute un peu d'espace entre les boutons lorsqu'ils sont empilés sur les petits écrans */
+.btn-custom:not(:last-child),
+.btn-custom-cancel:not(:last-child) {
+    margin-bottom: 10px;
+}
