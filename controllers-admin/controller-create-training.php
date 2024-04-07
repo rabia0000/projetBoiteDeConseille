@@ -44,4 +44,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 // Inclure la vue pour la création de formation
-include_once('../views-admin/view-create-training.php');
+include_once('../views-admin/view-create.php');
