@@ -11,7 +11,7 @@
 
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="../assets/style-admin-delete.css">
+    <link rel="stylesheet" href="../assets/style-gestion.css">
 
     <style>
         /* supprime les marges et paddings des éléments de la liste */
@@ -111,10 +111,10 @@
                     <span class="text">Nombre de place restante par formation</a></span>
                 </div>
 
-                <table>
+                <table class="bg-light">
                     <thead>
                         <tr class="text-center">
-                            <th scope="col-1">Nom de la formation</th>
+                            <th scope="col-1">Nom </th>
                             <th scope="col-1">Description</th>
                             <th scope="col-1">Nombre de place</th>
                             <th scope="col-1">Nombre de place restante </th>
@@ -177,11 +177,11 @@
                     <table class="table">
                         <thead>
                             <tr class="text-center">
-                                <th scope="col-1">Nom du stagière</th>
-                                <th scope="col-1">Prénom du stagière</th>
-                                <th scope="col-1">titre de la formation</th>
-                                <th scope="col-1">date de la formation </th>
-                                <th scope="col-1">status de la demande </th>
+                                <th scope="col-1">Nom</th>
+                                <th class="none" scope="col-1">Prénom</th>
+                                <th scope="col-1">Titre</th>
+                                <th scope="col-1">Date</th>
+                                <th scope="col-1">Status</th>
 
                             </tr>
                         </thead>
@@ -190,12 +190,12 @@
                             <?php foreach ($displayCoursReseved as $cour) : ?>
                                 <tr class="text-center">
                                     <td><?= htmlspecialchars($cour['user_lastname']) ?></td>
-                                    <td><?= htmlspecialchars($cour['user_firstname']) ?></td>
+                                    <td class="none"><?= htmlspecialchars($cour['user_firstname']) ?></td>
                                     <td><?= htmlspecialchars($cour['training_name']) ?></td>
                                     <td><?= date('d-m-Y', strtotime($cour['training_date'])) ?></td>
                                     <td>
                                         <div class="d-flex align-items-center justify-content-center">
-                                            <span class="me-3">En cours</span>
+                                            <!-- <span class="me-3">En cours</span> -->
                                             <div class="form-check form-switch">
                                                 <input class="form-check-input toggle-training" type="checkbox" id="monSwitch-<?= $cour['user_id'] . '-' . $cour['training_id']; ?>" data-user-id="<?= $cour['user_id']; ?>" data-training-id="<?= $cour['training_id']; ?>" <?= $cour['authorized_training'] ? 'checked' : ''; ?>>
                                             </div>

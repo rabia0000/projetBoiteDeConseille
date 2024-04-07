@@ -121,7 +121,7 @@
                 </div>
                 <div class="table-container">
                     <div class="responsive-table">
-                        <table>
+                        <table class="bg-light">
                             <thead>
                                 <tr>
                                     <th class="text-center">Date du cours</th>
@@ -134,10 +134,10 @@
                             <tbody>
                                 <?php foreach ($afficherCours as $cour) : ?>
                                     <tr>
-                                        <td class="link-name text-center"><?= date('d-m-Y', strtotime($cour['training_date'])) ?></td>
-                                        <td class="link-name text-center"><?= htmlspecialchars($cour['training_name']) ?></td>
-                                        <td class="none link-name  text-center"><?= htmlspecialchars($cour['training_description']) ?></td>
-                                        <td class="link-name text-center"><?= htmlspecialchars($cour['training_max']) ?></td>
+                                        <td class="link-name text-center text-dark"><?= date('d-m-Y', strtotime($cour['training_date'])) ?></td>
+                                        <td class="link-name text-center text-dark"><?= htmlspecialchars($cour['training_name']) ?></td>
+                                        <td class="none link-name  text-center text-dark"><?= htmlspecialchars($cour['training_description']) ?></td>
+                                        <td class="link-name text-center text-dark"><?= htmlspecialchars($cour['training_max']) ?></td>
                                         <td class="">
                                             <div class="btn-group">
                                                 <form action="../controllers-admin/controller-update-training.php" method="POST" class="button-form">
