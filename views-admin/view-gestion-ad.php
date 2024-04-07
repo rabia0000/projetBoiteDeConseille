@@ -172,7 +172,7 @@
                 <div class="activity">
                     <div class="title">
                         <i class="uil uil-clock-three"></i>
-                        <span class="text">Rechercher par type</span>
+                        <span class="text">Demande de réservation</span>
                     </div>
                     <table class="table">
                         <thead>

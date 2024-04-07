@@ -123,7 +123,7 @@
                     </div>
                     <div class="box box3">
                         <i class="uil uil-share"></i>
-                        <span class="text">Total des cours complétés avec succès</span>
+                        <span class="text">Total des cours réussies</span>
                         <span class="number"><?php if (!empty($getNumberUserValidate)) : ?>
                                 <span class="number"><?= $getNumberUserValidate[0]['training_finished'] ?></span>
                             <?php else : ?>

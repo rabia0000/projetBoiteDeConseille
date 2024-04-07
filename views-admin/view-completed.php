@@ -117,7 +117,7 @@
                         <div class="row">
                             <div class="col-md-6 mx-auto">
                                 <div class="input-group">
-                                    <select name="training_id" class="form-control me-1">
+                                    <select name="training_id" class="form-control search-text me-1 fs-6">
                                         <option value="">Sélectionnez une formation</option>
                                         <?php foreach ($DisplayAllTraining as $training) {
                                             echo "<option value='" . $training['training_id'] . "'>" . $training['training_name'] . "</option>";

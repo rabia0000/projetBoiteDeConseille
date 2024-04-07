@@ -1161,7 +1161,7 @@ th {
     /* Ajuste la taille de la police pour les cellules du tableau */
     .table th,
     .table td {
-        font-size: 12px;
+        font-size: 10px;
         /* Réduit la taille de la police pour les cellules du tableau */
     }
 
@@ -1187,6 +1187,27 @@ th {
         font-size: 10px;
         /* Réduit la taille de la police pour les textes à côté du switch */
     }
+
+    /* input de recherche */
+    .input-group .btn-custom {
+        padding: 5px 10px;
+        /* Réduit le padding pour rendre le bouton plus petit */
+        font-size: 14px;
+        /* Optionnel : Réduit la taille de la police si nécessaire */
+        height: 40px;
+        /* Ajuste la hauteur du bouton si nécessaire */
+    }
+
+    /* Ajustements pour le champ select */
+    .input-group .form-control {
+        font-size: 16px;
+        /* Ajuste la taille de la police pour le select */
+        height: 40px;
+        /* Ajuste la hauteur du select pour correspondre à celle du bouton */
+    }
+
+    /* texte a l'interieur de l'input */
+
 
 
 }
