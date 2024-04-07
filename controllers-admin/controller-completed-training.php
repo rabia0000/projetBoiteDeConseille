@@ -39,4 +39,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $displayAuthorizedUsers  = Admin::TrainingSort($_POST['training_id']);
 }
 
-require_once('../views-admin/view-completed-training.php');
+require_once('../views-admin/view-completed.php');

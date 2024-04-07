@@ -36,7 +36,7 @@ foreach ($inscriptionsParType as $inscription) {
 
 //Affichage du nb de demande de stage : 
 
-$nombreInscriptions = Admin::getNomberInscriptions();
+$nombreInscriptions = Admin::getNumberInscriptions();
 
 //second bar chart : 
 

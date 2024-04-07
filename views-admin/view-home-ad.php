@@ -104,8 +104,8 @@
                     <div class="box box1">
                         <i class="uil uil-thumbs-up"></i>
                         <span class="text">Nombre de formation réservées</span>
-                        <span class="number"><?php if (!empty($displayReservedTraining)) : ?>
-                                <span><?= $displayReservedTraining['nombre_de_reservation']; ?></span>
+                        <span class="number"><?php if (!empty($nombreInscriptions)) : ?>
+                                <span class="number"><?= $nombreInscriptions['Nombre_total_de_demande_de_formation']; ?></span>
                             <?php else : ?>
                                 <p>0</p>
                             <?php endif; ?>

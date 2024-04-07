@@ -522,20 +522,20 @@ class Admin
      * Methode permettant de compter le nombre de demande de formation
      * 
      */
-    public static function getNomberInscriptions()
+    public static function getNumberInscriptions()
     {
         try {
             // Création d'un objet $db selon la classe PDO
             $bdd = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
             // stockage de ma requete dans une variable
-            $sql =  "SELECT COUNT(*) AS 'Nombre total de demande de formation'
+            $sql =  "SELECT COUNT(*) AS 'Nombre_total_de_demande_de_formation'
             FROM to_register";
 
             $query = $bdd->prepare($sql);
 
             $query->execute();
 
-            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            $result = $query->fetch(PDO::FETCH_ASSOC);
 
             return $result;
         } catch (PDOException $e) {
