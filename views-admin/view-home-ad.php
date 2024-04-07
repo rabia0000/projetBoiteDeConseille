@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+
 <html lang="en">
 
 <head>
@@ -138,12 +138,7 @@
                     <i class="uil uil-clock-three"></i>
                     <span class="text">Analyse des activités</span>
                 </div>
-
-
-
             </div>
-
-
 
             <div id="chartContainer" class="chart">
                 <h3>Les cours les plus demandés</h3>

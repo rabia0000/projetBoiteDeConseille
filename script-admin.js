@@ -34,6 +34,8 @@ sidebarToggle.addEventListener("click", () => {
 // PAGE modifier ou supprimer un cours
 
 // modal de confirmation :
+
+// modal de confirmation : 
 document.addEventListener('DOMContentLoaded', (event) => {
     var confirmationModal = document.getElementById('confirmationModal');
     confirmationModal.addEventListener('show.bs.modal', function (event) {
@@ -45,4 +47,3 @@ document.addEventListener('DOMContentLoaded', (event) => {
         document.getElementById('courseName').textContent = courseName; // Insère le nom du cours dans le modal
     });
 });
-

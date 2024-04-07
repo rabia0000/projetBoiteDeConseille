@@ -21,3 +21,5 @@ if (isset($_POST['delete'])) {
 
 
 include_once '../views-admin/view-confirmationDelete.php';
+
+// include_once '../views-admin/view-display-modify-training.php';

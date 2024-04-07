@@ -1,6 +1,24 @@
 /* ===== Google Font Import - Poppins ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Si vous souhaitez également supprimer les marges et paddings des éléments de la liste */
+ul.nav-links,
+ul.logout-mode,
+li {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style-type: none;
+    /* Supprime les puces des listes */
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -130,7 +148,7 @@ nav .menu-items {
 .menu-items li a {
     display: flex;
     align-items: center;
-    height: 80px;
+    height: 70px;
     text-decoration: none;
     position: relative;
 }
@@ -228,6 +246,7 @@ body.dark .nav-links li a:hover .link-name {
 body.dark .switch:before {
     left: 20px;
 }
+
 
 
 .dashboard {
