@@ -180,48 +180,48 @@
         <?php endif; ?>
 
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                // Réactiver les boutons désactivés basés sur le stockage local
-                if (localStorage.getItem('reservedCourses')) {
-                    const reservedCourses = JSON.parse(localStorage.getItem('reservedCourses'));
-                    reservedCourses.forEach(function(trainingId) {
-                        const button = document.querySelector(`button[data-training-id="${trainingId}"]`);
-                        if (button) {
-                            button.disabled = true;
-                            button.textContent = 'Déjà réservé';
-                        }
-                    });
-                }
+            // document.addEventListener('DOMContentLoaded', function() {
+            //     // Réactiver les boutons désactivés basés sur le stockage local
+            //     if (localStorage.getItem('reservedCourses')) {
+            //         const reservedCourses = JSON.parse(localStorage.getItem('reservedCourses'));
+            //         reservedCourses.forEach(function(trainingId) {
+            //             const button = document.querySelector(`button[data-training-id="${trainingId}"]`);
+            //             if (button) {
+            //                 button.disabled = true;
+            //                 button.textContent = 'Déjà réservé';
+            //             }
+            //         });
+            //     }
 
-                document.querySelectorAll('.preReservationButton').forEach(function(button) {
-                    button.addEventListener('click', function(event) {
-                        event.preventDefault(); // Empêcher la soumission standard du formulaire
-                        const form = button.closest('form'); // Trouver le formulaire le plus proche du bouton
-                        const trainingId = form.querySelector('input[name="training_id"]').value;
-                        const formData = new FormData(form);
+            //     document.querySelectorAll('.preReservationButton').forEach(function(button) {
+            //         button.addEventListener('click', function(event) {
+            //             event.preventDefault(); // Empêcher la soumission standard du formulaire
+            //             const form = button.closest('form'); // Trouver le formulaire le plus proche du bouton
+            //             const trainingId = form.querySelector('input[name="training_id"]').value;
+            //             const formData = new FormData(form);
 
-                        // Envoyer les données du formulaire via AJAX
-                        fetch(form.action, {
-                                method: 'POST',
-                                body: formData
-                            })
-                            .then(response => response.text())
-                            .then(data => {
-                                alert('Pré-réservation réussie !');
-                                button.disabled = true;
-                                button.textContent = 'Déjà réservé';
+            //             // Envoyer les données du formulaire via AJAX
+            //             fetch(form.action, {
+            //                     method: 'POST',
+            //                     body: formData
+            //                 })
+            //                 .then(response => response.text())
+            //                 .then(data => {
+            //                     alert('Pré-réservation réussie !');
+            //                     button.disabled = true;
+            //                     button.textContent = 'Déjà réservé';
 
-                                // Enregistrer l'état dans le stockage local
-                                let reservedCourses = localStorage.getItem('reservedCourses') ? JSON.parse(localStorage.getItem('reservedCourses')) : [];
-                                reservedCourses.push(trainingId);
-                                localStorage.setItem('reservedCourses', JSON.stringify(reservedCourses));
-                            })
-                            .catch(error => {
-                                console.error('Erreur lors de la soumission :', error);
-                            });
-                    });
-                });
-            });
+            //                     // Enregistrer l'état dans le stockage local
+            //                     let reservedCourses = localStorage.getItem('reservedCourses') ? JSON.parse(localStorage.getItem('reservedCourses')) : [];
+            //                     reservedCourses.push(trainingId);
+            //                     localStorage.setItem('reservedCourses', JSON.stringify(reservedCourses));
+            //                 })
+            //                 .catch(error => {
+            //                     console.error('Erreur lors de la soumission :', error);
+            //                 });
+            //         });
+            //     });
+            // });
         </script>
 
 

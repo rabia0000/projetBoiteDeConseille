@@ -39,5 +39,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 ?>
 <?php
-require_once('../views-admin/view-gestion-admin.php');
+require_once('../views-admin/view-gestion-ad.php');
 ?>

@@ -124,42 +124,34 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Date du cours</th>
-                                    <th>Nom du cours</th>
-                                    <th class="d-none">Description</th>
-                                    <th>Participants max</th>
-                                    <th>Actions</th>
+                                    <th class="text-center">Date du cours</th>
+                                    <th class="text-center">Nom du cours</th>
+                                    <th class="none text-center">Description</th>
+                                    <th class="text-center">Participants max</th>
+                                    <th class="text-center">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php foreach ($afficherCours as $cour) : ?>
                                     <tr>
-                                        <td class="link-name"><?= date('d-m-Y', strtotime($cour['training_date'])) ?></td>
-                                        <td class="link-name"><?= htmlspecialchars($cour['training_name']) ?></td>
-                                        <td class="link-name d-none"><?= htmlspecialchars($cour['training_description']) ?></td>
-                                        <td class="link-name"><?= htmlspecialchars($cour['training_max']) ?></td>
-                                        <td>
-                                            <div>
-                                                <form action="../controllers-admin/controller-update-training.php" method="POST" class="mb-2 mb-md-0 me-md-2">
+                                        <td class="link-name text-center"><?= date('d-m-Y', strtotime($cour['training_date'])) ?></td>
+                                        <td class="link-name text-center"><?= htmlspecialchars($cour['training_name']) ?></td>
+                                        <td class="none link-name  text-center"><?= htmlspecialchars($cour['training_description']) ?></td>
+                                        <td class="link-name text-center"><?= htmlspecialchars($cour['training_max']) ?></td>
+                                        <td class="">
+                                            <div class="btn-group">
+                                                <form action="../controllers-admin/controller-update-training.php" method="POST" class="button-form">
                                                     <input type="hidden" name="training_id" value="<?= $cour['training_id'] ?>">
                                                     <button type="submit" class="btn btn-custom">Modifier</button>
                                                 </form>
-                                                <!-- <form action="../controllers-admin/controller-confirmationDelete.php" method="POST">
-                                                    <input type="" name="training_id" value="<?= $cour['training_id'] ?>">
-                                                    <button type="button" class="btn btn-custom-cancel" data-bs-toggle="modal" data-bs-target="#confirmationModal" data-training-id="<?= $cour['training_id'] ?>" data-course-name="<?= htmlspecialchars($cour['training_name']) ?>">Supprimer</button>
-                                                </form> -->
-                                                <!-- <form action="../controllers-admin/controller-display-modify-training.php" method="POST">
-                                                    <input type="hidden" name="training_id" value="<?= $cour['training_id'] ?>">
-                                                    <button type="button" class="btn btn-custom-cancel" data-bs-toggle="modal" data-bs-target="#confirmationModal" data-training-id="<?= $cour['training_id'] ?>" data-course-name="<?= htmlspecialchars($cour['training_name']) ?>">Supprimer</button>
-                                                </form> -->
 
-                                                <form action="../controllers-admin/controller-display-modify-training.php" method="POST">
+                                                <form action="../controllers-admin/controller-display-modify-training.php" method="POST" class="button-form">
                                                     <input type="hidden" name="training_id" value="<?= $cour['training_id'] ?>">
                                                     <button type="button" class="btn btn-custom-cancel" data-bs-toggle="modal" data-bs-target="#confirmationModal" data-training-id="<?= $cour['training_id'] ?>" data-course-name="<?= htmlspecialchars($cour['training_name']) ?>">Supprimer</button>
                                                 </form>
-
                                             </div>
                                         </td>
+
                                     </tr>
                                 <?php endforeach; ?>
                                 </tr>
@@ -178,7 +170,7 @@
                     <h5 class="modal-title text-center" id="modalLabel">Confirmation de Suppression</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body text-danger">
+                <div class="modal-body text-primary">
                     Êtes-vous sûr de vouloir supprimer le cours : <span id="courseName" class="fw-bold text-danger"></span> ?
                 </div>
                 <div class="modal-footer">
