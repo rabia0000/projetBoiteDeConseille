@@ -665,9 +665,11 @@ th {
         gap: 3px;
     }
 
-    .table-container {
-        margin: 0 -15px;
+
+    .none {
+        display: none;
     }
+
 }
 
 @media (max-width: 768px) {
@@ -715,6 +717,9 @@ th {
         /* Centre le bouton dans le conteneur .button-form si nécessaire */
     }
 
+    .none {
+        display: none;
+    }
 
 }
 
@@ -790,9 +795,7 @@ th {
         gap: 1px;
     }
 
-    .table-container {
-        margin: 0 -15px;
-    }
+
 
     .responsive-table {
         width: calc(100% + 10px);

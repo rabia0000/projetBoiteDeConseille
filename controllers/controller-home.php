@@ -38,4 +38,4 @@ $countCompletedTraining = Training::countTrainingValidate($userId);
 $displayUpCommingTraining = Training::displayUpcommingTraining($userId);
 
 // Inclusion de la vue du dashboard
-include_once '../views/view-home.php';
+include_once '../views/view-h.php';

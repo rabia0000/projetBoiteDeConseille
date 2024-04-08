@@ -27,4 +27,4 @@ if (isset($_POST['training_id'])) {
 }
 
 
-require_once '../views/view-booking.php';
+require_once '../views/view-b.php';
