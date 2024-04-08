@@ -41,7 +41,7 @@
 
         <div class="menu-items">
             <ul class="nav-links">
-                <li><a href="../controllers/controller-h.php">
+                <li><a href="../controllers/controller-home.php">
                         <i class="uil uil-estate"></i>
                         <span class="link-name">Dashboard</span>
                     </a></li>
@@ -53,7 +53,7 @@
                         <i class="bi bi-pencil-square"></i>
                         <span class="link-name">Voir vos formations réservées</span>
                     </a></li>
-                <li><a href="../controllers-admin/controller-gestion-admin.php">
+                <li><a href="../controllers/controller-completed-training.php">
                         <i class="bi bi-mortarboard"></i>
                         <span class="link-name">Voir vos formations complétées</span>
                     </a></li>

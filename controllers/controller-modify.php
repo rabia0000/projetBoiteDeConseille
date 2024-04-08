@@ -27,4 +27,4 @@ if (isset($_POST['cancel']) && isset($_POST['training_id'])) {
     }
 }
 
-include_once "../views/view-modify.php";
+include_once "../views/view-validate.php";
