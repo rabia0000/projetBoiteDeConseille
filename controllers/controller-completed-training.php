@@ -18,4 +18,4 @@ $displayCompletedTraining = Training::displayTrainingValidate($userId);
 
 
 
-include_once '../views/view-completed-training.php';
+include_once '../views/view-completed.php';
