@@ -168,7 +168,7 @@
                     <h4>Formation archivé ?</h4>
                 </label>
                 <select class="form-control transparent-input" id="trainingArchived" name="trainingArchived" value=''>
-                    <option value="0">Non</option>
+                    <option value="0" selected class='text-dark'>Non</option>
                     <option value="1">Oui</option>
                 </select>
             </div>
@@ -227,6 +227,8 @@
             </div>
         </div>
     </div>
+
+
 </body>
 
 </html>

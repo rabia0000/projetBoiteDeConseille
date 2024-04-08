@@ -41,4 +41,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-include_once('../views-admin/view-update-training.php');
+include_once('../views-admin/view-update.php');

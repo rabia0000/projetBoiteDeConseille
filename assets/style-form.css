@@ -304,7 +304,10 @@ nav.close~.dashboard .top {
     color: var(--black-light-color);
 }
 
-
+.top img {
+    width: 40px;
+    border-radius: 50%;
+}
 
 .dashboard .dash-content {
     padding-top: 50px;
@@ -334,6 +337,94 @@ nav.close~.dashboard .top {
     font-weight: 500;
     color: var(--text-color);
     margin-left: 10px;
+}
+
+.dash-content .boxes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.dash-content .boxes .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+    width: calc(100% / 3 - 15px);
+    padding: 15px 20px;
+    background-color: var(--box1-color);
+    transition: var(--tran-05);
+}
+
+.boxes .box i {
+    font-size: 35px;
+    color: var(--text-color);
+}
+
+.boxes .box .text {
+    white-space: nowrap;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.boxes .box .text-info {
+    font-size: 27px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.boxes .box .number {
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.boxes .box.box2 {
+    background-color: var(--box2-color);
+}
+
+.boxes .box.box3 {
+    background-color: var(--box3-color);
+}
+
+.dash-content .activity .activity-data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.activity .activity-data {
+    display: flex;
+}
+
+.activity-data .data {
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px;
+}
+
+.activity-data .data-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.activity-data .data .data-list {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 20px;
+    white-space: nowrap;
+    color: var(--text-color);
+}
+
+#myBarChart {
+    width: 60% !important;
+    height: 400px !important;
+    /* Assurez-vous de définir une hauteur explicite */
+    margin: auto;
 }
 
 .text {
@@ -473,6 +564,18 @@ nav.close~.dashboard .top {
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 .select-container {
     display: flex;
     flex-direction: column;
@@ -489,7 +592,7 @@ nav.close~.dashboard .top {
     /* Ajuste la taille de la police de l'input */
     padding: 0.5rem 1rem;
     /* Augmente le padding pour un input plus grand */
-    margin-top: 20px;
+    margin-top: 30px;
     /* Espace entre le label et le select */
 }
 
@@ -498,12 +601,12 @@ nav.close~.dashboard .top {
 .input-form {
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     /* Ajoute de l'espace entre les champs */
 }
 
 .input-form label h4 {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     /* Espacement entre le label et le champ */
 }
 
@@ -511,7 +614,7 @@ nav.close~.dashboard .top {
 .form-control {
     width: 100%;
     /* Assure que les champs occupent toute la largeur du conteneur */
-    height: 25px;
+    height: 45px;
     /* Ajuste la hauteur totale des champs input et select */
     padding: 12px;
     /* Ajuste le padding pour augmenter l'espace à l'intérieur des champs */

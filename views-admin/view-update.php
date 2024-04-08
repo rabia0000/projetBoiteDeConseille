@@ -100,28 +100,29 @@
             <div class="">
                 <div class="title">
                     <i class="uil uil-tachometer-fast-alt"></i>
-                    <span class="text">Ajouter une formation</a></span>
+                    <span class="text">Modifier une formation</a></span>
                 </div>
                 <div class="form-content">
 
-                    <form method="POST" action="../controllers-admin/controller-create-training.php" novalidate>
+                    <form method="POST" action="../controllers-admin/controller-update-training.php" novalidate>
+                        <input type="hidden" name="training_id" value="<?= $trainingInfos['training_id'] ?? '' ?>">
                         <div class="input-form text ">
                             <label for="trainingType">
                                 <h6>Type de formation</h6>
                             </label>
-                            <select name="trainingType" id="trainingType" class="input-form text" required>
-                                <option value="selected" <?php echo (empty($_POST['trainingType']) || $_POST['trainingType'] === "selected") ? 'selected' : ''; ?>>Selectionner un type de cours</option>
-                                <?php foreach ($trainingOfType as $type) { ?>
-                                    <option class="text-dark" value="<?= htmlspecialchars($type['type_id'], ENT_QUOTES, 'UTF-8') ?>" <?php echo (isset($_POST['trainingType']) && $_POST['trainingType'] === $type['type_id']) ? 'selected' : ''; ?>>
-                                        <?= htmlspecialchars($type['type_name'], ENT_QUOTES, 'UTF-8') ?>
+                            <select class="form-control transparent-input mb-2" name="training_type" id="trainingType" required>
+                                <option value="">Sélectionner un type de formation</option>
+                                <?php foreach ($trainingt as $type) { ?>
+                                    <option value="<?= htmlspecialchars($type['type_id']) ?>" <?= (isset($trainingType) && $trainingType == $type['type_id']) ? 'selected' : '' ?>>
+                                        <?= htmlspecialchars($type['type_name']) ?>
                                     </option>
                                 <?php } ?>
                             </select>
-                            <span class="error text-danger">
-                                <?php if (isset($errors['trainingType'])) {
-                                    echo $errors['trainingType'];
+                            <!-- <span class="error text-danger">
+                                <?php if (isset($errors['training_type'])) {
+                                    echo $errors['training_type'];
                                 } ?>
-                            </span>
+                            </span> -->
 
                         </div>
 
@@ -129,72 +130,74 @@
                             <label for="trainingName">
                                 <h6>Nom de la formation</h6>
                             </label>
-                            <input type="text" class="form-control transparent-input" id="trainingName" name="trainingName" value="<?= isset($_POST['trainingName']) ? htmlspecialchars($_POST['trainingName']) : '' ?>" required>
-                            <span class="error text-danger">
-                                <?php if (isset($errors['trainingName'])) {
-                                    echo $errors['trainingName'];
+                            <input type="text" class="form-control transparent-input mb-3" id="trainingName" name="training_name" value="<?= $trainingInfos['training_name'] ?? '' ?>" required>
+                            <!-- <span class="error text-danger">
+                                <?php if (isset($errors['training_name'])) {
+                                    echo $errors['training_name'];
                                 } ?>
-                            </span><br>
+                            </span><br> -->
                         </div>
 
                         <div class="input-form text">
                             <label for="trainingDate">
                                 <h6>Date de la formation</h6>
                             </label>
-                            <input type="date" class="form-control transparent-input" id="trainingDate" name="trainingDate" value="<?= isset($_POST['trainingDate']) ? htmlspecialchars($_POST['trainingDate']) : '' ?>" required>
-                            <span class="error text-danger">
-                                <?php if (isset($errors['trainingDate'])) {
-                                    echo $errors['trainingDate'];
+                            <input type="date" class="form-control transparent-input" id="trainingDate" name="training_date" value="<?= $trainingInfos['training_date'] ?? '' ?>" required>
+                            <!-- <span class="error text-danger">
+                                <?php if (isset($errors['training_date'])) {
+                                    echo $errors['training_date'];
                                 } ?>
-                            </span><br>
+                            </span><br> -->
                         </div>
 
                         <div class="input-form text">
                             <label>
                                 <h6>Description</h6>
                             </label>
-                            <textarea class="form-control transparent-input" id="trainingDescription" name="trainingDescription" value="<?= isset($_POST['trainingDescription']) ? htmlspecialchars($_POST['trainingDescription']) : '' ?>" rows="3" required></textarea>
-                            <span class="error text-danger">
-                                <?php if (isset($errors['trainingDescription'])) {
-                                    echo $errors['trainingDescription'];
+                            <textarea class="form-control transparent-input" id="trainingDescription" name="training_description" rows="3" required><?= $trainingInfos['training_description'] ?? '' ?></textarea>
+                            <!-- <span class="error text-danger">
+                                <?php if (isset($errors['training_description'])) {
+                                    echo $errors['training_description'];
                                 } ?>
-                            </span><br>
+                            </span><br> -->
                         </div>
 
                         <div class="input-form  text">
                             <label>
                                 <h6>Nombre de place</h6>
                             </label>
-                            <input type="number" class="form-control transparent-input" id="trainingMax" name="trainingMax" value="<?= isset($_POST['trainingMax']) ? ($_POST['trainingMax']) : '' ?>" required>
-                            <span class="error text-danger">
-                                <?php if (isset($errors['trainingMax'])) {
-                                    echo $errors['trainingMax'];
+                            <input type="number" class="form-control transparent-input" id="trainingMax" name="training_max" value="<?= $trainingInfos['training_max'] ?? '' ?>" required>
+                            <!-- <span class="error text-danger">
+                                <?php if (isset($errors['training_max'])) {
+                                    echo $errors['training_max'];
                                 } ?>
-                            </span><br>
+                            </span><br> -->
                         </div>
 
                         <div class="input-form text">
                             <label for="trainingUrl">
                                 <h6>URL</h6>
                             </label>
-                            <input type="text" class="form-control transparent-input" id="trainingUrl" name="trainingUrl" value="<?= isset($_POST['trainingUrl']) ? htmlspecialchars($_POST['trainingUrl']) : '' ?>" required>
-                            <span class="error text-danger">
-                                <?php if (isset($errors['trainingUrl'])) {
-                                    echo $errors['trainingUrl'];
+                            <input type="text" class="form-control transparent-input" id="trainingUrl" name="training_url" value="<?= $trainingInfos['training_name'] ?? '' ?>" required>
+                            <!-- <span class="error text-danger">
+                                <?php if (isset($errors['training_url'])) {
+                                    echo $errors['training_url'];
                                 } ?>
-                            </span><br>
+                            </span><br> -->
                         </div>
                         <div class="input-form text">
                             <label for="trainingArchived">
                                 <h6>Formation archivé ?</h6>
                             </label>
-                            <select class="form-control transparent-input" id="trainingArchived" name="trainingArchived" value="<?= isset($_POST['trainingArchived']) ? ($_POST['trainingArchived']) : '' ?>">
-                                <option value="0" selected>Non</option>
-                                <option value="1">Oui</option>
+                            <select class="form-control transparent-input" id="trainingArchived" name="training_archived" required>
+                                <option value="0" <?= isset($trainingInfos['training_archived']) && !$trainingInfos['training_archived'] ? 'selected' : '' ?>>Non</option>
+                                <option value="1" <?= isset($trainingInfos['training_archived']) && $trainingInfos['training_archived'] ? 'selected' : '' ?>>Oui</option>
                             </select>
                         </div>
 
-                        <input type="submit" value="ajouter formation" class="btn btn-dark mt-3 text-center ">
+                        <div class="text-center mt-4">
+                            <button type="submit" name="update" class="btn btn-custom fw-semibold btn-lg">Modifier</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -220,11 +223,11 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="confirmationModalLabel">Cours ajouté</h5>
+                    <h5 class="modal-title" id="confirmationModalLabel">Confirmation</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Votre cours a bien été ajouté.
+                    La formation a été modifiée avec succès.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
@@ -232,8 +235,24 @@
             </div>
         </div>
     </div>
-    <script src="../script-admin.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <?php if (isset($_SESSION['ajoutReussi']) && $_SESSION['ajoutReussi']) : ?>
+        <script>
+            document.addEventListener('DOMContentLoaded', (event) => {
+                var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+                confirmationModal.show();
+
+                // Écouter l'événement de fermeture du modal
+                document.getElementById('confirmationModal').addEventListener('hidden.bs.modal', function(event) {
+                    window.location.href = 'controller-display-modify-training.php'; // Redirigez vers la page souhaitée ici
+                });
+            });
+        </script>
+        <?php
+        // Réinitialiser ou supprimer la variable de session après l'affichage du modal
+        unset($_SESSION['ajoutReussi']);
+        ?>
+    <?php endif; ?>
+
 
 </body>
 

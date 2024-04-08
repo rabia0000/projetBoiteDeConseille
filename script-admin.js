@@ -45,3 +45,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
         document.getElementById('courseName').textContent = courseName; // Insère le nom du cours dans le modal
     });
 });
+

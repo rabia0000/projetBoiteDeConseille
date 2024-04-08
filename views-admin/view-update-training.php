@@ -144,7 +144,7 @@
                     <label for="trainingUrl">
                         <h4>URL de formation:</h4>
                     </label>
-                    <input type="text" class="form-control transparent-input" id="trainingUrl" name="training_url" value="<?= $trainingInfos['training_name'] ?? '' ?>" required>
+                    <input type="text" class="form-control transparent-input" id="trainingUrl" name="training_url" value="<?= $trainingInfos['training_url'] ?? '' ?>" required>
                 </div>
             </div>
 
