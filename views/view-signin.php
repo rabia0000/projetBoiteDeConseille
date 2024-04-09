@@ -19,7 +19,7 @@
 </head>
 
 
-<body>
+<body data-form-type="<?php echo $formType; ?>" data-login-errors='<?php echo json_encode($loginErrors); ?>' data-signup-errors='<?php echo json_encode($signupErrors); ?>'>
     <!-- video -->
 
     <div class="video-background">
@@ -118,7 +118,7 @@
                 <!-- <li><a href="../controllers/controller-signin.php">Login</a></li>
                 <li><a href="../controllers-admin/controller-signin-admin.php">Login admin</a></li> -->
             </ul>
-            <button class="login-btn">LOG IN</button>
+            <button class="login-btn" id="open-login-btn">LOG IN</button>
             <button class="login-btn" onclick="location.href='../controllers-admin/controller-signin-admin.php';">ADMIN</button>
             <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
         </div>
@@ -137,12 +137,13 @@
             <div class="form-content">
                 <h2>LOGIN</h2>
                 <form class="row" method="POST" action="../controllers/controller-signin.php" novalidate>
+                    <input type="hidden" name="formType" value="login">
                     <div class="input-field">
                         <input type="email" id="email" name="email" value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>" required>
                         <label>Email</label>
                         <span class="error">
-                            <?php if (isset($errors['email'])) {
-                                echo $errors['email'];
+                            <?php if (isset($loginErrors['email'])) {
+                                echo $loginErrors['email'];
                             } ?>
                         </span>
                     </div>
@@ -151,8 +152,8 @@
                         <input type="password" id="password" name="password" required>
                         <label>Password</label>
                         <span class="error text-danger">
-                            <?php if (isset($errors['password'])) {
-                                echo $errors['password'];
+                            <?php if (isset($loginErrors['password'])) {
+                                echo $loginErrors['password'];
                             } ?>
                         </span>
 
@@ -175,19 +176,27 @@
             </div>
             <div class="form-content">
                 <h2>SIGNUP</h2>
-                <form method="POST" action="controller-signup.php" novalidate>
+                <form method="POST" action="../controllers/controller-signin.php" novalidate>
+                    <input type="hidden" name="formType" value="signup">
+
                     <div class="input-field">
                         <input type="text" id="name" name="name" value="<?= isset($_POST['name']) ? htmlspecialchars($_POST['name']) : '' ?>" required>
                         <label>Nom</label>
+                        <?php if (isset($signupErrors['name'])) : ?>
+                            <span class="error"><?= htmlspecialchars($signupErrors['name']); ?></span>
+                        <?php endif; ?>
                     </div>
                     <div class="input-field">
                         <input type="text" id="prenom" name="prenom" value="<?= isset($_POST['prenom']) ? htmlspecialchars($_POST['prenom']) : '' ?>" required>
                         <label>Prénom</label>
+                        <?php if (isset($signupErrors['prenom'])) : ?>
+                            <span class="error"><?= htmlspecialchars($signupErrors['prenom']); ?></span>
+                        <?php endif; ?>
                     </div>
                     <div class="input-field">
                         <input type="email" id="email" name="email" value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>" required>
-                        <?php if (isset($errors['email'])) {
-                            echo $errors['email'];
+                        <?php if (isset($signupErrors['email'])) {
+                            echo $signupErrors['email'];
                         } ?>
                         </span>
                         <label>Entrer votre email</label>
@@ -197,8 +206,8 @@
                         <input type="password" id="password" name="password" required>
                         <label>Password</label>
                         <span class="error text-danger">
-                            <?php if (isset($errors['password'])) {
-                                echo $errors['password'];
+                            <?php if (isset($signupErrors['password'])) {
+                                echo $signupErrors['password'];
                             } ?>
                         </span>
                     </div>
@@ -206,16 +215,21 @@
                         <input type="password" id="confirm_password" name="confirm_password" required>
                         <label>Confirm Password</label>
                         <span class="error ">
-                            <?php if (isset($errors['confirm_password'])) {
-                                echo $errors['confirm_password'];
+                            <?php if (isset($signupErrors['confirm_password'])) {
+                                echo $signupErrors['confirm_password'];
                             } ?>
                         </span><br><br>
                     </div>
-                    <div class="policy-text">
-                        <input type="checkbox" name="cgu" id="policy" required></label>
-                        <label for="policy"></label>
-                        J'accepte les
-                        <a href="#"> cgu</a>
+                    <div class="policy">
+                        <input type="checkbox" name="cgu" id="policy" required>
+                        <label for="policy">J'accepte les <a href="#">CGU</a></label>
+                        <br>
+                        <span class="error">
+                            <?php if (isset($signupErrors['cgu'])) : ?>
+                                <?= htmlspecialchars($signupErrors['cgu']); ?>
+                            <?php endif; ?>
+                        </span>
+                        <br>
                     </div>
                     <button type="submit">Sign Up</button>
                 </form>
@@ -243,21 +257,19 @@
     </footer>
 
 
-
-    <!-- Modal -->
     <div class="modal" tabindex="-1" id="signupSuccessModal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
+                    <h5 class="modal-title">Inscription réussie</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Votre inscription à bien été pris en compte, vous pouvez maintenant vous connectez.</p>
+                    <p>Vous pouvez maintenant vous connectez</p>
                 </div>
                 <div class="modal-footer">
-                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
-                    <button type="button" class="btn btn-primary">Se connecter</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+
                 </div>
             </div>
         </div>
@@ -268,94 +280,61 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script defer>
         document.addEventListener("DOMContentLoaded", function() {
-            //pop up de connection 
+            const formType = document.body.getAttribute('data-form-type');
+            const loginErrors = JSON.parse(document.body.getAttribute('data-login-errors') || '{}');
+            const signupErrors = JSON.parse(document.body.getAttribute('data-signup-errors') || '{}');
 
             const showPopupBtn = document.querySelector(".login-btn");
             const hidePopupBtn = document.querySelector(".form-popup .close-btn");
             const formPopup = document.querySelector(".form-popup");
             const signupLoginLink = document.querySelectorAll(".form-content a");
 
+            // Gestion de l'affichage des popups basée sur le type de formulaire et les erreurs
+            if ((formType === 'login' && Object.keys(loginErrors).length > 0) || (formType === 'signup' && Object.keys(signupErrors).length > 0)) {
+                document.body.classList.add("show-popup");
+                formPopup.classList.toggle('show-signup', formType === 'signup');
+            }
 
-            // voir login popup
             showPopupBtn.addEventListener("click", () => {
                 document.body.classList.toggle("show-popup");
             });
-            //fermer la popup
-            hidePopupBtn.addEventListener("click", () => showPopupBtn.click());
 
+            hidePopupBtn.addEventListener("click", () => {
+                document.body.classList.remove("show-popup");
+                // Reset des champs input à déplacer si nécessaire, basé sur votre logique d'UI
+            });
 
             signupLoginLink.forEach(link => {
                 link.addEventListener("click", (e) => {
                     e.preventDefault(); // Empêche le comportement par défaut du lien
-                    // console.log(link.id);
-
-                    //si le click est sur signup alors on ajoute la classe "show-signup" dans le formulaire popup (form popup)sinon on le retire
-                    formPopup.classList[link.id === "signup-link" ? 'add' : 'remove']('show-signup');
+                    formPopup.classList.toggle('show-signup', link.id === "signup-link");
                 });
             });
 
+            // Lire les paramètres de l'URL
+            const params = new URLSearchParams(window.location.search);
+            const openLogin = params.get('openLogin');
+            const email = params.get('email');
 
+            // Si openLogin est vrai, simuler un clic sur le bouton d'ouverture de formulaire et remplir l'email
+            if (openLogin && email) {
+                const loginButton = document.getElementById('open-login-btn');
+                const emailInput = document.querySelector('input[type=email]');
 
+                // Simuler un clic sur le bouton pour ouvrir le formulaire
+                if (loginButton) loginButton.click();
 
-            // Création d'une variable JavaScript basée sur la présence d'erreurs
-            var showLoginForm = <?php echo !empty($errors) ? 'true' : 'false'; ?>;
-
-
-            if (showLoginForm) {
-                // Ouvrir le formulaire de connexion si des erreurs sont présentes
-                document.body.classList.add("show-popup");
+                // Remplir le champ email
+                if (emailInput) emailInput.value = decodeURIComponent(email);
             }
 
+            //modal
+            const parame = new URLSearchParams(window.location.search);
+            const signupSuccess = parame.get('signupSuccess');
 
-            const inputs = formPopup.querySelectorAll("input");
-            const errorMessages = formPopup.querySelectorAll(".error");
-
-            // Fermer la popup et vider les inputs
-            hidePopupBtn.addEventListener("click", () => {
-                document.body.classList.remove("show-popup");
-                // Boucle sur tous les champs d'input pour les vider
-                inputs.forEach(input => {
-                    // Ne réinitialisez pas les champs de type 'checkbox' ou 'radio'
-                    if (input.type !== "checkbox" && input.type !== "radio") {
-                        input.value = "";
-                    }
-                });
-
-                // Boucle sur tous les éléments d'erreur pour effacer les messages
-                errorMessages.forEach(errorElement => {
-                    errorElement.textContent = ""; // Efface le texte de l'élément d'erreur
-                });
-
-
-            });
-
-            // Création d'une variable JavaScript basée sur la présence d'erreurs dans le formulaire d'inscription
-            var showSignupForm = <?php echo !empty($errors) ? 'true' : 'false'; ?>;
-
-
-            // Afficher la popup d'inscription si des erreurs sont présentes
-            if (showSignupForm) {
-                document.body.classList.add("show-popup");
-                formPopup.classList.add('show-signup'); // S'assurer que le formulaire d'inscription est visible
+            if (signupSuccess) {
+                $('#signupSuccessModal').modal('show');
             }
-
-            // Fermer la popup et réinitialiser les champs d'input ainsi que les messages d'erreur
-            hidePopupBtn.addEventListener("click", () => {
-                document.body.classList.remove("show-popup");
-                formPopup.classList.remove('show-signup'); // S'assurer que le formulaire d'inscription est masqué
-
-                // Réinitialiser les champs d'input
-                inputs.forEach(input => {
-                    if (input.type !== "checkbox" && input.type !== "radio") {
-                        input.value = "";
-                    }
-                });
-
-                // Effacer les messages d'erreur
-                errorMessages.forEach(errorElement => {
-                    errorElement.textContent = "";
-                });
-            });
 
         });
     </script>

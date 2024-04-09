@@ -701,8 +701,16 @@ video {
     min-height: 100%;
 }
 
+.policy {
+    display: block;
+}
+
 .error {
+    display: block;
+    /* Assure que l'élément d'erreur s'affiche sur sa propre ligne */
     color: red;
+    margin-top: 5px;
+    /* Ajoute un peu d'espace au-dessus de l'erreur, ajustez selon besoin */
 }
 
 .captcha {

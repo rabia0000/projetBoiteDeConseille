@@ -74,7 +74,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <?php
 
-include_once('../views/view-signin.php');
 
-
+include_once('../views/view-signup.php');
 ?>
