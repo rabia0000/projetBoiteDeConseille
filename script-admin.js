@@ -31,18 +31,6 @@ sidebarToggle.addEventListener("click", () => {
     }
 })
 
-// PAGE modifier ou supprimer un cours
 
-// modal de confirmation : 
-document.addEventListener('DOMContentLoaded', (event) => {
-    var confirmationModal = document.getElementById('confirmationModal');
-    confirmationModal.addEventListener('show.bs.modal', function (event) {
-        var button = event.relatedTarget; // Bouton qui a déclenché le modal
-        var trainingId = button.getAttribute('data-training-id'); // Récupère l'ID du cours
-        var courseName = button.getAttribute('data-course-name'); // Récupère le nom du cours
-        var form = document.getElementById('deleteForm'); // Trouve le formulaire de suppression
-        form.trainingId.value = trainingId; // Met à jour la valeur de l'input caché avec l'ID du cours
-        document.getElementById('courseName').textContent = courseName; // Insère le nom du cours dans le modal
-    });
-});
+
 

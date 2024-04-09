@@ -39,7 +39,7 @@
 
         <div class="menu-items">
             <ul class="nav-links">
-                <li><a href="../controllers/controller-h.php">
+                <li><a href="../controllers/controller-home.php">
                         <i class="uil uil-estate"></i>
                         <span class="link-name">Dashboard</span>
                     </a></li>

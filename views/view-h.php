@@ -119,7 +119,7 @@
                         <i class="uil uil-comments"></i>
                         <span class="text">Nombre de formation validée</span>
                         <span class="text-info"><?php if (!empty($countCompletedTraining)) : ?>
-                                <span class="number"><?= $countCompletedTraining[0]['nombre_de_formation_validé']; ?></span>
+                                <span class="number"><?= $countCompletedTraining[0]['nombre_de_formation_valide']; ?></span>
                             <?php else : ?>
                                 <p>Aucune demande de formation enregistrée.</p>
                             <?php endif; ?>
@@ -128,9 +128,9 @@
                         <i class="uil uil-share"></i>
                         <span class="text">Prochaine formation à venir</span>
                         <span class="number"> <?php if (!empty($displayUpCommingTraining)) : ?></span>
-                        <span class="fs-4 my-3 p-2 text-warning-emphasis"><?= date('d-m-Y', strtotime($displayUpCommingTraining[0]['training_date'])) . '    ' . $displayUpCommingTraining[0]['training_name']; ?></span>
+                        <span class=""><?= date('d-m-Y', strtotime($displayUpCommingTraining[0]['training_date'])) . '    ' . $displayUpCommingTraining[0]['training_name']; ?></span>
                     <?php else : ?>
-                        <p>Aucune demande de formation enregistrée.</p>
+                        <p class='fs-6 text-center text-danger'>Aucune demande de formation enregistrée.</p>
                     <?php endif; ?>
                     </div>
                 </div>

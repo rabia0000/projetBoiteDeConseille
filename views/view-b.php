@@ -39,7 +39,7 @@
 
         <div class="menu-items">
             <ul class="nav-links">
-                <li><a href="../controllers/controller-h.php">
+                <li><a href="../controllers/controller-home.php">
                         <i class="uil uil-estate"></i>
                         <span class="link-name">Dashboard</span>
                     </a></li>
@@ -99,7 +99,7 @@
             <div class="activity">
                 <div class="title">
                     <i class="uil uil-clock-three"></i>
-                    <span class="text">Widget</span>
+                    <span class="text">Suivie des demandes de forrmations</span>
                 </div>
             </div>
             <div class="table-container">
@@ -118,6 +118,7 @@
                         </thead>
                         <tbody>
                             <?php foreach ($cours as $cour) : ?>
+
                                 <!-- Applique la classe archived conditionnellement -->
                                 <tr>
                                     <!-- <td class="link-name text-center text-dark"> <?= $cour['training_archived'] ? 'archived' : '' ?> </td> -->
@@ -130,11 +131,11 @@
                                     <td>
                                         <?php if (!$cour['training_archived']) : ?>
                                             <div class="btn-group">
-                                                <form action="" method="post">
-                                                    <input type="hidden" name="user_id" value="<?= htmlspecialchars($userId); ?>">
+                                                <form id="form-<?= htmlspecialchars($cour['training_id']); ?>" action="" method="post">
                                                     <input type="hidden" name="training_id" value="<?= htmlspecialchars($cour['training_id']); ?>">
-                                                    <button class="btn btn-custom" type="submit" data-training-id="<?= htmlspecialchars($cour['training_id']); ?>">Réserver ce cours</button>
-
+                                                    <button class="btn btn-custom btn-reserver" type="button" data-bs-toggle="modal" data-bs-target="#confirmationModal" data-already-reserved="false" data-training-id="<?= htmlspecialchars($cour['training_id']); ?>" data-form-id="form-<?= htmlspecialchars($cour['training_id']); ?>">
+                                                        Réserver ce cours
+                                                    </button>
                                                 </form>
                                             </div>
                                         <?php endif; ?>
@@ -147,7 +148,6 @@
                 </div>
             </div>
     </section>
-    <!-- Modal de Confirmation -->
     <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -156,29 +156,23 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <?= $confirmationMessage; ?>
+                    Votre demande a bien été prise en compte en attente de la validation de l'administrateur.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+
                 </div>
             </div>
         </div>
     </div>
 
 
-
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    :
 
 
-    <?php if (!empty($confirmationMessage)) : ?>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
-                confirmationModal.show();
-            });
-        </script>
-    <?php endif; ?>
+
 
     <script src="../script-admin.js"></script>
     <!-- <script src="../scriptUser.js"></script> -->

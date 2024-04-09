@@ -380,12 +380,9 @@ class Training
             // Création d'un objet $db selon la classe PDO
             $bdd = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
             // stockage de ma requete dans une variable
-            $sql = "SELECT  training.training_name, COUNT(training.training_name) AS nombre_de_formation_validé
-            FROM training
-            INNER JOIN to_register ON to_register.training_id = training.training_id
-            INNER JOIN user ON user.user_id = to_register.user_id
-            WHERE to_register.completed_training = 1 AND user.user_id = :user_id
-            GROUP BY training.training_name";
+            $sql = "SELECT COUNT(training_id) AS nombre_de_formation_valide
+            FROM to_register
+            WHERE completed_training = 1 AND user_id = :user_id";
 
 
 
