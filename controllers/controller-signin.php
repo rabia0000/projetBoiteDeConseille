@@ -4,18 +4,11 @@ session_start();
 require_once '../config.php';
 require_once '../models/Userprofil.php';
 
-if (isset($_SESSION['signupSuccess']) && $_SESSION['signupSuccess']) {
-    // Utilisation de l'API JavaScript de Bootstrap 5 pour afficher le modal
-    echo "<script>document.addEventListener('DOMContentLoaded', function() {
-        var myModal = new bootstrap.Modal(document.getElementById('signupSuccessModal'));
-        myModal.show();
-    });</script>";
-    unset($_SESSION['signupSuccess']);
-}
+$signupSuccess = isset($_SESSION['signupSuccess']) && $_SESSION['signupSuccess'];
 
 $loginErrors = [];
 $signupErrors = [];
-
+$userEmail = ''; // Variable pour retenir l'email en cas de redirection
 $formType = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['formType'])) {
@@ -37,7 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['formType'])) {
                 $utilisateurInfos = Userprofil::getInfos($_POST['email']);
                 if (!password_verify($_POST["password"], $utilisateurInfos['user_password'])) {
                     $loginErrors['password'] = 'Mauvais mot de passe.';
-                } else {
+                }
+                if (empty($loginErrors)) {
+                    // Si pas d'erreurs, procéder à l'authentification et la redirection
                     $_SESSION['user'] = $utilisateurInfos;
                     header('Location: controller-home.php');
                     exit;
@@ -73,19 +68,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['formType'])) {
             $signupErrors['cgu'] = "Veuillez accepter les CGU pour continuer.";
         }
 
-        if (empty($signupErrors)) {
 
-            Userprofil::create($_POST['name'], $_POST['prenom'], $_POST['email'],   $_POST["password"]);
-            // $_SESSION['signupSuccess'] = "Votre inscription a été réussie. Vous pouvez vous connecter maintenant.";
-            $_SESSION['signupSuccess'] = true; // Stocker un indicateur de succès dans la session
-            // Supposons que $email contient l'email de l'utilisateur et $id contient son identifiant.
-            $email = $_POST['email']; // Ou la source de l'email de votre utilisateur
-            header('Location: controller-signin.php?openLogin=true&email=' . urlencode($email));
+        if (empty($signupErrors)) {
+            // Si pas d'erreurs, créer l'utilisateur et rediriger
+            Userprofil::create($_POST['name'], $_POST['prenom'], $_POST['email'], $_POST["password"]);
+            $_SESSION['signupSuccess'] = true;
+            $userEmail = $_POST['email']; // Conserver l'email pour remplissage automatique après redirection
+            header('Location: controller-signin.php?openLogin=true&email=' . urlencode($userEmail));
             exit;
         }
     }
 }
-
+// Nettoyage après affichage
+if ($signupSuccess) {
+    unset($_SESSION['signupSuccess']);
+}
 
 
 include_once('../views/view-signin.php');
