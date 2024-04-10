@@ -35,15 +35,13 @@
             <div class="logo-image">
                 <img src="images/logo.png" alt="">
             </div>
-
             <span class="logo_name">Innovéo Conseil</span>
         </div>
-
         <div class="menu-items">
             <ul class="nav-links">
                 <li><a href="../controllers-admin/controller-home-admin.php">
                         <i class="uil uil-estate"></i>
-                        <span class="link-name">Dahsboard</span>
+                        <span class="link-name">Dashboard</span>
                     </a></li>
                 <li><a href="../controllers-admin/controller-create-training.php">
                         <i class="bi bi-plus-lg"></i>
@@ -51,7 +49,7 @@
                     </a></li>
                 <li><a href="../controllers-admin/controller-display-modify-training.php">
                         <i class="bi bi-pencil-square"></i>
-                        <span class="link-name">Modifier ou supprimer une formation</span>
+                        <span class="link-name">Gestion des formations</span>
                     </a></li>
                 <li><a href="../controllers-admin/controller-gestion-admin.php">
                         <i class="bi bi-calendar-check"></i>
@@ -61,46 +59,29 @@
                         <i class="bi bi-mortarboard"></i>
                         <span class="link-name">Certifier les formations</span>
                     </a></li>
-                <!-- <li><a href="#">
-                        <i class="uil uil-share"></i>
-                        <span class="link-name">Share</span>
-                    </a></li> -->
             </ul>
             <ul class="logout-mode">
-                <li><a href="#">
-                        <i class="bi bi-gear"></i>
-                        <span class="link-name">Réglages</span>
+                <li><a href="../controllers/controller-deconnexion.php">
+                        <i class="uil uil-signout"></i>
+                        <span class="link-name">Logout</span>
                     </a></li>
-
-                <ul class="logout-mode">
-                    <li><a href="../controllers/controller-deconnexion.php">
-                            <i class="uil uil-signout"></i>
-                            <span class="link-name">Logout</span>
-                        </a></li>
-
-                    <li class="mode">
-                        <a href="#">
-                            <i class="uil uil-moon"></i>
-                            <span class="link-name">Dark Mode</span>
-                        </a>
-
-                        <div class="mode-toggle">
-                            <span class="switch"></span>
-                        </div>
-                    </li>
-                </ul>
+                <li class="mode"><a href="#">
+                        <i class="uil uil-moon"></i>
+                        <span class="link-name">Dark Mode</span>
+                    </a>
+                    <div class="mode-toggle"><span class="switch"></span></div>
+                </li>
+            </ul>
         </div>
     </nav>
 
     <section class="dashboard">
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
-
             <div class="search-box">
                 <i class="uil uil-search"></i>
                 <input type="text" placeholder="Search here...">
             </div>
-
             <img src="images/profile.jpg" alt="">
         </div>
 
@@ -108,16 +89,14 @@
             <div class="overview">
                 <div class="title">
                     <i class="uil uil-tachometer-fast-alt"></i>
-                    <span class="text">Dashboard de <?= $_SESSION['admin']['admin_name'] ?></a></span>
+                    <span class="text">Dashboard de <?= $_SESSION['admin']['admin_name'] ?></span>
                 </div>
-
-
             </div>
 
             <div class="activity">
                 <div class="title">
                     <i class="uil uil-clock-three"></i>
-                    <span class="text">Recent Activity</span>
+                    <span class="text">Gestion des formations</span>
                 </div>
                 <div class="table-container">
                     <div class="responsive-table">
@@ -136,58 +115,49 @@
                                     <tr>
                                         <td class="link-name text-center text-dark"><?= date('d-m-Y', strtotime($cour['training_date'])) ?></td>
                                         <td class="link-name text-center text-dark"><?= htmlspecialchars($cour['training_name']) ?></td>
-                                        <td class="none link-name  text-center text-dark"><?= htmlspecialchars($cour['training_description']) ?></td>
+                                        <td class="none link-name text-center text-dark"><?= htmlspecialchars($cour['training_description']) ?></td>
                                         <td class="link-name text-center text-dark"><?= htmlspecialchars($cour['training_max']) ?></td>
-                                        <td class="">
+                                        <td class="text-center">
                                             <div class="btn-group">
-                                                <form action="../controllers-admin/controller-update-training.php" method="POST" class="button-form">
-                                                    <input type="hidden" name="training_id" value="<?= $cour['training_id'] ?>">
-                                                    <button type="submit" class="btn btn-custom">Modifier</button>
-                                                </form>
-
-                                                <form action="../controllers-admin/controller-display-modify-training.php" method="POST" class="button-form">
-                                                    <input type="hidden" name="training_id" value="<?= $cour['training_id'] ?>">
-                                                    <button type="button" class="btn btn-custom-cancel" data-bs-toggle="modal" data-bs-target="#confirmationModal" data-training-id="<?= $cour['training_id'] ?>" data-course-name="<?= htmlspecialchars($cour['training_name']) ?>">Supprimer</button>
-                                                </form>
+                                                <a href="../controllers-admin/controller-update-training.php?training_id=<?= $cour['training_id'] ?>" class="btn btn-outline-dark">Modifier</a>
+                                                <!-- Bouton qui ouvre le modal de suppression spécifique -->
+                                                <button type="button" class="btn btn-outline-danger" data-bs-toggle=" modal" data-bs-target="#modalDelete<?= $cour['training_id'] ?>">Supprimer</button>
                                             </div>
                                         </td>
-
                                     </tr>
+                                    <!-- Modal de confirmation de suppression pour ce cours spécifique -->
+                                    <div class="modal fade" id="modalDelete<?= $cour['training_id'] ?>" tabindex="-1" aria-labelledby="modalLabel<?= $cour['training_id'] ?>" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Confirmation de Suppression</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Êtes-vous sûr de vouloir supprimer le cours : <strong><?= htmlspecialchars($cour['training_name']) ?></strong> ?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <form action="../controllers-admin/controller-display-modify-training.php" method="POST">
+                                                        <input type="hidden" name="trainingId" value="<?= $cour['training_id'] ?>">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                                                        <button type="submit" name="delete" class="btn-custom-cancel">Supprimer</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 <?php endforeach; ?>
-                                </tr>
-                                <!-- Additional rows as needed -->
                             </tbody>
                         </table>
-
                     </div>
                 </div>
             </div>
     </section>
-    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header text-center">
-                    <h5 class="modal-title text-center" id="modalLabel">Confirmation de Suppression</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-primary">
-                    Êtes-vous sûr de vouloir supprimer le cours : <span id="courseName" class="fw-bold text-danger"></span> ?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-custom" data-bs-dismiss="modal">Annuler</button>
-                    <form id="deleteForm" action="../controllers-admin/controller-display-modify-training.php" method="POST">
-                        <input type="hidden" name="trainingId" id="trainingId" value="">
-                        <button type="submit" name="delete" class="btn btn-custom-cancel">Supprimer</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+</body>
 
-
-    <script src="../script-admin.js"></script>
-    <!-- <script src="../script.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../script-admin.js"></script>
+<!-- <script src="../script.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

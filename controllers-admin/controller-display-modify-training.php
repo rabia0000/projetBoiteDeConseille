@@ -6,7 +6,7 @@ require_once '../config.php';
 include_once '../models/Admin.php';
 include_once '../models/Training.php';
 
-
+var_dump($_POST);
 if (!isset($_SESSION['admin'])) {
     header('Location: controller-signin.php');
     exit;
@@ -14,6 +14,7 @@ if (!isset($_SESSION['admin'])) {
 
 
 $afficherCours = Admin::DisplayTraining();
+
 
 if (isset($_POST['delete'])) {
     Admin::deleteTraining($_POST['trainingId']);

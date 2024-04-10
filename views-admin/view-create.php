@@ -50,7 +50,7 @@
                     </a></li>
                 <li><a href="../controllers-admin/controller-display-modify-training.php">
                         <i class="bi bi-pencil-square"></i>
-                        <span class="link-name">Modifier ou supprimer une formation</span>
+                        <span class="link-name">Gestion des formations</span>
                     </a></li>
                 <li><a href="../controllers-admin/controller-gestion-admin.php">
                         <i class="bi bi-calendar-check"></i>
