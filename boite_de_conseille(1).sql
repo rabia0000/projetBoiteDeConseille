@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mer. 13 mars 2024 à 08:34
+-- Généré le : mer. 10 avr. 2024 à 17:16
 -- Version du serveur : 8.0.30
 -- Version de PHP : 8.1.10
 
@@ -68,19 +68,6 @@ CREATE TABLE `to_register` (
   `completed_training` tinyint NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Déchargement des données de la table `to_register`
---
-
-INSERT INTO `to_register` (`training_id`, `user_id`, `authorized_training`, `completed_training`) VALUES
-(83, 25, 1, 0),
-(83, 26, 1, 1),
-(84, 1, 0, 0),
-(85, 1, 0, 0),
-(85, 26, 0, 1),
-(86, 1, 1, 1),
-(86, 26, 1, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -103,10 +90,9 @@ CREATE TABLE `training` (
 --
 
 INSERT INTO `training` (`training_id`, `training_name`, `training_url`, `training_description`, `training_date`, `training_max`, `training_archived`, `type_id`) VALUES
-(83, 'javascript', 'javascript', 'cours de javascript du 04/12 au 07/12/2023', '2023-12-04', 4, 1, 5),
-(84, 'python', 'python', 'cours de python du 15/01 au 18/01/2024', '2024-01-15', 5, 1, 5),
-(85, 'HTML', 'HTML.com', 'Formation HTML du 04/09 au 15/09/2023', '2023-09-04', 5, 0, 5),
-(86, 'PHP', 'php.com', 'Formation PHP du 18/12 au 15/01/2024', '2023-12-18', 5, 0, 5);
+(139, 'Javascript', 'js.com', 'Formation de 6 semaines', '2024-04-15', 5, 0, 5),
+(140, 'Data pour débutant', 'data.com', 'cours découverte sur 2 jours', '2024-04-22', 10, 0, 3),
+(141, 'Réseau niveau intermédiaire', 'reseau.com', 'Formation de 3 semaines', '2024-09-02', 10, 0, 4);
 
 -- --------------------------------------------------------
 
@@ -168,7 +154,18 @@ INSERT INTO `user` (`user_id`, `user_lastname`, `user_firstname`, `user_mail`, `
 (24, 'mennai', 'rabia', 'rabia_mennai@mail.fr', '$2y$10$hURWHcpVFEQt0cKl62xLzeCP6TBgz64sKaT7kEoVF6VZYIv8bdOtK'),
 (25, 'moi', 'moi', 'moi@mail.fr', '$2y$10$hURWHcpVFEQt0cKl62xLzeCP6TBgz64sKaT7kEoVF6VZYIv8bdOtK'),
 (26, 'mennai', 'rabia', 'rabia_mennai@hotmail.fr', '$2y$10$hURWHcpVFEQt0cKl62xLzeCP6TBgz64sKaT7kEoVF6VZYIv8bdOtK'),
-(27, 'toototot', 'paul', 'aaa@mail.fr', '$2y$10$hURWHcpVFEQt0cKl62xLzeCP6TBgz64sKaT7kEoVF6VZYIv8bdOtK');
+(79, 'jjsjsjs', 'jjsjsjsj', 'rabp@mail.dr', '$2y$10$lqQYYstXS5qd2gYdc0VXRuPdWLH3YtBgvhNCv.t33Iazwoz3CUzuO'),
+(80, 'tt', 'uu', 'uu@mail.fr', '$2y$10$tBNpzT2q9Uk7z2O/nAL.S.V3o8gEV4MffZEtMPIjxqZl340IFVagq'),
+(81, 'yyy', 'yyyyy', 'oo@mail.fr', '$2y$10$Zq3uu1KKTTlpBrS5KGp1b.WyycK4TseqvIm78KUV.GvCt0sNyv51W'),
+(82, 'bsbsbs', 'bsbbsb', 'bb@mail.fr', '$2y$10$eyj195Ise8d29xvXF4sit.EYbTWjnszphtGHR5dwM99LQilclmaDC'),
+(83, 'toz', 'ssksksk', 'kk@mail.fr', '$2y$10$t1DMMq8W9MhxPdYJ1yr9BuxCssFOLSus1.BmAS2eOFmmr7gnx.Cke'),
+(84, 'yyyyuuuu', 'fffffvvv', 'ra@hotmail.fr', '$2y$10$owz1jEhdKFsuJYpqL7Ba0.vGr7sHe9.kdxIUemSUadfvDQsx41CRC'),
+(85, 'eeddc', 'sssss', 'xxxcvff@mail.com', '$2y$10$aPejanq/8ZNL9seOtNn6Vuj2vbuo9RFhQsw6oyV3QeNUCZ1f5muUq'),
+(86, 'nom', 'prenom', 'email@mail.fr', '$2y$10$0iJCpSmBGZS6umdoE778.OPe5yd3IB2etxKfNPuQHanAM7MIA8reK'),
+(87, 'aaaddd', 'cfgggh', 'rabia@ll.fr', '$2y$10$EDQkxlSktxwVj2P4bfmynu4cVmzhLMkOaTxrpKvRdqqD1sSCYRGbK'),
+(88, 'ggggcc', 'hhhxxx', 'ra@mail.com', '$2y$10$RLau4h9DahuCGpy1Sd9GWOAGsQS.fPYz6gjB4hlwqyTEuqAiKTway'),
+(89, 'doudii', 'dididi', 'jjj@mail.fr', '$2y$10$DRHePnAiV.9UYDLYDgOLM.PF2xhEN.ABgx98gpjpe6l4LmWaOYjfe'),
+(90, 'bcbcbc', 'ksksksk', 'oooo@mail.fr', '$2y$10$oEtvGpPZHJ3TJYm5QfiH8.pr1gWsQGcesVLdL2qx9x5NUJ6kvrPNG');
 
 --
 -- Index pour les tables déchargées
@@ -234,7 +231,7 @@ ALTER TABLE `articles`
 -- AUTO_INCREMENT pour la table `training`
 --
 ALTER TABLE `training`
-  MODIFY `training_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `training_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
 
 --
 -- AUTO_INCREMENT pour la table `type_training`
@@ -246,7 +243,7 @@ ALTER TABLE `type_training`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
 -- Contraintes pour les tables déchargées
