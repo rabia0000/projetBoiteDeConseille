@@ -300,7 +300,7 @@
             });
 
             hidePopupBtn.addEventListener("click", () => {
-                console.log('click')
+            console.log('click')
                 document.body.classList.remove("show-popup");
                 // Reset des champs input à déplacer si nécessaire, basé sur votre logique d'UI
             });
