@@ -119,8 +119,11 @@
                                         <td class="link-name text-center text-dark"><?= htmlspecialchars($cour['training_max']) ?></td>
                                         <td class="text-center">
                                             <div class="btn-group">
-                                                <a href="../controllers-admin/controller-update-training.php?training_id=<?= $cour['training_id'] ?>" class="btn btn-outline-dark">Modifier</a>
-                                                <!-- Bouton qui ouvre le modal de suppression spécifique -->
+                                                <form action="../controllers-admin/controller-update-training.php" method="POST">
+                                                    <input type="hidden" name="training_id" value="<?= $cour['training_id'] ?>">
+                                                    <input type="hidden" name="type_id" value="<?= $cour['type_id'] ?>">
+                                                    <button type="submit" class="btn btn-outline-dark">Modifier</button>
+                                                </form>
                                                 <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalDelete<?= $cour['training_id'] ?>">Supprimer</button>
                                             </div>
                                         </td>

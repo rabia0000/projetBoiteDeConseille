@@ -106,11 +106,12 @@
 
                     <form method="POST" action="../controllers-admin/controller-update-training.php" novalidate>
                         <input type="hidden" name="training_id" value="<?= $trainingInfos['training_id'] ?? '' ?>">
+                        <input type="hidden" name="training_id" value="<?= $trainingInfos['type_id'] ?? '' ?>">
                         <div class="input-form text ">
                             <label for="trainingType">
                                 <h6>Type de formation</h6>
                             </label>
-                            <select class="form-control transparent-input mb-2" name="training_type" id="trainingType" required>
+                            <select class="input-form text" name="training_type" id="trainingType" required>
                                 <option value="">Sélectionner un type de formation</option>
                                 <?php foreach ($trainingt as $type) { ?>
                                     <option value="<?= htmlspecialchars($type['type_id']) ?>" <?= (isset($trainingType) && $trainingType == $type['type_id']) ? 'selected' : '' ?>>
