@@ -40,7 +40,7 @@ html {
 
 /* formulaire login */
 .login .form-details {
-    background-image: url("images/login.jpg");
+    background-image: url("images/admin.jpg");
     background-size: cover;
     background-position: center;
 }

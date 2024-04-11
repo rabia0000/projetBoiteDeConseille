@@ -31,18 +31,18 @@
 
         <div class="form-details">
 
-            <p class="text-danger">Réserver a l'administeur</p>
+            <p class="text-danger fw-bold fs-5"> Parti réserver a l'administrateur</p>
         </div>
         <div class="form-content">
-            <h2>Administrateur</h2>
+            <h2> Administrateur</h2>
             <form class="row" method="POST" action="../controllers-admin/controller-signin-admin.php" novalidate>
                 <input type="hidden" name="formType" value="login">
                 <div class="input-field">
                     <input type="email" id="email" name="email" value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>" required>
                     <label>Email</label>
                     <span class="error">
-                        <?php if (isset($loginErrors['email'])) {
-                            echo $loginErrors['email'];
+                        <?php if (isset($errors['email'])) {
+                            echo $errors['email'];
                         } ?>
                     </span>
                 </div>
@@ -51,14 +51,14 @@
                     <input type="password" id="password" name="password" required>
                     <label>Password</label>
                     <span class="error text-danger">
-                        <?php if (isset($loginErrors['password'])) {
-                            echo $loginErrors['password'];
+                        <?php if (isset($errors['password'])) {
+                            echo $errors['password'];
                         } ?>
                     </span>
 
                 </div>
 
-                <button type="submit">Log In</button>
+                <button type="submit" class="my-2">Log In</button>
             </form>
             <div class="buttom-link">
 
@@ -118,39 +118,7 @@
                 </div>
             </div>
             </form> --> -->
-    <script>
-        const navbarMenu = document.querySelector(".navbar .links");
-        const hamburgerBtn = document.querySelector(".hamburger-btn");
-        const hideMenuBtn = navbarMenu.querySelector(".close-btn");
-        const showPopupBtn = document.querySelector(".login-btn");
-        const formPopup = document.querySelector(".form-popup");
-        const hidePopupBtn = formPopup.querySelector(".close-btn");
-        const signupLoginLink = formPopup.querySelectorAll(".bottom-link a");
 
-        // Show mobile menu
-        hamburgerBtn.addEventListener("click", () => {
-            navbarMenu.classList.toggle("show-menu");
-        });
-
-        // Hide mobile menu
-        hideMenuBtn.addEventListener("click", () => hamburgerBtn.click());
-
-        // Show login popup
-        showPopupBtn.addEventListener("click", () => {
-            document.body.classList.toggle("show-popup");
-        });
-
-        // Hide login popup
-        hidePopupBtn.addEventListener("click", () => showPopupBtn.click());
-
-        // Show or hide signup form
-        signupLoginLink.forEach(link => {
-            link.addEventListener("click", (e) => {
-                e.preventDefault();
-                formPopup.classList[link.id === 'signup-link' ? 'add' : 'remove']("show-signup");
-            });
-        });
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>
