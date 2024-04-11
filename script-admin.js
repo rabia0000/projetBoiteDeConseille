@@ -31,6 +31,20 @@ sidebarToggle.addEventListener("click", () => {
     }
 })
 
+//modal
+// Sélectionnez tous les boutons de suppression
+var deleteButtons = document.querySelectorAll('.delete-btn');
+
+// Ajoutez un écouteur d'événements à chaque bouton
+deleteButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+        var targetModalId = button.getAttribute('data-bs-target');
+        var targetModal = new bootstrap.Modal(document.querySelector(targetModalId), {
+            keyboard: false
+        });
+        targetModal.show();
+    });
+});
 
 
 

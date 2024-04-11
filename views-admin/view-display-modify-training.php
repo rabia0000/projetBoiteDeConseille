@@ -121,7 +121,7 @@
                                             <div class="btn-group">
                                                 <a href="../controllers-admin/controller-update-training.php?training_id=<?= $cour['training_id'] ?>" class="btn btn-outline-dark">Modifier</a>
                                                 <!-- Bouton qui ouvre le modal de suppression spécifique -->
-                                                <button type="button" class="btn btn-outline-danger" data-bs-toggle=" modal" data-bs-target="#modalDelete<?= $cour['training_id'] ?>">Supprimer</button>
+                                                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalDelete<?= $cour['training_id'] ?>">Supprimer</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -140,12 +140,13 @@
                                                     <form action="../controllers-admin/controller-display-modify-training.php" method="POST">
                                                         <input type="hidden" name="trainingId" value="<?= $cour['training_id'] ?>">
                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                                                        <button type="submit" name="delete" class="btn-custom-cancel">Supprimer</button>
+                                                        <button type="submit" name="delete" class="btn btn-danger">Supprimer</button>
                                                     </form>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
