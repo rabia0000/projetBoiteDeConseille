@@ -1,0 +1,273 @@
+/* Importing Google font - Open Sans */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body,
+html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("chemin/vers/votre/image/de/fond.jpg") center/cover no-repeat;
+    /* Optionnel: ajoutez un fond */
+}
+
+.form-box {
+    display: flex;
+    background: #fff;
+}
+
+
+/* ecriture a gauche du formulaire */
+.form-box .form-details {
+    max-width: 320px;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    padding: 0 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+/* formulaire login */
+.login .form-details {
+    background-image: url("images/login.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+
+.form-box h2 {
+    text-align: center;
+    margin-bottom: 30;
+}
+
+.form-box .form-content {
+    width: 100%;
+    padding: 35px;
+}
+
+
+form .input-field {
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 24px;
+
+    position: relative;
+    ;
+}
+
+form .input-field input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    padding: 0 15px;
+    font-size: 0.95rem;
+    border-radius: 3px;
+    border: 1px solid #000
+}
+
+.input-field input:focus {
+    border: 1px solid #00bcd4;
+}
+
+.input-field input:is(:focus, :valid) {
+    padding: 1-px 15px 0;
+}
+
+form .input-field label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #4a4646;
+    pointer-events: none;
+    transition: 0.2s ease;
+
+}
+
+.input-field input:is(:focus, :valid)~label {
+    color: #00bcd4;
+    font-size: 0.75rem;
+    transform: translateY(-120%);
+}
+
+.form-box a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+.form-box a:hover {
+    color: #00bcd4;
+    text-decoration: underline;
+}
+
+/* mots de passe oublie */
+.form-box :where(.forgot-pass, .policy-text) {
+    display: inline-block;
+    margin-top: 19px;
+    font-size: 0.95rem;
+
+}
+
+form button {
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 14px 0;
+    border-radius: 3px;
+    margin: 25px 0;
+    color: #fff;
+    cursor: pointer;
+    background: #00bcd4;
+    transition: 0.2s ease;
+}
+
+form button:hover {
+    background: #0097a7;
+}
+
+.form-box .bottom-link {
+    text-align: center;
+}
+
+/* ne pas afficher le signup important a comprendre ici login et signup */
+
+.form-popup .signup,
+.form-popup.show-signup .login {
+    display: none;
+}
+
+/* ajout de la classe show-signup du script js  */
+.form-popup.show-signup .signup {
+    display: flex;
+}
+
+.signup .policy-text {
+    display: flex;
+    align-items: center;
+}
+
+.signup .policy-text input {
+    width: 14px;
+    height: 14px;
+    margin-right: 7px;
+}
+
+/* formulaire format mobile */
+
+@media (max-width: 760px) {
+    .form-popup {
+        width: 95%;
+    }
+
+    .form-box .form-details {
+        display: none;
+    }
+
+    .form-box .form-content {
+        padding: 30px 20px;
+    }
+
+}
+
+
+
+.card {
+    /* background-color: rgba(183, 185, 189, 0.5); */
+    background-color: rgba(0, 0, 0, 0.13);
+
+}
+
+.card-transparent {
+    opacity: 0.8;
+    /* Ajustez cette valeur entre 0 (complètement transparent) et 1 (opaque) */
+
+}
+
+
+
+.video-background {
+    position: fixed;
+    /* Ou 'absolute', selon le besoin */
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    /* Assure que la vidéo reste en arrière-plan */
+    background-size: cover;
+    /* Couvre l'espace disponible */
+    overflow: hidden;
+}
+
+video {
+    /* Pour s'assurer que la vidéo couvre l'espace disponible */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.policy {
+    display: block;
+}
+
+.error {
+    display: block;
+    /* Assure que l'élément d'erreur s'affiche sur sa propre ligne */
+    color: red;
+    margin-top: 5px;
+    /* Ajoute un peu d'espace au-dessus de l'erreur, ajustez selon besoin */
+}
+
+.captcha {
+    margin: 0 auto;
+    width: max-content;
+}
+
+.footerPage {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.contain {
+    background-image: url('images/bureauClair.jpg');
+    /* Remplacez par le chemin de votre image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* Centrer l'image de fond */
+    height: 100vh;
+    /* Assurez-vous que l'élément a une hauteur pour voir l'image de fond */
+    width: 100%;
+    /* Optionnel: selon la mise en page souhaitée */
+
+}
+
+
+
+/* footer */
+
+.footerPage {
+    background-color: rgba(237, 235, 232, 0.3);
+}
