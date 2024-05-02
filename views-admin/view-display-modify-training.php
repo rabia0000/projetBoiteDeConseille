@@ -35,7 +35,7 @@
             <div class="logo-image">
                 <img src="images/logo.png" alt="">
             </div>
-            <span class="logo_name">Innovéo Conseil</span>
+            <span class="logo_name">Innovéo</span>
         </div>
         <div class="menu-items">
             <ul class="nav-links">
@@ -78,10 +78,7 @@
     <section class="dashboard">
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
-            <div class="search-box">
-                <i class="uil uil-search"></i>
-                <input type="text" placeholder="Search here...">
-            </div>
+
             <img src="images/profile.jpg" alt="">
         </div>
 

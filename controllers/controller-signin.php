@@ -1,4 +1,5 @@
 <?php
+//exemple de controller pour la connexion utilisateur
 session_start();
 
 require_once '../config.php';

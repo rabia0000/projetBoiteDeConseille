@@ -35,7 +35,7 @@
         <div class="logo-name">
 
 
-            <span class="logo_name">Innovéo Conseil</span>
+            <span class="logo_name">Innovéo</span>
         </div>
 
         <div class="menu-items">
@@ -194,7 +194,7 @@
                             </select>
                         </div>
 
-                        <input type="submit" value="ajouter formation" class="btn btn-dark mt-3 text-center ">
+                        <input type="submit" value="Ajouter formation" class="btn btn-dark mt-3 text-center ">
                     </form>
                 </div>
             </div>

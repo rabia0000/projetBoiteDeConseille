@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mer. 10 avr. 2024 à 17:16
+-- Généré le : jeu. 02 mai 2024 à 08:11
 -- Version du serveur : 8.0.30
 -- Version de PHP : 8.1.10
 
@@ -68,6 +68,22 @@ CREATE TABLE `to_register` (
   `completed_training` tinyint NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Déchargement des données de la table `to_register`
+--
+
+INSERT INTO `to_register` (`training_id`, `user_id`, `authorized_training`, `completed_training`) VALUES
+(143, 1, 0, 0),
+(143, 2, 0, 0),
+(143, 3, 0, 0),
+(143, 7, 0, 0),
+(143, 9, 0, 0),
+(143, 26, 1, 0),
+(144, 1, 0, 0),
+(144, 2, 0, 0),
+(144, 3, 0, 0),
+(144, 26, 1, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -90,9 +106,8 @@ CREATE TABLE `training` (
 --
 
 INSERT INTO `training` (`training_id`, `training_name`, `training_url`, `training_description`, `training_date`, `training_max`, `training_archived`, `type_id`) VALUES
-(139, 'Javascript', 'js.com', 'Formation de 6 semaines', '2024-04-15', 5, 0, 5),
-(140, 'Data pour débutant', 'data.com', 'cours découverte sur 2 jours', '2024-04-22', 10, 0, 3),
-(141, 'Réseau niveau intermédiaire', 'reseau.com', 'Formation de 3 semaines', '2024-09-02', 10, 0, 4);
+(143, 'le reseau pour debutant', 'reseau.com', 'formation de 3 jours ', '2024-06-25', 4, 0, 4),
+(144, 'le cloud niveau intermediaire ', 'cloud.com', 'formation de 5 jours ', '2024-06-24', 7, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -231,7 +246,7 @@ ALTER TABLE `articles`
 -- AUTO_INCREMENT pour la table `training`
 --
 ALTER TABLE `training`
-  MODIFY `training_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
+  MODIFY `training_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
 
 --
 -- AUTO_INCREMENT pour la table `type_training`

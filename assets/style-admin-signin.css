@@ -21,6 +21,7 @@ html {
 .form-box {
     display: flex;
     background: #fff;
+    justify-content: center;
 }
 
 
@@ -171,6 +172,8 @@ form button:hover {
 @media (max-width: 760px) {
     .form-popup {
         width: 95%;
+        display: block;
+        margin: 0 auto;
     }
 
     .form-box .form-details {

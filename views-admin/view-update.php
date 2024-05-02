@@ -35,7 +35,7 @@
         <div class="logo-name">
 
 
-            <span class="logo_name">Innovéo Conseil</span>
+            <span class="logo_name">Innovéo</span>
         </div>
 
         <div class="menu-items">

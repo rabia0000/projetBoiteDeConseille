@@ -141,7 +141,7 @@
                     <div class="input-field">
                         <input type="email" id="email" name="email" value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>" required>
                         <label>Email</label>
-                        <span class="error">
+                        <span class="error text-danger">
                             <?php if (isset($loginErrors['email'])) {
                                 echo $loginErrors['email'];
                             } ?>
@@ -172,7 +172,7 @@
         <div class="form-box signup">
             <div class="form-details">
                 <h2>Crée un compte</h2>
-                <p>Entrer vos information personnelles pour crée un compte</p>
+                <p>Entrez vos informations personnelles pour créer un compte</p>
             </div>
             <div class="form-content">
                 <h2>SIGNUP</h2>
@@ -195,9 +195,10 @@
                     </div>
                     <div class="input-field">
                         <input type="email" id="email" name="email" value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>" required>
-                        <?php if (isset($signupErrors['email'])) {
-                            echo $signupErrors['email'];
-                        } ?>
+                        <span class="error text-danger">
+                            <?php if (isset($signupErrors['email'])) {
+                                echo $signupErrors['email'];
+                            } ?>
                         </span>
                         <label>Entrer votre email</label>
                     </div>

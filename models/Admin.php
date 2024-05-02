@@ -120,7 +120,7 @@ class Admin
     }
 
     /**
-     * Methode permettant l'affichage des cours sans parametres
+     * Methode permettant l'affichage des cours
      * 
      */
 
