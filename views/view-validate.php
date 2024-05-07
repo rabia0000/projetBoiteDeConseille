@@ -111,19 +111,31 @@
                                 <th class="none link-name text-center text-dark">Description du cours</th>
                                 <th class="link-name text-center text-dark">date du cours</th>
                                 <th class="link-name text-center text-dark">Validation de l'inscription</th>
+                                <th class="link-name text-center text-dark">Annuler</th>
+
 
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($afficherCours as $cour) : ?>
+                            <?php
+
+                            foreach ($afficherCours as $cour) : ?>
                                 <tr class="text-center">
                                     <td class="text-center"><?= htmlspecialchars($cour['training_name']) ?></td>
                                     <td class="none text-center"><?= htmlspecialchars($cour['training_description']) ?></td>
                                     <td class="text-center"><?= date('d-m-Y', strtotime($cour['training_date'])) ?></td>
                                     <td class="text-center"><?= $cour['authorized_training'] ?  '<span class="text-success "> Validée </span>'  : '<span class="text-danger ">En cours</span>' ?></td>
+                                    <td>
+                                        <?php if (!$cour['authorized_training'] && isset($cour['training_id'])) : ?>
+                                            <form action="" method="post">
+                                                <input type="hidden" name="user_id" value="<?= htmlspecialchars($userId); ?>">
+                                                <input type="hidden" name="training_id" value="<?= htmlspecialchars($cour['training_id']); ?>">
+                                                <button class="btn btn-custom-cancel btn-sm" type="submit" name="cancel">Annuler la demande</button>
+                                            </form>
+                                        <?php endif; ?>
+                                    </td>
 
-                                </tr>
-                            <?php endforeach; ?>
+                                <?php endforeach; ?>
                         </tbody>
 
                     </table>

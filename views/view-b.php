@@ -125,15 +125,39 @@
                                     <td class="link-name text-center text-dark"><?= htmlspecialchars($cour['training_name']) ?>
                                     <td class="none link-name text-center text-dark "><?= htmlspecialchars($cour['training_description']) ?></td>
                                     <td class="link-name text-center text-dark"><?= date('d-m-Y', strtotime($cour['training_date'])) ?></td>
-                                    <td class="link-name text-center text-dark"><?= htmlspecialchars($cour['training_max']) ?></td>
+                                    <td class="link-name text-center text-dark"><?= Training::countTrainingReservation($cour['training_id']) . '/' ?><?= htmlspecialchars($cour['training_max']) ?></td>
                                     <td class="none link-name text-center text-dark"><?= htmlspecialchars($cour['type_de_cours']) ?></td>
                                     <td class="link-name text-center text-dark"><?= $cour['training_archived'] ? 'Oui' : 'Non' ?></td>
                                     <td>
-                                        <?php if (!$cour['training_archived']) : ?>
+
+                                        <?php
+                                        // var_dump(Training::checkTrainingRegister($cour['training_id'], $userId));
+                                        if (!$cour['training_archived']) : ?>
                                             <form action="" method="post">
                                                 <input type="hidden" name="user_id" value="<?= htmlspecialchars($userId); ?>">
                                                 <input type="hidden" name="training_id" value="<?= htmlspecialchars($cour['training_id']); ?>">
-                                                <button class="preReservationButton btn btn-outline-success ms-2 btn-sm" type="submit" data-training-id="<?= htmlspecialchars($cour['training_id']); ?>">Pré-réserver ce cours</button>
+
+                                                <?php
+                                                if (Training::checkTrainingRegister($cour['training_id'], $userId) > 0) { ?>
+                                                    <button type="button" class="btn btn-outline-dark text-dark disabled">Déjà réservé</button>
+                                                <?php } else if (Training::countTrainingReservation($cour['training_id']) == $cour['training_max']) { ?>
+                                                    <button type="button" class="btn btn-outline-danger text-danger disabled">Formation complète</button>
+
+                                                <?php } else { ?>
+                                                    <button type="submit" class="btn btn-outline-success text-sucess">Pré-réserver ce cours</button>
+
+
+                                                <?php } ?>
+
+
+
+
+
+
+                                                <php endif; ?>
+
+
+
 
                                             </form>
                                         <?php endif; ?>

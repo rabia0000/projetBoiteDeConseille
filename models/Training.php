@@ -443,4 +443,70 @@ class Training
             return [];
         }
     }
+
+
+
+    /**
+     * Methode qui permet de compter le nombre total d'inscription à une formation
+     * @param INT $trainingId
+     * @return Array 
+     */
+    public static function countTrainingReservation($trainingId)
+    {
+        try {
+            // Création d'un objet $db selon la classe PDO
+            $bdd = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
+            // stockage de ma requete dans une variable
+            $sql =  "SELECT COUNT(authorized_training) AS total
+            FROM to_register
+            WHERE training_id = :trainingId and authorized_training = 1;";
+
+            $query = $bdd->prepare($sql);
+
+            $query->bindParam(':trainingId', $trainingId, PDO::PARAM_INT);
+
+            $query->execute();
+
+            $result = $query->fetch(PDO::FETCH_ASSOC);
+
+            return $result['total'];
+        } catch (PDOException $e) {
+            echo 'Erreur : ' . $e->getMessage();
+            die();
+            return [];
+        }
+    }
+
+    /**
+     * Methode qui permet savoir si une reservation est déjà présente
+     * @param INT $trainingId
+     * @param INT $userId
+     * @return Array 
+     */
+    public static function checkTrainingRegister($trainingId, $userId)
+    {
+        try {
+            // Création d'un objet $db selon la classe PDO
+            $bdd = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSERNAME, DBPASSWORD);
+            // stockage de ma requete dans une variable
+            $sql =  "SELECT COUNT(training_id) AS total
+            FROM to_register
+            WHERE user_id = :userId AND training_id = :trainingId;";
+
+            $query = $bdd->prepare($sql);
+
+            $query->bindParam(':trainingId', $trainingId, PDO::PARAM_INT);
+            $query->bindParam(':userId', $userId, PDO::PARAM_INT);
+
+            $query->execute();
+
+            $result = $query->fetch(PDO::FETCH_ASSOC);
+
+            return $result['total'];
+        } catch (PDOException $e) {
+            echo 'Erreur : ' . $e->getMessage();
+            die();
+            return [];
+        }
+    }
 }
