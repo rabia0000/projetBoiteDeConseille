@@ -6,12 +6,14 @@ require_once '../models/Training.php';
 // var_dump($_POST);
 $trainingt = Training::getAllTypetraining();
 $errorMessage = '';
-$trainingInfos = Training::getCoursById($_POST['training_id']);
-// var_dump($trainingInfos);
+
+
 
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $trainingInfos = Training::getCoursById($_POST['training_id']);
+
 
     if (isset($_POST['update'])) {
         // Récupération des données soumises avec validation
@@ -22,9 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $trainingDate = $_POST['training_date'] ?? '';
         $trainingMax = $_POST['training_max'] ?? 0;
         $trainingArchived = isset($_POST['training_archived']) ? (bool)$_POST['training_archived'] : false;
+        $trainingType = ($_POST['training_type']);
 
-        // Convertir $trainingType en entier, avec une valeur par défaut si null ou non défini
-        $trainingType = isset($_POST['training_type']) ? intval($_POST['training_type']) : 0; // Assurez-vous que 0 est une valeur par défaut logique dans votre contexte
         // var_dump($trainingId);
         // Si les données sont valides, procéder à la mise à jour
         if ($trainingId !== null && is_numeric($trainingId)) {
